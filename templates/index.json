@@ -1,13 +1,18 @@
 {
-    "sections" : {
-        "main" : {
-            "type" : "home",
-            "settings" : {
-
-            }
+    "sections": {
+      "main": {
+        "type": "home",
+        "settings": {
         }
+      },
+      "f1c354b7-4375-4a9b-bf14-22ab94cce029": {
+        "type": "hero-banner",
+        "settings": {
+        }
+      }
     },
     "order": [
-        "main"
+      "main",
+      "f1c354b7-4375-4a9b-bf14-22ab94cce029"
     ]
-}
+  }

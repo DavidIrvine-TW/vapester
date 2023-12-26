@@ -1,0 +1,41 @@
+/* #imageContainer {
+    width: 100%;
+    height: 490px;
+    overflow: hidden;
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+
+}
+
+
+.img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid red;
+    flex: 1;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+} */
+
+/* .cont-one {
+    background-image: url('./banner-1-copyright.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 0 0 auto;
+    
+}
+.cont-two {
+    background-image: url('./image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 0 0 auto;
+} */
