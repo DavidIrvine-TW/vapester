@@ -1,3 +1,4 @@
+// hero-banner
 $('.fade').slick({
     dots: true,
     infinite: true,

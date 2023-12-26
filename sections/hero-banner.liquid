@@ -1,94 +1,144 @@
 
- <div id="imageContainer" style="width: 100%; height: 390px; overflow: hidden;">
 
-    <div id="pair1" style="display: flex; width: 100%; height: 100%; position: relative;">
-
-        <div class="img-cont" style=" position: relative; left: 0; min-width: 50%; height: 100%">
-            <img class="image" src="{{ 'banner-1-copyright.jpg' | asset_url }}" loading="eager" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-
-        <div class="img-cont" style=" position: absolute; left: 50%; max-width: 50%; height: 100%; z-index: -10;">
-            <img class="image" src="{{ 'image.png' | asset_url }}" loading="eager" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-
+{% comment %} mobile carousel {% endcomment %}
+{% comment %} <div id="image__banner-container-mobile" style="width: 100%; height: 390px; overflow: hidden; display: none">
+  <div id="pair1" style="display: flex; width: 100%; height: 100%; position: relative;">
+    <div class="img-cont" style=" position: relative; left: 0; min-width: 50%; height: 100%">
+      <img
+        class="image"
+        src="{{ 'banner-1-copyright.jpg' | asset_url }}"
+        loading="eager"
+        width="100"
+        height="100"
+        style="width: 100%; height: 100%; object-fit: cover;"
+      >
     </div>
 
-</div> 
+    <div class="img-cont" style=" position: absolute; left: 50%; max-width: 50%; height: 100%; z-index: -10;">
+      <img
+        class="image"
+        src="{{ 'image.png' | asset_url }}"
+        loading="eager"
+        width="100"
+        height="100"
+        style="width: 100%; height: 100%; object-fit: cover;"
+      >
+    </div>
+  </div>
+</div> {% endcomment %}
 
- {% comment %} <div class="fade"  style="width: 100%; height: 500px; border: 1px solid black overflow:hidden; border: 1px solid black; overflow:hidden">
-    <div id="pair1" style="display: flex; width: 100%; height: 100%; position: relative; overflow:hidden;">
-
-        <div class="img-cont" style=" position: relative; left: 0; min-width: 50%; height: 100%; overflow:hidden">
-            <img class="image" src="{{ 'banner-1-copyright.jpg' | asset_url }}" loading="eager" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-
-        <div class="img-cont" style=" position: absolute; left: 50%; max-width: 50%; height: 100%; z-index: -10; overflow:hidden">
-            <img class="image" src="{{ 'image.png' | asset_url }}" loading="eager" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        
-
+{% comment %} desktop carousel {% endcomment %}
+<div id="image__banner-container" class="fade">
+  <div
+    id="pair1"
+    class="image-pair-container"
+    style="display: flex; width: 100%; height: 100%; position: relative; overflow:hidden;"
+  >
+    <div class="image-container-left">
+      <img
+        class="image-individual"
+        src="{{ section.settings.image1| image_url }}"
+        loading="eager"
+        width="100"
+        height="100"
+      >
     </div>
 
-    <div id="pair1" style="display: flex; width: 100%; height: 100%; position: relative; overflow:hidden;">
+    <div class="image-container-right">
+      <img class="image-individual" src="{{ section.settings.image2| image_url }}" loading="eager" width="100" height="100">
+    </div>
+    <div class="hero-info">bananas</div>
+  </div>
 
-        <div class="img-cont" style=" position: relative; left: 0; min-width: 50%; height: 100%; overflow:hidden">
-            <img class="image" src="{{ 'banner-2-copyright.jpg' | asset_url }}" loading="eager" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-
-        <div class="img-cont" style=" position: absolute; left: 50%; max-width: 50%; height: 100%; z-index: -10; overflow:hidden">
-            <img class="image" src="{{ 'image-purple.png' | asset_url }}" loading="eager" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        
-
+  <div
+    id="pair2"
+    class="image-pair-container"
+    style="display: flex; width: 100%; height: 100%; position: relative; overflow:hidden;"
+  >
+    <div class="image-container-left">
+      <img
+        class="image-individual"
+        src="{{ section.settings.image3| image_url }}"
+        loading="eager"
+        width="100"
+        height="100"
+      >
     </div>
 
-    <div id="pair1" style="display: flex; width: 100%; height: 100%; position: relative; overflow:hidden;">
-
-        <div class="img-cont" style=" position: relative; left: 0; min-width: 50%; height: 100%; overflow:hidden">
-            <img class="image" src="{{ 'banner-3-copyright.jpg' | asset_url }}" loading="eager" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-
-        <div class="img-cont" style=" position: absolute; left: 50%; max-width: 50%; height: 100%; z-index: -10; overflow:hidden">
-            <img class="image" src="{{ 'image-red.png' | asset_url }}" loading="eager" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        
-
+    <div class="image-container-right ">
+      <img class="image-individual" src="{{ section.settings.image4| image_url }}" loading="eager" width="100" height="100">
     </div>
-  
-</div>  {% endcomment %}
+    <div class="hero-info">Cakes</div>
+  </div>
 
+  <div
+    id="pair3"
+    class="image-pair-container"
+    style="display: flex; width: 100%; height: 100%; position: relative; overflow:hidden;"
+  >
+    <div class="image-container-left">
+      <img
+        class="image-individual"
+        src="{{ section.settings.image5| image_url }}"
+        loading="eager"
+        width="100"
+        height="100"
+      >
+    </div>
 
+    <div class="image-container-right">
+      <img class="image-individual" src="{{ section.settings.image6| image_url }}" loading="eager" width="100" height="100">
+    </div>
+    <div class="hero-info">biscuits</div>
+  </div>
+</div>
 
+<style></style>
 
-
-
-
-
-<style>
-
-</style> 
-
-<script>
-  
-</script>
+<script></script>
 
 {% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "hero__main",
+  "settings": [
     {
-      "name": "Hero",
-      "tag": "section",
-      "class": "hero__main",
-      "settings": [
-    
-      ],
-      "presets": [
-        {
-          "name": "image-banner",
-          "blocks": [
-          ]
-        }
-      ]
+        "type": "image_picker",
+        "id": "image1",
+        "label": "Select image one"
+    },
+    {
+        "type": "image_picker",
+        "id": "image2",
+        "label": "Select background image"
+    },
+    {
+        "type": "image_picker",
+        "id": "image3",
+        "label": "Select image two"       
+    },
+    {
+        "type": "image_picker",
+        "id": "image4",
+        "label": "Select background image"
+    },
+    {
+        "type": "image_picker",
+        "id": "image5",
+        "label": "Select image three"       
+    },
+    {
+        "type": "image_picker",
+        "id": "image6",
+        "label": "Select background image"
+    } 
+  ],
+  "presets": [
+    {
+      "name": "image-banner",
+      "blocks": []
     }
+  ]
+}
 {% endschema %}
-
-
-
