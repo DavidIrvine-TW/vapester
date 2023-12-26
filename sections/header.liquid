@@ -1,0 +1,68 @@
+<div class="header-section">
+  {% comment %} UPPER HEADER {% endcomment %}
+  <div class="header-top">
+
+    <div class="page-width header-top-container">
+      {% comment %} logo container {% endcomment %}   
+        <div class="logo-container  bg-logo-background relative">
+          {%- if settings.logo != blank -%}
+            <a href="/" class="header-logo-link">
+              <img class="logo" src="{{ settings.logo |  image_url: width: settings.logo_width }}" alt="{{ shop.name }}">
+            </a>
+          {%- else -%}
+            <h1>{{ shop.name }}</h1>
+          {%- endif -%}
+        </div> 
+
+        <div class="header-top-container-content">
+          <span class="">
+              <span>Call Us:</span>
+              <span>+1 800 820 20 20</span>
+          </span>
+
+          <div class="search">
+              SEARCH
+          </div>
+
+          <span>
+            CART
+          </span>
+         
+        </div>
+    </div>
+
+   
+  </div>
+
+  {% comment %} LOWER HEADER {% endcomment %}
+  <div class="header-bottom page-width ">
+    <ul class="header-nav">
+      {% assign current_path = request.path %}
+      {% for link in linklists['main-menu'].links %}
+        <li class="nav-item {% if current_path == link.url %} active{% endif %}">
+          <a href="{{ link.url }}">
+            {{ link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <p class="menu-button">Categories</p>
+
+    <div class="head-accent menu-button">
+      <h1 class="heading">VAPOR</h1>
+    </div>
+    
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "header",
+  "class": "header__main",
+  "settings": [
+
+  ]
+}
+{% endschema %}

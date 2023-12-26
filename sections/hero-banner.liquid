@@ -1,0 +1,135 @@
+
+
+
+{% comment %} <div>
+    <div style="width: 100%; display: flex;">
+        <div style="flex: 1;">
+            <img src="{{ 'banner-1-copyright.jpg' | asset_url }}" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <div style="flex: 1;">
+            <img src="{{ 'image.png' | asset_url }}" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
+        </div> 
+    </div>  
+
+    <div style="width: 100%; display: flex;">
+        <div style="flex: 1;">
+            <img src="{{ 'banner-2-copyright.jpg' | asset_url }}" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <div style="flex: 1;">
+            <img src="{{ 'image-purple.png' | asset_url }}" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
+        </div> 
+    </div>  
+
+    <div style="width: 100%; display: flex;">
+        <div style="flex: 1;">
+            <img src="{{ 'banner-3-copyright.jpg' | asset_url }}" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <div style="flex: 1;">
+            <img src="{{ 'image-red.png' | asset_url }}" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
+        </div> 
+    </div>  
+</div> {% endcomment %}
+
+<div id="imageContainer" style="width: 100%; height: 490px; overflow: hidden; border: 1px solid black;">
+
+    <div style="width: 100%; display: flex;">
+        <div id="pair1" class="image-pair" style="flex: 1;">
+            <div style="flex: 1;">
+                <img src="{{ 'banner-1-copyright.jpg' | asset_url }}" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 1;">
+                <img src="{{ 'image.png' | asset_url }}" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </div>  
+
+    <div style="width: 100%; display: flex;">
+        <div id="pair2" class="image-pair" style="flex: 1; display: none;">
+            <div style="flex: 1;">
+                <img src="{{ 'banner-2-copyright.jpg' | asset_url }}" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 1;">
+                <img src="{{ 'image-purple.png' | asset_url }}" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </div>  
+
+    <div style="width: 100%; display: flex;">
+        <div id="pair3" class="image-pair" style="flex: 1; display: none;">
+            <div style="flex: 1;">
+                <img src="{{ 'banner-3-copyright.jpg' | asset_url }}" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 1;">
+                <img src="{{ 'image-red.png' | asset_url }}" width="100" height="100" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </div>  
+</div>
+
+<style>
+  .image-pair {
+    display: flex;
+  }
+
+  .image-pair > div {
+    flex: 1;
+    transition: opacity 1.5s ease-in-out;
+  }
+</style> 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var currentPair = 1;
+
+    function switchImagePairs() {
+      var pairs = document.querySelectorAll('.image-pair');
+
+      // Hide all pairs
+      pairs.forEach(function(pair) {
+        pair.style.display = 'none';
+      });
+
+      // Show the next pair
+      currentPair = (currentPair % pairs.length) + 1;
+      var currentPairElement = document.getElementById('pair' + currentPair);
+      currentPairElement.style.display = 'flex';
+
+      // Trigger a reflow to apply the transition
+      void currentPairElement.offsetWidth;
+
+      // Set the opacity of the first image to 0 and the second image to 1
+    //   currentPairElement.children[0].style.opacity = 0;
+    //   currentPairElement.children[1].style.opacity = 1;
+    }
+
+    // Call the switchImagePairs function every 20 seconds
+    setInterval(switchImagePairs, 10000); // 10 seconds in milliseconds
+  });
+</script>
+
+
+
+
+{% schema %}
+    {
+      "name": "Hero",
+      "tag": "section",
+      "class": "hero__main",
+      "settings": [
+    
+      ],
+      "presets": [
+        {
+          "name": "image-banner",
+          "blocks": [
+          ]
+        }
+      ]
+    }
+{% endschema %}
+
+
+
