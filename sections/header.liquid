@@ -1,3 +1,5 @@
+
+
 <div class="header-section">
   {% comment %} UPPER HEADER {% endcomment %}
   <div class="header-top">
@@ -7,7 +9,7 @@
         <div class="logo-container  bg-logo-background relative">
           {%- if settings.logo != blank -%}
             <a href="/" class="header-logo-link">
-              <img class="logo" src="{{ settings.logo |  image_url: width: settings.logo_width }}" alt="{{ shop.name }}">
+              <img loading="eager" class="logo" src="{{ settings.logo |  image_url: width: settings.logo_width }}" alt="{{ shop.name }}" width="100" height="100">
             </a>
           {%- else -%}
             <h1>{{ shop.name }}</h1>
@@ -15,18 +17,20 @@
         </div> 
 
         <div class="header-top-container-content">
-          <span class="">
-              <span>Call Us:</span>
-              <span>+1 800 820 20 20</span>
-          </span>
 
-          <div class="search">
-              SEARCH
+          <div class="" style="color: white; display: flex; gap: .5rem; font-size: 1.1rem">
+              <p id="heading" >Call Us:</p>
+              <p>+1 800 820 20 20</p>
           </div>
 
-          <span>
-            CART
-          </span>
+          <div class="header-search-container bg-logo-background" style="display: flex; gap: 10px; align-items: center; padding: 1rem;">
+              {% render 'icon-search' %}
+              <input style="width: 200px" placeholder="Search Products..." type="text"/>
+          </div>
+
+          <div class="header-cart-container" >
+            {% render 'icon-cart' %}
+          </div>
          
         </div>
     </div>
@@ -34,7 +38,7 @@
    
   </div>
 
-  {% comment %} LOWER HEADER {% endcomment %}
+  {% comment %} LOWER HEADER - nav menu {% endcomment %}
   <div class="header-bottom page-width ">
     <ul class="header-nav">
       {% assign current_path = request.path %}
@@ -54,7 +58,12 @@
     </div>
     
   </div>
+
 </div>
+
+
+<script>
+</script>
 
 {% schema %}
 {

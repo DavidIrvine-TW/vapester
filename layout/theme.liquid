@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="{{ 'hero-banner.css' | asset_url }}">
 
     <link rel="stylesheet" type="text/css" href="{{ 'slick.css' | asset_url }}"/>
-   <link rel="stylesheet" type="text/css" href="{{ "slick-theme.css" | asset_url }}"/>     
-   
+     <link rel="stylesheet" type="text/css" href="{{ "slick-theme.css" | asset_url }}"/>     
+     
 
     {%- if settings.favicon != blank -%}
         <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 35, height: 35 }}">
@@ -42,18 +42,27 @@
 <body>
     {% comment %} {% section "announcement-bar" %} {% endcomment %}
     {% section "header" %}
+ 
+
+
+   
 
      <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 
+
+
+
+
+
+
+
     <script type="text/javascript" src="{{ "jquery-1.11.0.min.js" | asset_url }}"></script>
     <script type="text/javascript" src="{{ "jquery-migrate-1.2.1.min.js" | asset_url }}"></script>
     <script type="text/javascript" src="{{ "slick.min.js" | asset_url }}"></script>
     <script type="text/javascript" src="{{ "carousel.js" | asset_url }}"></script>
-
-  
-
+    <script type="text/javascript" src="{{ "jq.js" | asset_url }}"></script>
 </body>
 </html>
 

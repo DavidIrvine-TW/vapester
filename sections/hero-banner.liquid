@@ -47,7 +47,26 @@
     <div class="image-container-right">
       <img class="image-individual" src="{{ section.settings.image2| image_url }}" loading="eager" width="100" height="100">
     </div>
-    <div class="hero-info">bananas</div>
+
+    {% comment %} hero slide one info {% endcomment %}
+        <div class="hero-info">
+            
+            <div class="hero-title">
+                <h2 class="hero-heading hero-heading-img-one">TAROT MINI KITS</h2>
+            </div>
+           
+            <div class="hero-heading-btn-container">
+
+                 <div class="hero-price-cont" style="display: flex; align-items: center;">
+                    <span style="color: white;">{% render 'icon-cash' %}</span>
+                    <span class="hero-price">79.00</span>
+                </div>
+                    
+                <button id="myButton" class="btn-shop-now">SHOP NOW</button>
+            </div> 
+            
+        </div>
+
   </div>
 
   <div
@@ -68,7 +87,24 @@
     <div class="image-container-right ">
       <img class="image-individual" src="{{ section.settings.image4| image_url }}" loading="eager" width="100" height="100">
     </div>
-    <div class="hero-info">Cakes</div>
+        {% comment %} hero slide one info {% endcomment %}
+        <div class="hero-info">
+            
+            <div class="hero-title">
+                <h2 class="hero-heading hero-heading-img-one">E-LIQUID BUNDLE</h2>
+            </div>
+           
+            <div class="hero-heading-btn-container">
+
+                 <div class="hero-price-cont" style="display: flex; align-items: center;">
+                    <span style="color: white;">{% render 'icon-cash' %}</span>
+                    <span class="hero-price">79.00</span>
+                </div>
+                    
+                <button class="btn-shop-now">SHOP NOW</button>
+            </div> 
+            
+        </div>
   </div>
 
   <div
@@ -89,13 +125,29 @@
     <div class="image-container-right">
       <img class="image-individual" src="{{ section.settings.image6| image_url }}" loading="eager" width="100" height="100">
     </div>
-    <div class="hero-info">biscuits</div>
+        {% comment %} hero slide one info {% endcomment %}
+        <div class="hero-info">
+            
+            <div class="hero-title">
+                <h2 class="hero-heading hero-heading-img-one">VAPORESSO VECO ONE</h2>
+            </div>
+           
+            <div class="hero-heading-btn-container">
+
+                 <div class="hero-price-cont" style="display: flex; align-items: center;">
+                    <span style="color: white;">{% render 'icon-cash' %}</span>
+                    <span class="hero-price">79.00</span>
+                </div>
+                    
+                <button class="btn-shop-now">SHOP NOW</button>
+            </div> 
+            
+        </div>
   </div>
 </div>
 
 <style></style>
 
-<script></script>
 
 {% schema %}
 {
