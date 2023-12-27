@@ -21,24 +21,14 @@
     {{ content_for_header }}
 
     <style>
-
         :root {
             --page-width: {{ settings.page_width }}px;
             --logo-width: {{ settings.logo_width }}px;
             --bp: 960px;
             }     
-
-    </style>
-
-
-
-    <script>
-      console.log({{ settings.logo_width }})
-    </script>
-
-
-    
+    </style>  
 </head>
+
 <body>
     {% comment %} {% section "announcement-bar" %} {% endcomment %}
     {% section "header" %}
