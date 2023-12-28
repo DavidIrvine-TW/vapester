@@ -18,28 +18,29 @@
 
         <div class="header-top-container-content">
 
-          <div class="" style="color: white; display: flex; gap: .5rem; font-size: 1.1rem">
+          <div class="" style="color: white; display: flex; gap: .5rem; font-size: 1.1rem; display: none">
               <p id="heading" >Call Us:</p>
               <p>+1 800 820 20 20</p>
           </div>
 
-          <div class="header-search-container bg-logo-background" style="display: flex; gap: 10px; align-items: center; padding: 1rem;">
+          <div class="header-search-container bg-logo-background" >
               {% render 'icon-search' %}
               <input style="width: 200px" placeholder="Search Products..." type="text"/>
           </div>
 
-          <div class="header-cart-container" >
-            {% render 'icon-cart' %}
-          </div>
+
+          {% render 'icon-cart' %}
+
+          {% render 'burger-menu' %}
          
-        </div>
+        </div> 
     </div>
 
    
   </div>
 
   {% comment %} LOWER HEADER - nav menu {% endcomment %}
-  <div class="header-bottom page-width ">
+  <div class="header-bottom ">
     <ul class="header-nav">
       {% assign current_path = request.path %}
       {% for link in linklists['main-menu'].links %}
@@ -51,11 +52,11 @@
       {% endfor %}
     </ul>
 
-    <p class="menu-button">Categories</p>
 
-    <div class="head-accent menu-button">
-      <h1 class="heading">VAPOR</h1>
-    </div>
+    <button class="menu-button">
+      MENU
+      {% render 'icon-chevron' %}
+    </button>
     
   </div>
 
@@ -69,7 +70,7 @@
 {
   "name": "Header",
   "tag": "header",
-  "class": "header__main",
+  "class": "header__container",
   "settings": [
 
   ]
