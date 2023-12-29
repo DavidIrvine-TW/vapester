@@ -1,36 +1,58 @@
+<div>
+  <h1>{{ section.settings.heading }}</h1>
+
+  {% for block in section.blocks %}
+   
+        <div class="slide" {{ block.shopify_attributes }}>
+          {{ block.settings.selling_point_image | image_url: width: 2048 | image_tag }}
+        </div>
 
 
+  {% endfor %}
+  
 
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
 {% schema %}
-
 {
-"name" : "Selling points",
-"class" : "section-selling-points",
-"tag" : "section",
-"settings" : [
+  "name": "Selling points",
+  "settings": [
     {
-    "type" : "richtext",
-    "id" : "selling_point",
-    "label" : "Selling point"
+      "type": "richtext",
+      "id": "heading",
+      "label": "Add selling point title"
+
     }
-],
-"presets": [
+  ],
+  "presets": [{"name": "Section selling points"}],
+  "tag": "section",
+  "class": "section-selling-points",
+  "limit": 1,
+  "blocks": [
     {
-      "name": "Selling points",
-      "blocks": []
+      "name": "Add selling point",
+      "type": "selling_point",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Add selling point title" 
+        },
+        {
+          "type": "text",
+          "id": "body_text",
+          "label": "Selling point details" 
+        },
+        {
+          "type": "image_picker",
+          "id": "selling_point_image",
+          "label": "Add selling point image" 
+        }
+      ]
+
     }
   ]
+
 }
+
 {% endschema %}
