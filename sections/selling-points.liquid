@@ -1,17 +1,22 @@
-<div>
-  <h1>{{ section.settings.heading }}</h1>
+
+
 
   {% for block in section.blocks %}
-   
-        <div class="slide" {{ block.shopify_attributes }}>
-          {{ block.settings.selling_point_image | image_url: width: 2048 | image_tag }}
-        </div>
+    <div class="point-container">
 
+      <div class="svg-container">
+        <img class="collection-img" src="{{ block.settings.selling_point_image | image_url }}" loading="lazy" height="100"  width="100"> 
+      </div>
 
+      <div>
+        <p class="point-heading">{{ block.settings.title | strip_html }} </p>
+        <p class="point-body">{{ block.settings.body_text | strip_html }}</p>
+      </div>
+
+    </div>
   {% endfor %}
   
 
-</div>
 
 {% schema %}
 {
@@ -21,7 +26,6 @@
       "type": "richtext",
       "id": "heading",
       "label": "Add selling point title"
-
     }
   ],
   "presets": [{"name": "Section selling points"}],
@@ -52,7 +56,6 @@
 
     }
   ]
-
 }
 
 {% endschema %}

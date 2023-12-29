@@ -28,168 +28,94 @@
 {% endcomment %}
 
 {% comment %} desktop carousel {% endcomment %}
-<div id="image__banner-container">
-  <div id="pair1" class="image-container">
-    <div class="image-container-left">
-      <img
-        class="image-individual"
-        src="{{ section.settings.image1 | image_url }}"
-        loading="eager"
-        width="100"
-        height="100"
-      >
+<div id="image__banner-container" class="{% if section.blocks.size > 1 %} fade {% endif %}">
+
+  {% for block in section.blocks %}
+
+  <div class="image-container">  
+
+      <div class="image-container-left">
+        <img
+          class="image-individual"
+          src="{{ block.settings.image1 | image_url }}"
+          loading="eager"
+          width="100"
+          height="100"
+        >
         <div class="image-overlay"></div>
-    </div>
-
-    <div class="image-backdrop">
-      <img src="{{ section.settings.image2 | image_url }}" loading="eager" width="100" height="100">
-    </div>
-
-    {% comment %} hero slide one info {% endcomment %}
-    <div class="hero-info-container">
-
-      <div class="hero-title">
-        <h2 class="hero-heading hero-heading-img-one">TAROT MINI KITS</h2>
       </div>
 
-      <div class="hero-heading-btn-container">
+      <div class="image-backdrop">
+        <img src="{{ block.settings.image2 | image_url }}" loading="eager" width="100" height="100">
+      </div>
+
+      {% comment %} hero slide one info {% endcomment %}
+      <div class="hero-info-container">
+
+        <div class="hero-title">
+          <h2 class="hero-heading hero-heading-img-one">{{ block.settings.product_title | upcase }}</h2>
+        </div>
+
+        <div class="hero-heading-btn-container">
 
           <div class="hero-price-cont">
             <span style="color: white;">{% render 'icon-cash' %}</span>
-            <span class="hero-price">79.00</span>
+            <span class="hero-price">{{ block.settings.product_price }}</span>
           </div>
+
           <div class="hero-heading-btn-container-one">
-            <button id="myButton" class="btn-shop-now ">SHOP NOW</button> 
-          </div> 
-      </div> 
-
-    </div>
-
+            <button id="myButton" class="btn-shop-now ">SHOP NOW</button>
+          </div>
+          
+        </div>
+      </div>
+    
   </div>
-
-    <div
-      id="pair2"
-      class="image-pair-container"
-      style="display: flex; width: 100%; height: 100%; position: relative; overflow:hidden;"
-    >
-      <div class="image-container-left">
-        <img
-          class="image-individual"
-          src="{{ section.settings.image3| image_url }}"
-          loading="eager"
-          width="100"
-          height="100"
-        >
-      </div>
-
-      <div class="image-container-right ">
-        <img class="image-individual" src="{{ section.settings.image4| image_url }}" loading="eager" width="100" height="100">
-      </div>
-          {% comment %} hero slide one info {% endcomment %}
-          <div class="hero-info">
-
-              <div class="hero-title">
-                  <h2 class="hero-heading hero-heading-img-one">E-LIQUID BUNDLE</h2>
-              </div>
-
-              <div class="hero-heading-btn-container">
-
-                   <div class="hero-price-cont" style="display: flex; align-items: center;">
-                      <span style="color: white;">{% render 'icon-cash' %}</span>
-                      <span class="hero-price">79.00</span>
-                  </div>
-
-                  <button class="btn-shop-now">SHOP NOW</button>
-              </div>
-
-          </div>
-    </div>
-
-
-  
-    <div
-      id="pair3"
-      class="image-pair-container"
-      style="display: flex; width: 100%; height: 100%; position: relative; overflow:hidden;"
-    >
-      <div class="image-container-left">
-        <img
-          class="image-individual"
-          src="{{ section.settings.image5| image_url }}"
-          loading="eager"
-          width="100"
-          height="100"
-        >
-      </div>
-
-      <div class="image-container-right">
-        <img class="image-individual" src="{{ section.settings.image6| image_url }}" loading="eager" width="100" height="100">
-      </div>
-          {% comment %} hero slide one info {% endcomment %}
-          <div class="hero-info">
-
-              <div class="hero-title">
-                  <h2 class="hero-heading hero-heading-img-one">VAPORESSO VECO ONE</h2>
-              </div>
-
-              <div class="hero-heading-btn-container">
-
-                   <div class="hero-price-cont" style="display: flex; align-items: center;">
-                      <span style="color: white;">{% render 'icon-cash' %}</span>
-                      <span class="hero-price">79.00</span>
-                  </div>
-
-                  <button class="btn-shop-now">SHOP NOW</button>
-              </div>
-
-          </div>
-    </div>
-
+{% endfor %}  
 </div>
 
 <style></style>
 
 {% schema %}
 {
-  "name": "Hero",
-  "tag": "section",
-  "class": "hero__main",
+  "name": "Hero banner",
   "settings": [
     {
-      "type": "image_picker",
-      "id": "image1",
-      "label": "Select image one"
-    },
-    {
-      "type": "image_picker",
-      "id": "image2",
-      "label": "Select background image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image3",
-      "label": "Select image two"
-    },
-    {
-      "type": "image_picker",
-      "id": "image4",
-      "label": "Select background image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image5",
-      "label": "Select image three"
-    },
-    {
-      "type": "image_picker",
-      "id": "image6",
-      "label": "Select background image"
+      "type": "richtext",
+      "id": "heading",
+      "label": "Add selling point title"
     }
   ],
-  "presets": [
+  "presets": [{ "name": "Default hero banner" }],
+  "class": "hero__main",
+  "tag": "section",
+  "limit": 1,
+  "blocks": [
     {
-      "name": "image-banner",
-      "blocks": []
+      "name": "Hero banner",
+      "type": "hero_images",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Select product image"
+        },
+        {
+          "type": "text",
+          "id": "product_title",
+          "label": "Product title"
+        },
+        {
+          "type": "text",
+          "id": "product_price",
+          "label": "Product price"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Select product image background"
+        }
+      ]
     }
   ]
 }

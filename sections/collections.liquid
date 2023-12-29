@@ -1,0 +1,51 @@
+<h1>COLLECTIONS</h1>
+{% for block in section.blocks %}
+<div class="collection-image-container">
+    <div class="image-container">
+        <img class="collection-image" src="{{ block.settings.collection_image | image_url }}" loading="lazy" height="100" width="100">
+    </div>
+  
+  <div>
+    <h3 class="image-collection-title">{{ block.settings.collection_name | strip_html }}</h3>
+  </div>
+  <div class="collection-image-overlay"></div>
+</div>
+{% endfor %}
+
+
+
+{% schema %}
+{
+  "name": "Collections",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Add selling point title"
+    }
+  ],
+  "tag": "section",
+  "class": "section-collections",
+  "presets": [{ "name": "Default collections" }],
+  "limit": 1,
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "name": "Add collection",
+      "type": "collection_item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "collection_image",
+          "label": "Collection image"
+        },
+        {
+          "type": "text",
+          "id": "collection_name",
+          "label": "Collection name"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
