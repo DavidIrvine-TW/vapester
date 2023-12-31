@@ -1,15 +1,22 @@
-<h1>COLLECTIONS</h1>
-{% for block in section.blocks %}
-<div class="collection-image-container">
-    <div class="image-container">
-        <img class="collection-image" src="{{ block.settings.collection_image | image_url }}" loading="lazy" height="100" width="100">
+<h2 style="text-align: right;"> {{ section.settings.heading |  strip_html }}</h2>
+
+  {% for block in section.blocks %}
+  <div class="collection__main-container">
+
+    <div class="collection__main-image-container ">
+          <img class="image" src="{{ block.settings.collection_image | image_url }}" loading="lazy" height="100" width="100">
     </div>
-  
-  <div>
-    <h3 class="image-collection-title">{{ block.settings.collection_name | strip_html }}</h3>
+    
+    <div class="collection__main-container-heading">
+      <h3 class="image-collection-title">{{ block.settings.collection_name | strip_html }}</h3>
+    </div>
+
+    <div class="collection-image-overlay" style="background-color:{{ block.settings.collection_image_overlay_color }}"></div>
+
   </div>
-  <div class="collection-image-overlay"></div>
-</div>
+
+
+
 {% endfor %}
 
 
@@ -25,7 +32,7 @@
     }
   ],
   "tag": "section",
-  "class": "section-collections",
+  "class": "collections__section",
   "presets": [{ "name": "Default collections" }],
   "limit": 1,
   "max_blocks": 5,
@@ -38,6 +45,11 @@
           "type": "image_picker",
           "id": "collection_image",
           "label": "Collection image"
+        },
+        {
+          "type": "color",
+          "id": "collection_image_overlay_color",
+          "label": "Collection image overlay color"
         },
         {
           "type": "text",

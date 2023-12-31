@@ -23,6 +23,11 @@
   z-index: -10; 
 }
 
+.banner-mg {
+  height: 100%;
+  width: 100%;
+}
+
 .image-container-left {
     height: 100%;
    
