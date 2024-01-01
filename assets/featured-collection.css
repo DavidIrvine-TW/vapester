@@ -1,9 +1,32 @@
 .featured-collection__section {
+    position: relative;
     padding: 3rem 0rem;
     max-width: 280px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    border: 1px solid red;
+    overflow: hidden;
+}
+.featured-collection__image-container {
+    border: 3px solid lightgray;
+    overflow: hidden;
+}
+
+.featured-collection__image-container > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.featured-collection__image-container:hover > img {
+    transform: scale(1.2);
+}
+.featured-collection__image-container:hover {
+    border: 3px solid red;
+}
+
+.featured-collection__info-container {
+    padding: 1rem;
 }
