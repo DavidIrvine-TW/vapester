@@ -1,0 +1,70 @@
+
+<div class="featured-collection__main-container fade">
+
+
+
+{% if section.settings.section_title == blank %}
+  <h2>{{ collections['best-sellers'].title | strip_html }}</h2>
+  {% else %}
+  <h2>{{ section.settings.section_title | strip_html }}</h2>
+{% endif %}
+
+
+
+
+{% for product in collections['best-sellers'].products %}
+
+
+  <div class="featured-collection__single-product-container" style="border: 1px solid black;">
+    <div class="featured-collection__image-container">
+      <img class="image" src="{{ product.featured_image | image_url }}" loading="lazy" width="100" height="100">
+    </div>
+
+    <div class="featured-collection__info-container">
+      <h3> {{ product.title | link_to: product.url | strip_html }} </h3>
+      <p> {{ product.price | money }}</p>
+    </div>
+
+   
+  </div>
+  
+
+
+
+
+
+{% endfor %}
+
+</div>
+
+<script>
+
+</script>
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "section_title",
+      "label": "Section title"
+    },
+    {
+      "id": "title_subtext",
+      "type": "textarea",
+      "label": "Section description"
+    },
+    {
+      "id": "collection",
+      "type": "collection",
+      "label": "Collection"
+    }
+  ],
+  "presets": [{ "name": "Featured collection" }],
+  "tag": "section",
+  "class": "featured-collection__section",
+  "limit": 1
+  
+}
+{% endschema %}

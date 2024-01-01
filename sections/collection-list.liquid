@@ -1,0 +1,62 @@
+<h2 style="text-align: right;">{{ section.settings.heading | strip_html }}</h2>
+
+{% for block in section.blocks %}
+  <a href="{{ block.settings.collection.url }}">
+    <div class="collection__main-container">
+      <div class="collection__main-image-container ">
+        <img
+          class="image"
+          src="{{ block.settings.collection.featured_image | image_url }}"
+          loading="lazy"
+          height="100"
+          width="100"
+        >
+      </div>
+
+      <div class="collection__main-container-heading">
+        <h3 class="image-collection-title">{{ block.settings.collection.title | strip_html }}</h3>
+      </div>
+
+      <div
+        class="collection-image-overlay"
+        style="background-color:{{ block.settings.collection_image_overlay_color }}"
+      ></div>
+    </div>
+  </a>
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Collection list",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Collection list title"
+    }
+  ],
+  "tag": "section",
+  "class": "collection-list__section",
+  "presets": [{ "name": "Collection list" }],
+  "limit": 1,
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "name": "Collection",
+      "type": "collection_item",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "color",
+          "id": "collection_image_overlay_color",
+          "label": "Collection image overlay color"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

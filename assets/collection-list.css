@@ -1,10 +1,10 @@
-.collections__section {
-    padding: 3rem 1rem;
+.collection-list__section{
+    padding: 3rem 0rem;
     max-width: 280px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 .collection__main-container {
 position: relative;
@@ -23,29 +23,24 @@ cursor: pointer;
 }
 
 .collection__main-container-heading > h3 {
-     /* background-color: #3498db;  */
      color: #ffffff; 
      padding: 1px 2px; 
      font-size: 1.5rem;
      line-height: 24px;
      position: relative; 
      z-index: 20;
-  
 }
 
- 
   .collection__main-container-heading > h3:before {
     content: "";
     position: absolute;
     top: 0;
-
-    width: 90%;
+    width: 95%;
     height: 100%;
     background-color: var(--header-bg);
     z-index: -1; 
     transform: translate(2px, 5px); 
   } 
-
 
   .collection-image-overlay {
     position: absolute;
@@ -58,6 +53,5 @@ cursor: pointer;
     transition: all .2s ease;
   }
   .collection-image-overlay:hover {
-   
-    opacity: 0.3;
+    opacity: 0.6;
   }
