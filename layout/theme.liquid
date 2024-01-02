@@ -35,7 +35,7 @@
 
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
     {% comment %} {% section "announcement-bar" %} {% endcomment %}
     {% section "header" %}
  
@@ -55,9 +55,9 @@
 
     <script type="text/javascript" src="{{ "jquery-1.11.0.min.js" | asset_url }}" defer></script>
     <script type="text/javascript" src="{{ "jquery-migrate-1.2.1.min.js" | asset_url }}" defer></script>
+    <script type="text/javascript" src="{{ "jq.js" | asset_url }}" defer></script>
     <script type="text/javascript" src="{{ "slick.min.js" | asset_url }}" defer></script>
     <script type="text/javascript" src="{{ "featured-collection-carousel.js" | asset_url }}" defer></script>
-    <script type="text/javascript" src="{{ "jq.js" | asset_url }}" defer></script>
     <script type="text/javascript" src="{{ 'burgermenu.js' | asset_url }}" defer></script>
 </body>
 </html>

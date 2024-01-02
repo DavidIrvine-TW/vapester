@@ -1,7 +1,12 @@
-<h3 class="section-heading">{{ section.settings.heading | strip_html }}</h3>
+<div class="discount-banner__main-container ">
+  <h3 class="section-heading">{{ section.settings.heading | strip_htm }}</h3>
 
-{% for block in section.blocks %}
-  <a href="{{ block.settings.collection.url }}">
+
+
+
+  <div class="discount-banner__display-container">
+    {% for block in section.blocks %}
+        <a href="{{ block.settings.collection.url }}">
     <div class="collection__main-container">
       <div class="collection__main-image-container ">
         <img
@@ -24,26 +29,42 @@
     </div>
   </a>
 {% endfor %}
+    
+    <div>
+
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+</div>
 
 {% schema %}
 {
-  "name": "Collection list",
+  "name": "Discount banner",
   "settings": [
     {
-      "type": "richtext",
+      "type": "text",
       "id": "heading",
-      "label": "Collection list title"
+      "label": "Section title"
     }
   ],
+  "limit": 2,
+  "class": "discount-banner__section",
   "tag": "section",
-  "class": "collection-list__section",
-  "presets": [{ "name": "Collection list" }],
-  "limit": 1,
-  "max_blocks": 5,
+  "presets": [{ "name": "Discount banner" }],
+  "max_blocks": 4,
   "blocks": [
     {
-      "name": "Collection",
-      "type": "collection_item",
+      "name": "Discount",
+      "type": "discount",
       "settings": [
         {
           "type": "collection",
@@ -51,9 +72,14 @@
           "label": "Collection"
         },
         {
-          "type": "color",
-          "id": "collection_image_overlay_color",
-          "label": "Collection image overlay color"
+            "type": "text",
+            "id": "body_text",
+            "label": "Discount details"
+        },
+        {
+            "type": "richtext",
+            "label": "Discount heading",
+            "id": "discount_heading"
         }
       ]
     }

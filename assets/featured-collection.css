@@ -24,7 +24,7 @@
     transform: scale(1.2);
 }
 .featured-collection__image-container:hover {
-    border: 3px solid red;
+    border: 3px solid #f2d71f;
 }
 
 .featured-collection__info-container {

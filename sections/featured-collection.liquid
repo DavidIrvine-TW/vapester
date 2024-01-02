@@ -1,25 +1,18 @@
+{% if section.settings.title_subtext != blank %}
+  <p>{{ section.settings.title_subtext |  strip_html }}</p>
+  {% endif %} 
 {% if section.settings.section_title == blank %}
-  <h2>{{ collections['best-sellers'].title | strip_html }}</h2>
+  <h3 class="section-heading">{{ collections['best-sellers'].title | strip_html }}</h3>
   {% else %}
-  <h2>{{ section.settings.section_title | strip_html }}</h2>
+  <h3 class="section-heading">{{ section.settings.section_title | strip_html }}</h3>
 {% endif %}
-
-
 
 <div class="featured-collection__main-container fade">
 
 
-
-
-
-
-
-
 {% for product in collections['best-sellers'].products %}
 
-
   <div class="featured-collection__single-product-container" >
-
 
     <a href="{{ product.url }}">
       <div class="featured-collection__image-container">

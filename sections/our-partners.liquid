@@ -1,0 +1,32 @@
+<h1 class="section-heading">our partners</h1>
+
+{% for product in collections['Partners'].products %}
+    <div class="featured-collection__image-container">
+        <img class="image" src="{{ product.featured_image | image_url }}" loading="lazy" width="100" height="100">
+      </div>
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Our partners",
+  "settings": [],
+  "limit": 2,
+  "class": "our-partners__section",
+  "tag": "section",
+  "presets": [{ "name": "Our partners" }],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "name": "Collection",
+      "type": "collection_item",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }    
+      ]
+    }
+  ]
+}
+{% endschema %}
