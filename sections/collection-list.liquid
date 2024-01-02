@@ -1,29 +1,31 @@
-<h3 class="section-heading">{{ section.settings.heading | strip_html }}</h3>
+<div class="section-collection-list">
+  <h3 class="section-heading">{{ section.settings.heading | strip_html }}</h3>
 
-{% for block in section.blocks %}
-  <a href="{{ block.settings.collection.url }}">
-    <div class="collection__main-container">
-      <div class="collection__main-image-container ">
-        <img
-          class="image"
-          src="{{ block.settings.collection.featured_image | image_url }}"
-          loading="lazy"
-          height="100"
-          width="100"
-        >
+  {% for block in section.blocks %}
+    <a href="{{ block.settings.collection.url }}">
+      <div class="collection__main-container">
+        <div class="collection__main-image-container ">
+          <img
+            class="image"
+            src="{{ block.settings.collection.featured_image | image_url }}"
+            loading="lazy"
+            height="100"
+            width="100"
+          >
+        </div>
+
+        <div class="collection__main-container-heading">
+          <h3 class="image-collection-title">{{ block.settings.collection.title | strip_html }}</h3>
+        </div>
+
+        <div
+          class="collection-image-overlay"
+          style="background-color:{{ block.settings.collection_image_overlay_color }}"
+        ></div>
       </div>
-
-      <div class="collection__main-container-heading">
-        <h3 class="image-collection-title">{{ block.settings.collection.title | strip_html }}</h3>
-      </div>
-
-      <div
-        class="collection-image-overlay"
-        style="background-color:{{ block.settings.collection_image_overlay_color }}"
-      ></div>
-    </div>
-  </a>
-{% endfor %}
+    </a>
+  {% endfor %}
+</div>
 
 {% schema %}
 {
@@ -36,7 +38,7 @@
     }
   ],
   "tag": "section",
-  "class": "collection-list__section",
+  "class": "collection-list__main-container",
   "presets": [{ "name": "Collection list" }],
   "limit": 1,
   "max_blocks": 5,

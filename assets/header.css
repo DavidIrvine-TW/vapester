@@ -1,6 +1,5 @@
 /* HEADER - MOBILE FIRST */
-
-.header__container {
+.header__main-container {
 
 }
 
@@ -21,8 +20,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding: 0 1rem;
-   
+  padding: 0 1rem; 
 }
 
 .logo-container {
@@ -91,7 +89,7 @@
       display: none;
     }
     .nav-menu {
-      /* display: none; */
+      display: none;
     }
 }
 

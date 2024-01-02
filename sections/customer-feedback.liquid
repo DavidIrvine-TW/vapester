@@ -1,0 +1,112 @@
+<div class="section-customer-review">
+  {% comment %} Customer review {% endcomment %}
+  <div class="customer-review-main-content" style="width: 100%; height: 500px; position: relative">
+    <div class="customer-review-image-container" style="width: 100%; height: 100%; overflow: hidden;">
+      <img
+        src="{{ section.settings.background_image | image_url }}"
+        loading="lazy"
+        height="100"
+        width="100"
+        style="width: 100%; height: 100%; object-fit: cover;"
+      >
+
+      {% for block in section.blocks %}
+        <div class="section-body fade" style="position: absolute;  top: 20%; padding: 3rem;">
+          <p>{{ block.settings.body_text | strip_html }}</p>
+          <p>{{ block.settings.reviewer | strip_html }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="section-heading" style="position: absolute; top: 10%">
+      {% if section.settings.section_heading != blank %}
+        <h4>{{ section.settings.section_heading | strip_html }}</h4>
+      {% endif %}
+    </div>
+  </div>
+
+
+
+  {% comment %} Newsletter {% endcomment %}
+  {% if section.settings.newsletter_background != blank %}
+  <div  class="newsletter-content">
+    <div class="newsletter-image-container">
+      <img class="image" src="{{ section.settings.newsletter_background | image_url }}" width="100" height="100" loading="lazy">
+    </div>
+
+    <div>
+      <h4>{{ section.settings.newsletter_title | strip_html }}</h4>
+      <p>{{ section.settings.newsletter_body_text | strip_html }}</p>
+
+    <div>
+
+    <div>
+      <input type="email" placeholder="Enter email address">
+      <button type="button">SUBSCRIBE<button>
+    </div>
+
+ 
+  </div>
+  {% endif %}
+
+
+
+
+
+
+</div>
+
+{% schema %}
+{
+  "name": "Customer reviews",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "section_heading",
+      "label": "Section heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type" : "richtext",
+      "id": "newsletter_title",
+      "label": "Newsletter title" 
+    },
+    {
+      "type": "image_picker",
+      "id": "newsletter_background",
+      "label": "Newsletter background image"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter_body_text",
+      "label": "Newsletter body text"
+    }
+  ],
+  "tag": "section",
+  "class": "customer-review__main-container",
+  "presets": [{ "name": "Customer review" }],
+  "max_blocks": 25,
+  "blocks": [
+    {
+      "name": "Customer review",
+      "type": "customer_review",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "body_text",
+          "label": "Review"
+        },
+        {
+          "type": "text",
+          "id": "reviewer",
+          "label": "Customer Name"
+        }      
+      ]
+    }
+  ]
+}
+{% endschema %}

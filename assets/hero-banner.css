@@ -1,5 +1,5 @@
 /* hero banner */
-#image__banner-container {
+.section-hero-banner {
     width: 100%;
     height: 400px;
     overflow: hidden;

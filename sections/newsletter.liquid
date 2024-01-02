@@ -1,0 +1,32 @@
+
+
+
+
+
+{% schema %}
+{
+    "name": "Newsletter",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "background_image",
+            "label": "Background image"
+        },
+        {
+            "type": "text",
+            "id": "body_text",
+            "label": "Message"     
+        },
+        {
+            "type": "richtext",
+            "id": "section_heading",
+            "label": "Section heading"
+        
+        }
+    ],
+    "tag": "article",
+    "class": "newsletter__main-container",
+    "presets": [{"name": "Newsletter"}],
+    "limit": 1
+}
+{% endschema %}

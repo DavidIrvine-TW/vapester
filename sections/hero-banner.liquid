@@ -1,65 +1,29 @@
-{% comment %} mobile carousel {% endcomment %}
-
-  <div id="image__banner-container-mobile" style="width: 100%; height: 390px; overflow: hidden; display: none">
-    <div id="pair1" style="display: flex; width: 100%; height: 100%; position: relative;">
-      <div class="img-cont" style=" position: relative; left: 0; min-width: 50%; height: 100%">
-        <img
-          class="image"
-          src="{{ 'banner-1-copyright.jpg' | asset_url }}"
-          loading="eager"
-          width="100"
-          height="100"
-          style="width: 100%; height: 100%; object-fit: cover;"
-        >
-      </div>
-
-      <div class="img-cont" style=" position: absolute; left: 50%; max-width: 50%; height: 100%; z-index: -10;">
-        <img
-          class="image"
-          src="{{ 'image.png' | asset_url }}"
-          loading="eager"
-          width="100"
-          height="100"
-          style="width: 100%; height: 100%; object-fit: cover;"
-        >
-      </div>
-    </div>
-  </div>
-
-
-{% comment %} desktop carousel {% endcomment %}
-<div id="image__banner-container" class="{% if section.blocks.size > 1 %} {% endif %}">
-
+<div class="section-hero-banner {% if section.blocks.size > 1 %} {% endif %}">
   {% for block in section.blocks %}
-
-  <div class="image-container">  
-
+    <div class="image-container">
       <div class="image-container-left">
-       <img
+        <img
           class="image-individual"
           src="{{ block.settings.image1 | image_url }}"
           loading="eager"
           width="100"
           height="100"
-        > 
-        
+        >
       </div>
 
-      <div class="image-overlay"></div> 
+      <div class="image-overlay"></div>
 
       <div class="image-backdrop">
-        <img class="banner-mg "src="{{ block.settings.image2 | image_url }}" loading="eager" width="100" height="100">
+        <img class="banner-mg " src="{{ block.settings.image2 | image_url }}" loading="eager" width="100" height="100">
       </div>
 
       {% comment %} hero slide one info {% endcomment %}
       <div class="hero-info-container">
-
         <div class="hero-title">
           <h2 class="hero-heading hero-heading-img-one">{{ block.settings.product_title | upcase }}</h2>
         </div>
 
         <div class="hero-heading-btn-container">
-
           <div class="hero-price-cont">
             <span style="color: white;">{% render 'icon-cash' %}</span>
             <span class="hero-price">{{ block.settings.product_price }}</span>
@@ -68,15 +32,11 @@
           <div class="hero-heading-btn-container-one">
             <button id="myButton" class="btn-shop-now ">SHOP NOW</button>
           </div>
-          
         </div>
       </div>
-    
-  </div>
-{% endfor %}  
+    </div>
+  {% endfor %}
 </div>
-
-<style></style>
 
 {% schema %}
 {
@@ -89,7 +49,7 @@
     }
   ],
   "presets": [{ "name": "Default hero banner" }],
-  "class": "hero__main",
+  "class": "hero__main-container",
   "tag": "section",
   "limit": 1,
   "blocks": [

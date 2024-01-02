@@ -1,16 +1,15 @@
-<div class="discount-banner__main-container ">
-  <h3 class="section-heading">{{ section.settings.heading | strip_htm }}</h3>
+<div class="section-discount-banner">
+  {% if section.settings.heading != blank %}
+    <div class="section-heading-container">
+      <h3 class="section-heading">{{ section.settings.heading | strip_html }}</h3>
+    </div>
+  {% endif %}
 
-
-
-
-  <div class="discount-banner__display-container">
-    {% for block in section.blocks %}
-        <a href="{{ block.settings.collection.url }}">
-    <div class="collection__main-container">
-      <div class="collection__main-image-container ">
+  {% for block in section.blocks %}
+    <div class="discount-main-container">
+      <div class="discount-image-container">
         <img
-          class="image"
+          class="discount-image image"
           src="{{ block.settings.collection.featured_image | image_url }}"
           loading="lazy"
           height="100"
@@ -18,32 +17,16 @@
         >
       </div>
 
-      <div class="collection__main-container-heading">
-        <h3 class="image-collection-title">{{ block.settings.collection.title | strip_html }}</h3>
+      <div class="discount-title-container">
+        <h4 class="discount-title">{{ block.settings.collection.title | strip_html }}</h4>
+      </div>
+      <div class="discount-description-container">
+        <h4 class="discount-description">{{ block.settings.collection.description | strip_html }}</h4>
       </div>
 
-      <div
-        class="collection-image-overlay"
-        style="background-color:{{ block.settings.collection_image_overlay_color }}"
-      ></div>
+      <div class="collection-image-overlay" style="background-color:{{ block.settings.overlay_color }}"></div>
     </div>
-  </a>
-{% endfor %}
-    
-    <div>
-
-    </div>
-
-
-
-
-
-  </div>
-
-
-
-
-
+  {% endfor %}
 </div>
 
 {% schema %}
@@ -57,7 +40,7 @@
     }
   ],
   "limit": 2,
-  "class": "discount-banner__section",
+  "class": "discount-banner__main-container",
   "tag": "section",
   "presets": [{ "name": "Discount banner" }],
   "max_blocks": 4,
@@ -72,14 +55,19 @@
           "label": "Collection"
         },
         {
-            "type": "text",
-            "id": "body_text",
-            "label": "Discount details"
+          "type": "text",
+          "id": "body_text",
+          "label": "Discount details"
         },
         {
-            "type": "richtext",
-            "label": "Discount heading",
-            "id": "discount_heading"
+          "type": "richtext",
+          "label": "Discount heading",
+          "id": "discount_heading"
+        },
+        {
+          "type": "color",
+          "label": "Overlay color",
+          "id": "overlay_color"
         }
       ]
     }
