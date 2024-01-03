@@ -19,8 +19,8 @@
             </a>
     
             <div class="featured-collection__info-container">
-              <p>{{ product.title | link_to: product.url | strip_html }}</p>
-              <p>{{ product.price | money }}</p>
+              <p class="product-title">{{ product.title | link_to: product.url | strip_html }}</p>
+              <p class="product-price">{{ product.price | money }}</p>
             </div>
           </div>
     </div>

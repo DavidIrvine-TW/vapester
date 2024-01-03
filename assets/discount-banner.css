@@ -1,42 +1,37 @@
-.discount-banner__main-container{
-    padding: 1rem;
-}
-
 .section-discount-banner {
     padding: 3rem 1rem 0rem 1rem;
     width: 100%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 2rem;
- 
 }
 
 .discount-main-container {
     width: 100%;
-    height: 300px;
+    height: 360px;
     position: relative;
+    margin: 0 auto;
 }
 
 .discount-image-container {
     width: 100%;
     height: 100%;
 }
-.discount-title-container {
+
+.discount-image-overlay {
     position: absolute;
-    top: 20%;
+    top: 0;
     left: 0;
-    text-align: right;
-    padding: 1rem;
-}
-
-.discount-description-container {
-    position: absolute;
-    top: 40%;
     right: 0;
-    padding: 1rem;
-
+    bottom: 0;
+    background-color: var(--header-bg);
+    opacity: 0.3;
+    z-index: 0;
 }
+
 .discount-description {
     font-size: 3rem;
 }
+
+
+ 

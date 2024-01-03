@@ -1,30 +1,30 @@
 
-
 .section-featured-collection {
     position: relative;
-    padding: 5rem 1rem 0rem 1rem;
+    padding: 3rem 1rem 0rem 1rem;
     width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
+.featured-subheading{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;;
+}
+
 .featured-collection-heading-container {
     padding-bottom: 2rem;
 }
+
 .featured-collection-content {
     padding: 1rem;
     display: flex;
     gap: 2rem;
     width: 260px;
-  
- 
 }
 
-.featured-collection__single-product-container {
-   
-
-}
 .featured-collection__image-container {
     border: 3px solid lightgray;
     overflow: hidden;
@@ -46,4 +46,19 @@
 
 .featured-collection__info-container {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.product-price {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d22756;
+    text-align: left;
+}
+.product-title {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: bold;
 }

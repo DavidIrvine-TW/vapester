@@ -14,17 +14,17 @@
           loading="lazy"
           height="100"
           width="100"
-        >
+        > 
       </div>
 
       <div class="discount-title-container">
         <h4 class="discount-title">{{ block.settings.collection.title | strip_html }}</h4>
       </div>
       <div class="discount-description-container">
-        <h4 class="discount-description">{{ block.settings.collection.description | strip_html }}</h4>
+        <p class="discount-description">{{ block.settings.collection.description | strip_html }}</p>
       </div>
 
-      <div class="collection-image-overlay" style="background-color:{{ block.settings.overlay_color }}"></div>
+      <div class="discount-image-overlay" style="background-color:{{ block.settings.overlay_color }}"></div>
     </div>
   {% endfor %}
 </div>

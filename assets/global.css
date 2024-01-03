@@ -65,12 +65,6 @@ a {
 
 
 /* SECTION HEADINGS */
-
-.section-heading {
-
-
-}
-
 .section-heading {
     color: var(--header-bg);
     padding: 1px 2px; 

@@ -1,14 +1,14 @@
-.our-partners__main-container {
-    padding: 1rem;
-}
 
 .section-our-partners {
-    padding: 3rem 1rem 0rem 1rem;
+    padding: 3rem 1rem 3rem 1rem;
     width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+
+}
+.partners-section-heading {
+    margin-bottom: 2rem;
 }
 
 .our-partners-image-container {
