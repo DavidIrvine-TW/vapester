@@ -1,18 +1,246 @@
 {
-    "sections": {
-      "main": {
-        "type": "home",
-        "settings": {
+  "sections": {
+    "fd69394f-acd2-4d60-b382-27a7c8feaa89": {
+      "type": "hero-banner",
+      "blocks": {
+        "6d14e206-6d52-4129-adc3-9f1e296fda78": {
+          "type": "hero_images",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/banner-1-copyright.jpg",
+            "product_title": "tarot mini kits",
+            "product_price": "79.00",
+            "image2": "shopify:\/\/shop_images\/image.png"
+          }
         }
       },
-      "f1c354b7-4375-4a9b-bf14-22ab94cce029": {
-        "type": "hero-banner",
-        "settings": {
-        }
+      "block_order": [
+        "6d14e206-6d52-4129-adc3-9f1e296fda78"
+      ],
+      "settings": {
+        "heading": ""
       }
     },
-    "order": [
-      "main",
-      "f1c354b7-4375-4a9b-bf14-22ab94cce029"
-    ]
-  }
+    "b44a1dcf-0993-4009-89b0-8003895e568b": {
+      "type": "selling-points",
+      "blocks": {
+        "a6999702-05a0-4362-935f-29a2ac3353f3": {
+          "type": "selling_point",
+          "settings": {
+            "title": "<p>Free shipping! <\/p>",
+            "body_text": "No minimum order",
+            "selling_point_image": "shopify:\/\/shop_images\/shipped-truck-svgrepo-com.svg"
+          }
+        },
+        "e97e0806-079c-488b-9707-07e3ea4d81ef": {
+          "type": "selling_point",
+          "settings": {
+            "title": "<p>60 day warranty<\/p>",
+            "body_text": "Free roundtrip shipping",
+            "selling_point_image": "shopify:\/\/shop_images\/thumb-up-shield-svgrepo-com.svg"
+          }
+        },
+        "bbad9a77-3f54-4e38-b11e-dee3b1b6125e": {
+          "type": "selling_point",
+          "settings": {
+            "title": "<p>Easy returns<\/p>",
+            "body_text": "With no restocking fee",
+            "selling_point_image": "shopify:\/\/shop_images\/refund-svgrepo-com.svg"
+          }
+        },
+        "14616b96-7246-4a55-bc21-d3c40feb9229": {
+          "type": "selling_point",
+          "settings": {
+            "title": "<p>Expert advice<\/p>",
+            "body_text": "In store, call, email or chat",
+            "selling_point_image": "shopify:\/\/shop_images\/advice-consult-mobile-svgrepo-com.svg"
+          }
+        },
+        "c58f6fc3-6fcf-430b-8427-e800eafc3d99": {
+          "type": "selling_point",
+          "settings": {
+            "title": "<p>Low prices<\/p>",
+            "body_text": "shop with confidence",
+            "selling_point_image": "shopify:\/\/shop_images\/piggy-bank-save-svgrepo-com.svg"
+          }
+        }
+      },
+      "block_order": [
+        "a6999702-05a0-4362-935f-29a2ac3353f3",
+        "e97e0806-079c-488b-9707-07e3ea4d81ef",
+        "bbad9a77-3f54-4e38-b11e-dee3b1b6125e",
+        "14616b96-7246-4a55-bc21-d3c40feb9229",
+        "c58f6fc3-6fcf-430b-8427-e800eafc3d99"
+      ],
+      "settings": {
+        "heading": ""
+      }
+    },
+    "4e0a0cfb-a473-4767-9fe3-4b2349221b68": {
+      "type": "collection-list",
+      "blocks": {
+        "53dd43ea-8bd0-4c43-bc60-c6c73da5adbd": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "accessories",
+            "collection_image_overlay_color": "#af7ffc"
+          }
+        },
+        "591e4feb-c59d-4348-86cc-98ed47e1b513": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "e-liquids",
+            "collection_image_overlay_color": "#d22756"
+          }
+        },
+        "f3a2f712-f347-4af2-8995-4685122ab543": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "tanks-and-rdas",
+            "collection_image_overlay_color": "#f0d51f"
+          }
+        },
+        "8785409e-4a35-4bcf-b87c-25a70f5878ce": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "vape-mods",
+            "collection_image_overlay_color": "#292929"
+          }
+        },
+        "4d673bf9-cecf-47b4-a49f-42662a150027": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "starter-kit-bundles",
+            "collection_image_overlay_color": "#af7ffc"
+          }
+        }
+      },
+      "block_order": [
+        "53dd43ea-8bd0-4c43-bc60-c6c73da5adbd",
+        "591e4feb-c59d-4348-86cc-98ed47e1b513",
+        "f3a2f712-f347-4af2-8995-4685122ab543",
+        "8785409e-4a35-4bcf-b87c-25a70f5878ce",
+        "4d673bf9-cecf-47b4-a49f-42662a150027"
+      ],
+      "settings": {
+        "heading": "<p>collections<\/p>"
+      }
+    },
+    "9f0e799b-4233-4cda-8745-77a0b1b35017": {
+      "type": "featured-collection",
+      "settings": {
+        "section_title": "",
+        "title_subtext": "Meet our hottest products...",
+        "collection": "best-sellers"
+      }
+    },
+    "8ef73bba-2a84-4cfc-a876-989d7393bed9": {
+      "type": "discount-banner",
+      "blocks": {
+        "03462854-8cbf-473f-9407-bf3e388b5de0": {
+          "type": "discount",
+          "settings": {
+            "collection": "save-30-on-selected-e-liquids",
+            "body_text": "",
+            "discount_heading": "",
+            "overlay_color": ""
+          }
+        },
+        "b9514b9e-372a-4bee-b2f1-c57045e35dcb": {
+          "type": "discount",
+          "settings": {
+            "collection": "10-off-vaporesso-veko-one-kits",
+            "body_text": "",
+            "discount_heading": "",
+            "overlay_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "03462854-8cbf-473f-9407-bf3e388b5de0",
+        "b9514b9e-372a-4bee-b2f1-c57045e35dcb"
+      ],
+      "settings": {
+        "heading": "Current promotions"
+      }
+    },
+    "14f25435-6d43-4ec8-90e5-e16800797719": {
+      "type": "our-partners",
+      "blocks": {
+        "3c4c07a2-60e0-434c-86fb-c305c9cbfc92": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "partners"
+          }
+        }
+      },
+      "block_order": [
+        "3c4c07a2-60e0-434c-86fb-c305c9cbfc92"
+      ],
+      "settings": {}
+    },
+    "8402b05c-d993-46f6-882c-c59b3a0ccdd9": {
+      "type": "new-arrivals",
+      "settings": {
+        "collection": "new-arrivals",
+        "collection_title": ""
+      }
+    },
+    "6361dd1a-b262-43fb-9ac4-be704b543cd9": {
+      "type": "customer-feedback",
+      "blocks": {
+        "f622cca1-7b2e-481c-9cda-92fc9dedbc45": {
+          "type": "customer_review",
+          "settings": {
+            "body_text": "Qualified support team, unique products, good prices- Vapester got it all. I’ve never felt so satisfied after buying something online. I hope someday every online shop can be like Vapester.",
+            "reviewer": "John Doe"
+          }
+        },
+        "daa83377-a4b7-40d3-8d80-1190de2e3fe0": {
+          "type": "customer_review",
+          "settings": {
+            "body_text": "A huge variety of products, amazing support staff, and nice discounts. Got a free juice refill for my vape and 15% discount on a new vape. 10\/10 rating for Vapester, I will definitely shop here again",
+            "reviewer": "Jane Doe, UK."
+          }
+        }
+      },
+      "block_order": [
+        "f622cca1-7b2e-481c-9cda-92fc9dedbc45",
+        "daa83377-a4b7-40d3-8d80-1190de2e3fe0"
+      ],
+      "settings": {
+        "section_heading": "<p>Customer Feedback<\/p>",
+        "background_image": "shopify:\/\/shop_images\/home3-bg4-copyright.jpg",
+        "newsletter_title": "<p>Vapester Newsletter<\/p>",
+        "newsletter_background": "shopify:\/\/shop_images\/home1-bg9-copyright.jpg",
+        "newsletter_body_text": "Subscribe to keep up to date with our discounts."
+      }
+    },
+    "acb0bcf1-6e27-4e73-9da8-47012a737609": {
+      "type": "instagram",
+      "blocks": {
+        "553efe75-02ba-4372-87eb-2ad3ff801bc0": {
+          "type": "content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "553efe75-02ba-4372-87eb-2ad3ff801bc0"
+      ],
+      "settings": {
+        "section_heading": "",
+        "section_subtitle": ""
+      }
+    }
+  },
+  "order": [
+    "fd69394f-acd2-4d60-b382-27a7c8feaa89",
+    "b44a1dcf-0993-4009-89b0-8003895e568b",
+    "4e0a0cfb-a473-4767-9fe3-4b2349221b68",
+    "9f0e799b-4233-4cda-8745-77a0b1b35017",
+    "8ef73bba-2a84-4cfc-a876-989d7393bed9",
+    "14f25435-6d43-4ec8-90e5-e16800797719",
+    "8402b05c-d993-46f6-882c-c59b3a0ccdd9",
+    "6361dd1a-b262-43fb-9ac4-be704b543cd9",
+    "acb0bcf1-6e27-4e73-9da8-47012a737609"
+  ]
+}

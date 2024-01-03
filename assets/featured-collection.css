@@ -1,16 +1,29 @@
-.featured-collection__main-container {
-    padding: 1rem;
-}
+
 
 .section-featured-collection {
     position: relative;
-    padding: 1rem 0rem;
+    padding: 5rem 1rem 0rem 1rem;
     width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     overflow: hidden;
+}
+.featured-collection-heading-container {
+    padding-bottom: 2rem;
+}
+.featured-collection-content {
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+    width: 260px;
+  
+ 
+}
+
+.featured-collection__single-product-container {
+   
+
 }
 .featured-collection__image-container {
     border: 3px solid lightgray;
