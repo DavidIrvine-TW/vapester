@@ -18,22 +18,29 @@
       </div>
 
       {% comment %} hero slide one info {% endcomment %}
-      <div class="hero-info-container page-width">
-        <div class="hero-title">
-          <h2 class="hero-heading hero-heading-img-one">{{ block.settings.product.title | upcase }}</h2>
-        </div>
 
-        <div class="hero-heading-btn-container">
-          <div class="hero-price-cont">
-            <span style="color: white;">{% render 'icon-cash' %}</span>
-            <span class="hero-price">{{ block.settings.product.price  | money}}</span>
+        <div class="hero-info-container">
+          
+          <div class="hero-title">
+            <h2 class="hero-heading hero-heading-img-one">{{ block.settings.product.title | upcase }}</h2>
           </div>
 
-          <div class="hero-heading-btn-container-one">
-            <button id="myButton" class="btn-shop-now ">SHOP NOW</button>
+          <div class="hero-heading-btn-container">
+
+            <div class="hero-price-cont">
+              <span style="color: white;">{% render 'icon-cash' %}</span>
+              <span class="hero-price">{{ block.settings.product.price | money }}</span>
+            </div>
+
+            <div class="hero-heading-btn-container-one">
+              <button id="myButton" class="btn-shop-now ">SHOP NOW</button>
+            </div>
+
           </div>
+
         </div>
-      </div>
+
+
     </div>
   {% endfor %}
 </div>

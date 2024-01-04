@@ -1,5 +1,5 @@
 
-<div class="section-selling-points">
+<div class="section-selling-points page-width">
 
   {% for block in section.blocks %}
     <div class="point-container">
@@ -12,6 +12,7 @@
           <p class="point-heading">{{ block.settings.title | strip_html }} </p>
           <p class="point-body">{{ block.settings.body_text | strip_html }}</p>
         </div>
+
     </div>
 
   

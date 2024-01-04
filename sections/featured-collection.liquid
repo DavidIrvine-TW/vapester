@@ -1,4 +1,4 @@
-<div class="section-featured-collection">
+<div class="section-featured-collection page-width">
 
   <div class="featured-collection-heading-container">
 
@@ -13,7 +13,7 @@
 
   </div >
 
-  <div class="fade">
+  <div class="featured">
 
     {% for product in collections['best-sellers'].products %}
       <div class="featured-collection-content ">
@@ -26,7 +26,7 @@
 
           <div class="featured-collection__info-container">
             <p class="product-title">{{ product.title | link_to: product.url | strip_html }}</p>
-            <p class="product-price">{{ product.price | money | strip_html }}</p>
+            <p class="product-price"><span style="color: black;"> {% render 'icon-cash-black' %}</span> {{ product.price | money | strip_html }}</p>
           </div>
      
       </div>

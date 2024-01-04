@@ -1,9 +1,14 @@
 .section-discount-banner {
     padding: 3rem 1rem 0rem 1rem;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+}
+.section-heading-container {
+    margin-bottom: 2rem;
+}
+.discount-main-content {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 2rem;  
 }
 
 .discount-main-container {
@@ -34,4 +39,10 @@
 }
 
 
- 
+ @media screen and (min-width: 768px){
+
+    .discount-main-content {
+        grid-template-columns: 2fr 1fr; 
+
+    }
+ }

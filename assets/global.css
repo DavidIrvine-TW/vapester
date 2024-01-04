@@ -72,6 +72,7 @@ a {
     position: relative;
     max-width: var(--page-width);
     margin: 0 auto;
+    border: 1px solid blue;
 }
 
 

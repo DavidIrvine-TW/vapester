@@ -1,9 +1,5 @@
-.selling-points__main-container {
-    
-}
-
 .section-selling-points {
-    padding: 3rem 1rem 0rem 1rem;
+    padding: 3rem 1rem 3rem 1rem;
     max-width: 280px;
     margin: 0 auto;
     display: flex;
@@ -20,13 +16,41 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    border: 1px solid red;
 }
 .point-heading {
     font-weight: bold;
     font-size: 1.5rem;
+    color: var(--header-bg)
    
 }
 .point-body {
     font-size: 1rem;
-    color: gray;
+    color: var(  --body_txt-gray)
+}
+
+@media screen and (min-width: 768px){
+
+    .section-selling-points {
+        max-width: var(--page-width);
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 3rem 1rem 0rem 1rem;
+    }
+    .point-heading {
+        font-size: 2rem;
+    }
+    .point-body {
+        font-size: 1.5rem;
+    }
+    .point-container {
+        padding: .2rem;
+    }
+}
+@media screen and (min-width: 1200px){
+
+    .section-selling-points {
+        justify-content: space-between;
+    }
 }

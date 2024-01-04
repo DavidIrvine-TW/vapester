@@ -1,32 +1,34 @@
-<div class="section-discount-banner">
+<div class="section-discount-banner page-width">
+
   {% if section.settings.heading != blank %}
     <div class="section-heading-container">
       <h3 class="section-heading">{{ section.settings.heading | strip_html }}</h3>
     </div>
   {% endif %}
+  <div class="discount-main-content">
+    {% for block in section.blocks %}
+      <div class="discount-main-container">
+        <div class="discount-image-container">
+          <img
+            class="discount-image image"
+            src="{{ block.settings.collection.featured_image | image_url }}"
+            loading="lazy"
+            height="100"
+            width="100"
+          > 
+        </div>
 
-  {% for block in section.blocks %}
-    <div class="discount-main-container">
-      <div class="discount-image-container">
-        <img
-          class="discount-image image"
-          src="{{ block.settings.collection.featured_image | image_url }}"
-          loading="lazy"
-          height="100"
-          width="100"
-        > 
-      </div>
+        <div class="discount-title-container">
+          <h4 class="discount-title">{{ block.settings.collection.title | strip_html }}</h4>
+        </div>
+        <div class="discount-description-container">
+          <p class="discount-description">{{ block.settings.collection.description | strip_html }}</p>
+        </div>
 
-      <div class="discount-title-container">
-        <h4 class="discount-title">{{ block.settings.collection.title | strip_html }}</h4>
+        <div class="discount-image-overlay" style="background-color:{{ block.settings.overlay_color }}"></div>
       </div>
-      <div class="discount-description-container">
-        <p class="discount-description">{{ block.settings.collection.description | strip_html }}</p>
-      </div>
-
-      <div class="discount-image-overlay" style="background-color:{{ block.settings.overlay_color }}"></div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 
 {% schema %}
