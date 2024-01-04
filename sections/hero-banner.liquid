@@ -1,10 +1,10 @@
-<div class="section-hero-banner {% if section.blocks.size > 1 %} {% endif %}">
+<div class="section-hero-banner">
   {% for block in section.blocks %}
     <div class="image-container">
       <div class="image-container-left">
         <img
           class="image-individual"
-          src="{{ block.settings.image1 | image_url }}"
+          src="{{ block.settings.product| image_url }}"
           loading="eager"
           width="100"
           height="100"
@@ -18,15 +18,15 @@
       </div>
 
       {% comment %} hero slide one info {% endcomment %}
-      <div class="hero-info-container">
+      <div class="hero-info-container page-width">
         <div class="hero-title">
-          <h2 class="hero-heading hero-heading-img-one">{{ block.settings.product_title | upcase }}</h2>
+          <h2 class="hero-heading hero-heading-img-one">{{ block.settings.product.title | upcase }}</h2>
         </div>
 
         <div class="hero-heading-btn-container">
           <div class="hero-price-cont">
             <span style="color: white;">{% render 'icon-cash' %}</span>
-            <span class="hero-price">{{ block.settings.product_price }}</span>
+            <span class="hero-price">{{ block.settings.product.price  | money}}</span>
           </div>
 
           <div class="hero-heading-btn-container-one">
@@ -37,6 +37,10 @@
     </div>
   {% endfor %}
 </div>
+
+<script>
+ 
+</script>
 
 {% schema %}
 {
@@ -49,7 +53,7 @@
     }
   ],
   "presets": [{ "name": "Default hero banner" }],
-  "class": "hero__main-container",
+  "class": "hero-banner__main-container",
   "tag": "section",
   "limit": 1,
   "blocks": [
@@ -58,19 +62,14 @@
       "type": "hero_images",
       "settings": [
         {
-          "type": "image_picker",
-          "id": "image1",
-          "label": "Select product image"
+          "type": "product",
+          "id": "product",
+          "label": "Select product"
         },
         {
           "type": "text",
           "id": "product_title",
           "label": "Product title"
-        },
-        {
-          "type": "text",
-          "id": "product_price",
-          "label": "Product price"
         },
         {
           "type": "image_picker",

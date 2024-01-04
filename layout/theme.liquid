@@ -34,18 +34,16 @@
         :root {
             --page-width: {{ settings.page_width }}px;
             --logo-width: {{ settings.logo_width }}px;
-            --header-bg: rgba(41, 41, 41, 1);
-            --bp: 960px;
             }     
     </style>  
 
 </head>
 
-<body style="overflow-x: hidden;">
+<body style="overflow-x: hidden; ">
  
     {% section "header" %}
  
-     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1" style="max-width: 1920px;">
         {{ content_for_layout }} 
     </main>
 

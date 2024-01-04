@@ -26,9 +26,20 @@
 }
 
 /* GLOBAL */
+:root {
+    --clr-yellow: #f2d71f;
+    --clr-purple: #AF7FFC;
+    --clr-red: #D22756;
+    --body_txt-gray: #a8a8a8;
+    --txt-white: #FFFFFF;
+    --header-bg: rgba(41, 41, 41, 1);
+    --bp: 960px;
+
+}
 
 html {
     font-size: 16px;
+    color: var(--body_txt-gray);
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -2,7 +2,7 @@
 
   <div class="header-top">
 
-    <div class="page-width header-top-container">
+    <div class="page-width header-top-container" style="border: 1px solid red;">
 
       {% comment %} logo container {% endcomment %}   
         <div class="logo-container  bg-logo-background relative">
@@ -13,8 +13,8 @@
           {%- else -%}
             <h1>{{ shop.name }}</h1>
           {%- endif -%}
-        </div> 
-
+        </div>  
+        
         <div class="header-top-container-content">
 
           <div class="" style="color: white; display: flex; gap: .5rem; font-size: 1.1rem; display: none">
@@ -40,7 +40,7 @@
   </div>
 
   {% comment %} LOWER HEADER - NAV MENU {% endcomment %}
-  <div class="header-bottom ">
+  <div class="header-bottom page-width" style="border: 1px solid red;">
     <ul class="header-nav">
       {% assign current_path = request.path %}
       {% for link in linklists['main-menu'].links %}
