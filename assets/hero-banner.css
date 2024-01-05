@@ -199,7 +199,7 @@ justify-content: flex-end;
   }
 
   .hero-info-container {
-    word-wrap: break-word;
+    right: 10%;
   }
 
   .hero-heading:before {

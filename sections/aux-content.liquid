@@ -1,0 +1,63 @@
+<div class="page-width section-id-{{ section.id }}">
+
+    {% if section.settings.section_subtitle != blank %}
+        <p class="section-subtitle">{{ section.settings.section_subtitle | strip_html }}</p>
+    {% endif %}
+
+    {% if section.settings.section_heading != blank %}
+        <h4 class="section-heading">{{ section.settings.section_heading | strip_html }}</h4>
+    {% endif %}
+
+    <div class="aux-section-content-container" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; padding: 2rem;">
+
+        {% for block in section.blocks %}
+            <div class="aux-image-container" style="max-width: 150px ; min-width: 105px overflow: hidden">
+                <img class="aux-image image" src="{{ block.settings.social_image | image_url }}" loading="lazy" height="100" width="100">
+            </div>
+        {% endfor %}
+
+    </div>
+    
+</div>
+
+
+
+{% schema %}
+{
+    "name": "Auxiliary Content",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "section_heading",
+            "label": "Section heading"
+        },
+        {
+            "type": "text",
+            "id": "section_subtitle",
+            "label": "Title subtext"
+        }
+    ],
+    "limit": 1,
+    "tag": "section",
+    "class": "aux-content__main-container",
+    "presets": [
+        {
+            "name": "Auxiliary content"
+        }
+    ],
+    "max_blocks": 8,
+    "blocks": [
+        {
+            "name": "Content",
+            "type": "content",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "social_image",
+                    "label": "Image"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
