@@ -1,7 +1,7 @@
 <div class="section-our-partners page-width">
   <div class="partners-section-heading">
-    <p>The best names in vape culture</p>
-    <h4 class="section-heading">our partners</h4>
+    <p>{{ section.settings.heading_subtitle |  strip_html }}</p>
+    <h4 class="section-heading">{{ section.settings.section_heading |  strip_html }}</h4>
   </div>
 
   <div class="our-partners-carousel-container partners">
@@ -20,7 +20,18 @@
 {% schema %}
 {
   "name": "Our partners",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label" : "Section heading"
+    },
+    {
+      "type" : "text",
+      "id" : "heading_subtitle",
+      "label" : "Heading subtitle"
+    }
+  ],
   "limit": 2,
   "class": "our-partners__main-container",
   "tag": "section",

@@ -1,4 +1,4 @@
-<div class="section-collection-list page-width">
+<div class="section-collection-list page-width section-{{ section.id }}">
   <div class="section-title">
     <h3 class="section-heading">{{ section.settings.heading | strip_html }}</h3>
   </div>
@@ -7,6 +7,7 @@
       {% for block in section.blocks %}
          
           <div class="collection__main-container" >
+
             <a href="{{ block.settings.collection.url }}"> 
               <div class="collection__main-image-container ">
                 <img
@@ -27,6 +28,7 @@
                 style="background-color:{{ block.settings.collection_image_overlay_color }}"
               ></div>
             </a> 
+            
           </div>
        
       {% endfor %}

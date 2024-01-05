@@ -8,7 +8,13 @@
 
 }
 .partners-section-heading {
+    display: flex;
+    flex-direction:  column;
+    gap: 1rem;
     margin-bottom: 2rem;
+}
+.partners-section-heading  > p{
+    font-size: 1.5rem;
 }
 
 .our-partners-image-container {

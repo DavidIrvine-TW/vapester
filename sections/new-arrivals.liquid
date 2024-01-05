@@ -1,4 +1,4 @@
-<div class="section-new-arrivals">
+<div class="section-new-arrivals page-width">
     <div class="section-heading">
         {% if section.settings.collection_title != blank %}
             <h4>{{ section.settings.collection_title | strip_html }}</h4>
@@ -9,8 +9,10 @@
         {% endif %}
     </div>
 
-    {% for product in collections['new-arrivals'].products %}
     <div class="new-arrivals-product-container">
+      
+      {% for product in collections['new-arrivals'].products %}
+    
         <div class="featured-collection__single-product-container">
             <a href="{{ product.url }}">
               <div class="featured-collection__image-container">
@@ -22,10 +24,13 @@
               <p class="product-title">{{ product.title | link_to: product.url | strip_html }}</p>
               <p class="product-price">{{ product.price | money }}</p>
             </div>
-          </div>
+        </div>
+
+      {% endfor %}
+
     </div>
 
-    {% endfor %}
+   
 </div>
 
 

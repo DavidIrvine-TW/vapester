@@ -20,7 +20,7 @@
   justify-content: flex-end;
   gap: 2rem;
   padding: 0 1rem; 
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 100%;
 }
 
@@ -130,6 +130,7 @@
 /* nav menu - desktop */
 .header-nav {
     display: flex;
+    color: var(--header-bg)
     /* display: none; */
 }
 

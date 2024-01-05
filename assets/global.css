@@ -72,7 +72,7 @@ a {
     position: relative;
     max-width: var(--page-width);
     margin: 0 auto;
-    border: 1px solid blue;
+
 }
 
 
@@ -90,7 +90,7 @@ a {
    content: "";
    position: absolute;
    top: 0;
-   width: 100%;
+   width: 45%;
    height: 100%;
    background-color: #f2d71f;
    z-index: -1; 

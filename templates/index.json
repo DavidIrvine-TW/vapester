@@ -6,15 +6,32 @@
         "6d14e206-6d52-4129-adc3-9f1e296fda78": {
           "type": "hero_images",
           "settings": {
-            "image1": "shopify:\/\/shop_images\/banner-1-copyright.jpg",
+            "product": "tarot-mini-kits",
             "product_title": "tarot mini kits",
-            "product_price": "79.00",
             "image2": "shopify:\/\/shop_images\/image.png"
+          }
+        },
+        "9f9b4e2b-b76d-4806-85dd-03c8b8edfff5": {
+          "type": "hero_images",
+          "settings": {
+            "product": "e-liquids-bundle",
+            "product_title": "",
+            "image2": "shopify:\/\/shop_images\/image-purple.png"
+          }
+        },
+        "46804171-2270-48b0-9ba9-de1fd3234513": {
+          "type": "hero_images",
+          "settings": {
+            "product": "vaporesso-veco-one",
+            "product_title": "",
+            "image2": "shopify:\/\/shop_images\/image-red.png"
           }
         }
       },
       "block_order": [
-        "6d14e206-6d52-4129-adc3-9f1e296fda78"
+        "6d14e206-6d52-4129-adc3-9f1e296fda78",
+        "9f9b4e2b-b76d-4806-85dd-03c8b8edfff5",
+        "46804171-2270-48b0-9ba9-de1fd3234513"
       ],
       "settings": {
         "heading": ""
@@ -122,7 +139,7 @@
         "4d673bf9-cecf-47b4-a49f-42662a150027"
       ],
       "settings": {
-        "heading": "<p>collections<\/p>"
+        "heading": ""
       }
     },
     "9f0e799b-4233-4cda-8745-77a0b1b35017": {
@@ -176,7 +193,10 @@
       "block_order": [
         "3c4c07a2-60e0-434c-86fb-c305c9cbfc92"
       ],
-      "settings": {}
+      "settings": {
+        "section_heading": "Our Partners",
+        "heading_subtitle": "The best names in vape culture!"
+      }
     },
     "8402b05c-d993-46f6-882c-c59b3a0ccdd9": {
       "type": "new-arrivals",
@@ -226,6 +246,7 @@
       "block_order": [
         "553efe75-02ba-4372-87eb-2ad3ff801bc0"
       ],
+      "disabled": true,
       "settings": {
         "section_heading": "",
         "section_subtitle": ""

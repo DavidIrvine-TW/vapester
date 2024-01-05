@@ -1,5 +1,5 @@
 .section-discount-banner {
-    padding: 3rem 1rem 0rem 1rem;
+    padding: 3rem 1rem 3rem 1rem;
     width: 100%;
 }
 .section-heading-container {
@@ -29,20 +29,46 @@
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 0;
+    transition: .2s ease;
+}
+.discount-image-overlay:hover {
     background-color: var(--header-bg);
     opacity: 0.3;
-    z-index: 0;
 }
 
+
 .discount-description {
-    font-size: 3rem;
+    font-size: 8rem;
 }
+
+
+.discount-title-container {
+    position: absolute;
+    top: 20%;
+    left: 5%
+}
+
+.discount-description-container {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+   
+}
+
+
 
 
  @media screen and (min-width: 768px){
-
     .discount-main-content {
         grid-template-columns: 2fr 1fr; 
 
     }
+    .discount-main-container {
+        
+        height: 500px;
+        
+  
+    }
+    
  }

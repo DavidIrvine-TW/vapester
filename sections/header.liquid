@@ -2,7 +2,7 @@
 
   <div class="header-top">
 
-    <div class="page-width header-top-container" style="border: 1px solid red;">
+    <div class="page-width header-top-container" >
 
       {% comment %} logo container {% endcomment %}   
         <div class="logo-container  bg-logo-background relative">
@@ -40,7 +40,7 @@
   </div>
 
   {% comment %} LOWER HEADER - NAV MENU {% endcomment %}
-  <div class="header-bottom page-width" style="border: 1px solid red;">
+  <div class="header-bottom page-width">
     <ul class="header-nav">
       {% assign current_path = request.path %}
       {% for link in linklists['main-menu'].links %}

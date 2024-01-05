@@ -1,6 +1,9 @@
-<div class="section-customer-review">
+<div class="section-customer-review page-width">
+
+
   {% comment %} Customer review {% endcomment %}
   <div class="customer-review-main-content" style="width: 100%; height: 500px; position: relative">
+
     <div class="customer-review-image-container" style="width: 100%; height: 100%; overflow: hidden;">
       <img
         src="{{ section.settings.background_image | image_url }}"
@@ -11,11 +14,12 @@
       >
 
       {% for block in section.blocks %}
-        <div class="section-body fade" style="position: absolute;  top: 20%; padding: 3rem;">
+        <div class="section-body" style="position: absolute;  top: 20%; padding: 3rem;">
           <p>{{ block.settings.body_text | strip_html }}</p>
           <p>{{ block.settings.reviewer | strip_html }}</p>
         </div>
       {% endfor %}
+
     </div>
 
     <div class="section-heading" style="position: absolute; top: 10%">
@@ -23,6 +27,7 @@
         <h4>{{ section.settings.section_heading | strip_html }}</h4>
       {% endif %}
     </div>
+
   </div>
 
 
@@ -30,6 +35,7 @@
   {% comment %} Newsletter {% endcomment %}
   {% if section.settings.newsletter_background != blank %}
   <div  class="newsletter-content">
+
     <div class="newsletter-image-container">
       <img class="image" src="{{ section.settings.newsletter_background | image_url }}" width="100" height="100" loading="lazy">
     </div>
@@ -37,7 +43,6 @@
     <div>
       <h4>{{ section.settings.newsletter_title | strip_html }}</h4>
       <p>{{ section.settings.newsletter_body_text | strip_html }}</p>
-
     <div>
 
     <div>
@@ -45,7 +50,6 @@
       <button type="button">SUBSCRIBE<button>
     </div>
 
- 
   </div>
   {% endif %}
 

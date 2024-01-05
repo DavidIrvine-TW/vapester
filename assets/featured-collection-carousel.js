@@ -1,5 +1,5 @@
 $('.featured').slick({
-  dots: true,
+  dots: false,
   infinite: false,
   speed: 300,
   slidesToShow: 5,
@@ -46,11 +46,11 @@ $('.featured').slick({
   
 
   $('.partners').slick({
-    dots: true,
-    infinite: false,
+    dots: false,
+    infinite: true,
     speed: 300,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 5,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,

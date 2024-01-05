@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    border: 1px solid red;
+
 }
 .point-heading {
     font-weight: bold;
@@ -36,7 +36,6 @@
         justify-content: space-around;
         flex-direction: row;
         flex-wrap: wrap;
-        padding: 3rem 1rem 0rem 1rem;
     }
     .point-heading {
         font-size: 2rem;
