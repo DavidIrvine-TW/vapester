@@ -29,8 +29,6 @@
 
 
           {% render 'icon-cart' %}
-
-          {% render 'burger-menu' %}
          
         </div> 
 
@@ -40,8 +38,10 @@
   </div>
 
   {% comment %} LOWER HEADER - NAV MENU {% endcomment %}
-  <div class="header-bottom page-width">
-    <ul class="header-nav">
+  <nav class="header-bottom page-width">
+    <div class="header-bottom-content">
+
+    <ul id="nav-menu" class="header-nav">
       {% assign current_path = request.path %}
       {% for link in linklists['main-menu'].links %}
         <li class="nav-item {% if current_path == link.url %} active{% endif %}">
@@ -50,19 +50,21 @@
           </a>
         </li>
       {% endfor %}
+
     </ul>
 
+  </div>
+    
 
     <button class="menu-button">
       MENU
-      {% render 'icon-chevron' %}
+      {% render 'burger-menu' %}
     </button>
     
-  </div>
+  </nav>
 
   <div id="mobile-menu">
-    <label for="toggle"> I agree to the terms</label>
-    <input type="checkbox" id="toggle">
+
   </div>
 
 
