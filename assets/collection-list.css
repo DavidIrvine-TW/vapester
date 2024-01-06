@@ -45,7 +45,7 @@
      position: relative; 
      z-index: 20;
 
-}
+  }
 
   .collection__main-container-heading > h3:before {
     content: "";

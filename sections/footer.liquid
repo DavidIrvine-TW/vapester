@@ -1,11 +1,134 @@
 
-<p> THE FOOTER</p>
+
+
+<footer class="footer-alt">
+  <div class="footer-width">
+    <div class="footer-top">
+
+      {% for block in section.blocks %}
+
+          {% if block.type == 'navigation' %}
+            <div class="footer-column footer-column--nav">
+              <h2>{{ block.settings.linkList.title }}</h2>      
+              {% for link in block.settings.linkList.links %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %} 
+            </div>
+
+          {% elsif block.type == 'text' %}
+            <div class="footer-column footer-column--text">
+              <h2>{{ block.settings.heading }}</h2>
+              {{block.settings.text}}   
+            </div>
+
+          {% elsif block.type == 'newsletter' %}
+            <div class="footer-column footer-column--news">
+                <h2>{{ block.settings.heading }}</h2>
+                {{block.settings.text}}  
+                <form>
+                  <input type="email" placeholder="Email address"/>
+                  <button type="submit">Subscribe</button>
+                </form> 
+            </div>
+
+            {% elsif block.type == 'image' %}
+              <div class="footer-column footer-column--image">
+                  <h2>{{ block.settings.imageheader }}</h2>                 
+                  <img src="{{block.settings.image | image_url}}" width="80" height="80"/> 
+              </div>
+
+        {% endif %}
+      {% endfor %}  
+  </div>
+
+   <div class="footer-bottom">
+      <p>{{ section.settings.copyright }}</p>
+    </div> 
+
+  </div>
+</footer>
 
 {% schema %}
 {
-    "name": "Footer",
-    "settings": [],
-    "presets": [{"name": "Footer"}]
+  "name": "Footer",
+  "settings": [
+    {
+      "id": "copyright",
+      "label": "Copyright-text",
+      "type": "text"
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "name": "NewsLetter",
+      "type" : "newsletter",
+      "settings": [
+        {
+          "id" : "heading",
+          "type" : "text",
+          "label" : "Heading text"
+
+        },
+        {
+          "id" : "text",
+          "type" : "richtext",
+          "label" : "Body text"
+        }
+      ]
+    },
+    {
+      "name": "footer-image",
+      "type" : "image",
+      "settings": [
+        {
+          "id" : "imageheader",
+          "type" : "richtext",
+          "label" : "Heading"
+
+        },
+        {
+          "id" : "image",
+          "type" : "image_picker",
+          "label" : "Image"
+
+        }
+      ]
+    },
+    {
+      "name" : "Text",
+      "type" : "text",
+      "settings" : [
+        {
+          "id" : "heading",
+          "type" : "text",
+          "label" : "Heading text"
+        },
+        {
+          "id" : "text",
+          "type" : "richtext",
+          "label" : "Body text"
+        }
+      ]
+    },
+    {
+      "name": "Navigation column",
+      "type": "navigation",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "linkList",
+          "label": "Navigation menu"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
 
+
+
+{% javascript %}
+{% endjavascript %}
