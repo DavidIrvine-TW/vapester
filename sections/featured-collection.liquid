@@ -1,7 +1,5 @@
 <div class="section-featured-collection page-width">
-
-  <div class="featured-collection-heading-container">
-
+ <div class="featured-collection-heading-container">
     {% if section.settings.title_subtext != blank %}
       <p class="featured-subheading">{{ section.settings.title_subtext | strip_html }}</p>
     {% endif %}
@@ -10,33 +8,51 @@
     {% else %}
       <h3 class="section-heading">{{ section.settings.section_title | strip_html }}</h3>
     {% endif %}
+  </div> 
 
-  </div >
+  <div class="swiper featuredSwiper">
 
-  <div class="featured">
+    <div class="swiper-wrapper">
 
-    {% for product in collections['best-sellers'].products %}
-      <div class="featured-collection-content ">
- 
+      {% for product in collections['best-sellers'].products %}
+
+        <div class="swiper-slide">
+
           <a href="{{ product.url }}">
             <div class="featured-collection__image-container">
               <img class="image" src="{{ product.featured_image | image_url }}" loading="lazy" width="100" height="100">
             </div>
           </a>
-
           <div class="featured-collection__info-container">
             <p class="product-title">{{ product.title | link_to: product.url | strip_html }}</p>
-            <p class="product-price"><span style="color: black;"> {% render 'icon-cash-black' %}</span> {{ product.price | money | strip_html }}</p>
+            <p class="product-price">
+              <span style="color: black;"> {% render 'icon-cash-black' %}</span>
+              {{ product.price | money | strip_html }}
+            </p>
           </div>
-     
-      </div>
-    {% endfor %}
-    
-  </div>
+        </div>
 
+      {% endfor %}
+
+
+    </div>
+    <div id="featured-swiper-prev" class="swiper-button-prev"></div>
+    <div id="featured-swiper-next" class="swiper-button-next"></div>
+    <div id="featured-swiper-pagination" class="swiper-pagination"></div>
+  </div>
 </div>
 
-<script></script>
+<style>
+  .swiper {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+</style>
+
+<script>
+
+</script>
 
 {% schema %}
 {
@@ -60,7 +76,7 @@
   ],
   "presets": [{ "name": "Featured collection" }],
   "tag": "section",
-  "class": "featured-collection__main-container",
+  "class": "featured-collection__main-container section page-width",
   "limit": 1
 }
 {% endschema %}

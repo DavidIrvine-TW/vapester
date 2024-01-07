@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +17,7 @@
     <link rel="stylesheet" href="{{ 'customer-feedback.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'newsletter.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'footer.css' | asset_url }}">
-    
-    {% comment %} JQ {% endcomment %}
-    <link rel="stylesheet" type="text/css" href="{{ 'slick.css' | asset_url }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ "slick-theme.css" | asset_url }}"/>   
+    <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' |  asset_url }}"/>
 
      
     {%- if settings.favicon != blank -%}
@@ -40,22 +37,23 @@
 
 </head>
 
-<body style="overflow-x: hidden; ">
+<body style="overflow-x: hidden;">
  
     {% section "header" %}
  
-     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1" style="max-width: 1920px;">
+     <main role="main"  style="max-width: 1920px;">
         {{ content_for_layout }} 
     </main>
 
     {% section "footer" %}
 
-    <script type="text/javascript" src="{{ "jquery-1.11.0.min.js" | asset_url }}" defer></script>
-    <script type="text/javascript" src="{{ "jquery-migrate-1.2.1.min.js" | asset_url }}" defer></script>
-    <script type="text/javascript" src="{{ "jq.js" | asset_url }}" defer></script>
-    <script type="text/javascript" src="{{ "slick.min.js" | asset_url }}" defer></script>
-    <script type="text/javascript" src="{{ "featured-collection-carousel.js" | asset_url }}" defer></script>
-    <script type="text/javascript" src="{{ 'burgermenu.js' | asset_url }}" defer></script>
+
+ 
+    
+    <script src="{{ 'swiper-bundle.min.js' |  asset_url }}"></script>
+    <script src="{{ 'featuredCarousel.js' |  asset_url }}"></script>
+  
+ 
 </body>
 </html>
 

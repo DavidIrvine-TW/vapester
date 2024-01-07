@@ -37,38 +37,43 @@
    
   </div>
 
+  <input type="checkbox" id="toggle-menu" style="display: none;"/>
+ 
+
   {% comment %} LOWER HEADER - NAV MENU {% endcomment %}
   <nav class="header-bottom page-width">
     <div class="header-bottom-content">
 
-    <ul id="nav-menu" class="header-nav">
-      {% assign current_path = request.path %}
-      {% for link in linklists['main-menu'].links %}
-        <li class="nav-item {% if current_path == link.url %} active{% endif %}">
-          <a href="{{ link.url }}">
-            {{ link.title }}
-          </a>
-        </li>
-      {% endfor %}
+      <ul id="nav-menu" class="header-nav">
+        {% assign current_path = request.path %}
+        {% for link in linklists['main-menu'].links %}
+          <li class="nav-item {% if current_path == link.url %} active{% endif %}">
+            <a href="{{ link.url }}">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
 
-    </ul>
+      </ul>
 
-  </div>
+    </div>
     
-
-    <button class="menu-button">
-      MENU
+    <label class="hamburger" for="toggle-menu">
       {% render 'burger-menu' %}
-    </button>
-    
+    </label>
   </nav>
 
-  <div id="mobile-menu">
-
-  </div>
+  <div class="nav-menu-overlay"></div> 
 
 
 
+  <script>
+    // prevent screen from being scrollable when menu is open
+    const toggleMenu = document.getElementById('toggle-menu');
+    toggleMenu.addEventListener('change', function() {
+        document.body.style.overflowY = this.checked ? 'hidden' : 'auto';
+    });
+  </script>
 
 
 

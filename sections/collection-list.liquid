@@ -1,7 +1,8 @@
-<div class="section-collection-list page-width section-{{ section.id }}">
-  <div class="section-title">
+
+  {% if section.settings.heading != blank %}
     <h3 class="section-heading">{{ section.settings.heading | strip_html }}</h3>
-  </div>
+  {% endif %}
+
   <div class="collection-content">
 
       {% for block in section.blocks %}
@@ -9,11 +10,12 @@
           <div class="collection__main-container" >
 
             <a href="{{ block.settings.collection.url }}"> 
+
               <div class="collection__main-image-container ">
                 <img
                   class="image"
                   src="{{ block.settings.collection.featured_image | image_url }}"
-                  loading="lazy"
+                  loading="eager"
                   height="100"
                   width="100"
                 >
@@ -27,6 +29,7 @@
                 class="collection-image-overlay"
                 style="background-color:{{ block.settings.collection_image_overlay_color }}"
               ></div>
+              
             </a> 
             
           </div>
@@ -35,7 +38,7 @@
 
   </div>
 
-</div>
+
 
 {% schema %}
 {
@@ -48,7 +51,7 @@
     }
   ],
   "tag": "section",
-  "class": "collection-list__main-container",
+  "class": "collection-list__main-container section page-width",
   "presets": [{ "name": "Collection list" }],
   "limit": 1,
   "max_blocks": 5,
