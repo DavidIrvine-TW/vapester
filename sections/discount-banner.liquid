@@ -1,12 +1,15 @@
-<div class="section-discount-banner page-width">
+
 
   {% if section.settings.heading != blank %}
     <div class="section-heading-container">
       <h3 class="section-heading">{{ section.settings.heading | strip_html }}</h3>
     </div>
   {% endif %}
+
   <div class="discount-main-content">
+
     {% for block in section.blocks %}
+      
       <div class="discount-main-container">
         <div class="discount-image-container">
           <img
@@ -27,9 +30,10 @@
 
         <div class="discount-image-overlay" style="background-color:{{ block.settings.overlay_color }}"></div>
       </div>
+
     {% endfor %}
   </div>
-</div>
+
 
 {% schema %}
 {
@@ -42,7 +46,7 @@
     }
   ],
   "limit": 2,
-  "class": "discount-banner__main-container",
+  "class": "discount-banner__main-container  page-width section",
   "tag": "section",
   "presets": [{ "name": "Discount banner" }],
   "max_blocks": 4,

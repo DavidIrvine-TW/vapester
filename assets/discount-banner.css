@@ -1,14 +1,8 @@
-.section-discount-banner {
-    padding: 3rem 1rem 3rem 1rem;
-    width: 100%;
-}
-.section-heading-container {
-    margin-bottom: 2rem;
-}
+
 .discount-main-content {
     display: grid;
     grid-template-columns: 1fr; 
-    gap: 2rem;  
+    gap: 1rem;  
 }
 
 .discount-main-container {
@@ -46,12 +40,29 @@
 .discount-title-container {
     position: absolute;
     top: 20%;
-    left: 5%
+    left: 1%
 }
+.discount-title {
+    position: relative;
+    font-size: 1.5rem;
+    color: white;
+    line-height: 1.2rem;
+    z-index: 20;
+}
+.discount-title:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 98%;
+    height: 32px;
+    background-color: var(--header-bg);;
+    z-index: -1; 
+    transform: translate(2px, 5px); 
+  }  
 
 .discount-description-container {
     position: absolute;
-    right: 5%;
+    right: 1%;
     bottom: 5%;
    
 }
@@ -62,13 +73,17 @@
  @media screen and (min-width: 768px){
     .discount-main-content {
         grid-template-columns: 2fr 1fr; 
-
+        gap: 2rem;  
     }
     .discount-main-container {
-        
         height: 500px;
-        
-  
+    }
+    .discount-title {
+        font-size: 3rem;
+        line-height: 2.5rem;
+    }
+    .discount-title:before {
+        height: 3rem;
     }
     
  }

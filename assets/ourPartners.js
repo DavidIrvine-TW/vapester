@@ -1,8 +1,8 @@
-var swiper = new Swiper(".featuredSwiper", {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    loop: true,
-
+var swiper = new Swiper(".partnerSwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
     pagination: {
       el: ".swiper-pagination",
       // clickable: true,
@@ -13,7 +13,6 @@ var swiper = new Swiper(".featuredSwiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
-
 
     breakpoints: {
       640: {
@@ -33,5 +32,4 @@ var swiper = new Swiper(".featuredSwiper", {
         spaceBetween: 32,
       }
     },
-
   });

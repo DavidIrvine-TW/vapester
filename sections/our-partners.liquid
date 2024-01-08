@@ -1,20 +1,25 @@
-<div class="section-our-partners page-width">
-  <div class="partners-section-heading">
-    <p>{{ section.settings.heading_subtitle |  strip_html }}</p>
-    <h4 class="section-heading">{{ section.settings.section_heading |  strip_html }}</h4>
+
+  <div class="section-heading-container">
+    <p class="section-subheading">{{ section.settings.heading_subtitle | strip_html }}</p>
+    <h4 class="section-heading">{{ section.settings.section_heading | strip_html }}</h4>
   </div>
 
-  <div class="our-partners-carousel-container partners">
-    {% for product in collections.Partners.products %}
-      <div class="picture-frame">
-        <div class="our-partners-image-container">
-          <img class="our-partners-image image" src="{{ product.featured_image | image_url }}" loading="lazy" width="100" height="100">
+  <div class="swiper partnerSwiper">
+    <div class="swiper-wrapper">
+      {% for product in collections.Partners.products %}
+        <div class="swiper-slide picture-frame">
+          <div class="our-partners-image-container">
+            <img class="our-partners-image image" src="{{ product.featured_image | image_url }}" loading="lazy" width="100" height="100">
+          </div>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>  
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
   </div>
 
-</div>
+
 
 
 {% schema %}
@@ -33,7 +38,7 @@
     }
   ],
   "limit": 2,
-  "class": "our-partners__main-container",
+  "class": "our-partners__main-container section page-width",
   "tag": "section",
   "presets": [{ "name": "Our partners" }],
   "max_blocks": 5,

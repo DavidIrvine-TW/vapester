@@ -1,7 +1,7 @@
 <div class="section-featured-collection page-width">
- <div class="featured-collection-heading-container">
+ <div class="section-heading-container">
     {% if section.settings.title_subtext != blank %}
-      <p class="featured-subheading">{{ section.settings.title_subtext | strip_html }}</p>
+      <p class="section-subheading">{{ section.settings.title_subtext | strip_html }}</p>
     {% endif %}
     {% if section.settings.section_title == blank %}
       <h3 class="section-heading">{{ collections['best-sellers'].title | strip_html }}</h3>
@@ -10,7 +10,7 @@
     {% endif %}
   </div> 
 
-  <div class="swiper featuredSwiper">
+  <div class=" featuredSwiper">
 
     <div class="swiper-wrapper">
 
@@ -19,11 +19,11 @@
         <div class="swiper-slide">
 
           <a href="{{ product.url }}">
-            <div class="featured-collection__image-container">
+            <div class="product-card-image-container">
               <img class="image" src="{{ product.featured_image | image_url }}" loading="lazy" width="100" height="100">
             </div>
           </a>
-          <div class="featured-collection__info-container">
+          <div class="product-card-price-info">
             <p class="product-title">{{ product.title | link_to: product.url | strip_html }}</p>
             <p class="product-price">
               <span style="color: black;"> {% render 'icon-cash-black' %}</span>
@@ -43,11 +43,7 @@
 </div>
 
 <style>
-  .swiper {
-  width: 100%;
-  height: 100%;
-  border: 1px solid black;
-}
+ 
 </style>
 
 <script>
