@@ -1,20 +1,36 @@
 .section-new-arrivals {
-    padding: 3rem 2rem;
     width: 100%;
     margin: 0 auto;
   }
   
   .new-arrivals-product-container {
-    padding: 4rem 0rem;;
+    /* padding: 4rem 0rem;; */
     display: grid;
+    width: 260px;
+    margin: 0 auto;
     gap: 2rem;
     grid-template-columns: repeat(1, 1fr);
+
   }
   
-  .featured-collection__single-product-container {
-    display: grid;
-    grid-template-rows: auto auto; /* Two rows for image and info */
-    row-gap: 10px; /* Adjust as needed for spacing between rows */
+ 
+  @media screen and (min-width: 640px) {
+    .new-arrivals-product-container {
+      grid-template-columns: repeat(2, 1fr); /* Five columns */
+      width: 100%
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .new-arrivals-product-container {
+      grid-template-columns: repeat(3, 1fr); /* Five columns */
+
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .new-arrivals-product-container {
+      grid-template-columns: repeat(4, 1fr); /* Five columns */
+
+    }
   }
   
   @media screen and (min-width: 1200px) {

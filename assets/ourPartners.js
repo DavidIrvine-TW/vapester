@@ -16,7 +16,7 @@ var swiper = new Swiper(".partnerSwiper", {
 
     breakpoints: {
       640: {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 16,
       },
       768: {
@@ -29,7 +29,7 @@ var swiper = new Swiper(".partnerSwiper", {
       },
       1200: {
         slidesPerView: 5,
-        spaceBetween: 32,
+        spaceBetween: 16,
       }
     },
   });

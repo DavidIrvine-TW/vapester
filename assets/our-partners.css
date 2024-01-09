@@ -1,10 +1,10 @@
 
 .section-our-partners {
-    padding: 3rem 1rem 3rem 1rem;
+    /* padding: 3rem 1rem 3rem 1rem; */
     width: 100%;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
 
 }
 .partners-section-heading {
@@ -13,7 +13,7 @@
     gap: 1rem;
     margin-bottom: 2rem;
 }
-.partners-section-heading  > p{
+.partners-section-heading  > p {
     font-size: 1.5rem;
 }
 
@@ -28,7 +28,7 @@
     border: 3px solid lightgray;
 }
 .picture-frame {
-    padding: 1rem;  
+    /* padding: 1rem;   */
 }
 .our-partners-image  {
     max-width: 175px;
