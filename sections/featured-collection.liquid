@@ -1,5 +1,5 @@
 <div class="section-featured-collection page-width">
- <div class="section-heading-container">
+  <div class="section-heading-container">
     {% if section.settings.title_subtext != blank %}
       <p class="section-subheading">{{ section.settings.title_subtext | strip_html }}</p>
     {% endif %}
@@ -8,50 +8,37 @@
     {% else %}
       <h3 class="section-heading">{{ section.settings.section_title | strip_html }}</h3>
     {% endif %}
-  </div> 
+  </div>
 
   <div class="featuredSwiper">
-
     <div class="swiper-wrapper">
-
-
-     
-        
       {% for product in collections['best-sellers'].products %}
         {% render 'product-card', product: product %}
       {% endfor %}
-      
-
-  
-  
-      
-
     </div>
     <div id="featured-swiper-pagination" class="swiper-pagination"></div>
-    
- 
   </div>
 
   <div class="" style="margin-top: 3rem; display: flex; gap: 2rem">
     <div>
-        <button class="" type="button" style="letter-spacing: 1.5px; color: white; font-weight: bold; padding: 1rem 1.5rem 1rem 1.5rem; background-color: var(--header-bg); margin: 0 auto;" >SHOP OTHER BEST SELLERS</button>
+      <button
+        class=""
+        type="button"
+        style="letter-spacing: 1.5px; color: white; font-weight: bold; padding: 1rem 1.5rem 1rem 1.5rem; background-color: var(--header-bg); margin: 0 auto;"
+      >
+        SHOP OTHER BEST SELLERS
+      </button>
     </div>
     <div style="position: relative; width: 150px;">
       <div id="featured-swiper-prev" class="swiper-button-prev"></div>
       <div id="featured-swiper-next" class="swiper-button-next"></div>
     </div>
-    
   </div>
-
 </div>
 
-<style>
- 
-</style>
+<style></style>
 
-<script>
-
-</script>
+<script></script>
 
 {% schema %}
 {

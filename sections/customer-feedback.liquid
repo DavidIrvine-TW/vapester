@@ -1,64 +1,77 @@
-<div class="section-customer-review page-width">
 
-
-  {% comment %} Customer review {% endcomment %}
-  <div class="customer-review-main-content" style="width: 100%; height: 500px; position: relative">
-
-    <div class="customer-review-image-container" style="width: 100%; height: 100%; overflow: hidden;">
-      <img
+  <div class="customer-review-content" style="border: 1px solid blue;">
+      {% comment %} <img
         src="{{ section.settings.background_image | image_url }}"
         loading="lazy"
         height="100"
         width="100"
-        style="width: 100%; height: 100%; object-fit: cover;"
-      >
+        class="image"
+      > {% endcomment %}
 
-      {% for block in section.blocks %}
-        <div class="section-body" style="position: absolute;  top: 20%; padding: 3rem;">
-          <p>{{ block.settings.body_text | strip_html }}</p>
-          <p>{{ block.settings.reviewer | strip_html }}</p>
+        <div class="reviewSwiper"> 
+
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="swiper-slide" style="padding: 8rem;">
+                <p>{{ block.settings.body_text | strip_html }}</p>
+                <p>{{ block.settings.reviewer | strip_html }}</p>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
         </div>
-      {% endfor %}
 
-    </div>
 
-    <div class="section-heading" style="position: absolute; top: 10%">
+
+
+
+
+
+
+        
+      r
+
+    <div class="customer-feedback-heading" style="">
       {% if section.settings.section_heading != blank %}
         <h4>{{ section.settings.section_heading | strip_html }}</h4>
       {% endif %}
-    </div>
+    </div> 
 
   </div>
 
 
 
-  {% comment %} Newsletter {% endcomment %}
-  {% if section.settings.newsletter_background != blank %}
-  <div  class="newsletter-content">
 
-    <div class="newsletter-image-container">
+  
+  <div  class="newsletter-content" >
+
+ 
       <img class="image" src="{{ section.settings.newsletter_background | image_url }}" width="100" height="100" loading="lazy">
-    </div>
 
-    <div>
+
+    <div class="newsletter-heading">
       <h4>{{ section.settings.newsletter_title | strip_html }}</h4>
-      <p>{{ section.settings.newsletter_body_text | strip_html }}</p>
-    <div>
+      {% comment %} <p>{{ section.settings.newsletter_body_text | strip_html }}</p> {% endcomment %}
+    <div> 
 
-    <div>
+     <div style="margin-top: 5rem; display: flex; flex-direction: column; gap: 2rem; padding: 2rem;">
       <input type="email" placeholder="Enter email address">
       <button type="button">SUBSCRIBE<button>
-    </div>
+    </div> 
 
   </div>
-  {% endif %}
+ 
 
 
 
 
 
 
-</div>
+
 
 {% schema %}
 {
@@ -91,7 +104,7 @@
     }
   ],
   "tag": "section",
-  "class": "customer-review__main-container section page-width",
+  "class": "customer-review__main-container page-width",
   "presets": [{ "name": "Customer review" }],
   "max_blocks": 25,
   "blocks": [
