@@ -3,7 +3,7 @@
    display: grid;
    grid-template-columns: 1fr;
    gap: 2rem; 
-   border: 1px solid red;
+
 }
 
 .customer-review-content {
@@ -13,6 +13,32 @@
     overflow: hidden;
     margin: 0 auto;
 }
+.review-background-image {
+    position: absolute;
+    top: 0;
+    bottom:0;
+    object-fit: cover;
+    left: 0;
+    right: 0;
+    z-index: -100;
+}
+
+
+.reviewSwiper {
+
+    z-index: 100;
+}
+.reviewSlide {
+  
+    padding: 8rem 2.5rem;
+  
+}
+
+.reviewSlide-body-text {
+    color: var(--header-bg);
+    font-size: 1.25rem;
+}
+
 
 /* NEWSLETTER */
 .newsletter-content {
@@ -72,6 +98,9 @@
         width: 410px;
         height: 380px;
     }
+    .reviewSlide {
+        padding: 8rem 3rem;
+    }
     .newsletter-content {
         width: 410px;
         height: 380px;
@@ -82,6 +111,9 @@
  @media screen and (min-width: 768px){
     .customer-review__main-container {
         grid-template-columns: 2fr 1fr;
+    }
+    .reviewSlide {
+        padding: 9rem 5rem;
     }
     .customer-review-content {
         width: 100%; 

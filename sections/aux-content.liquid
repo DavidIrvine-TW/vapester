@@ -1,17 +1,25 @@
-<div class="page-width section-id-{{ section.id }}">
+<div class="section-id-{{ section.id }}">
 
-    {% if section.settings.section_subtitle != blank %}
-        <p class="section-subheading">{{ section.settings.section_subtitle | strip_html }}</p>
-    {% endif %}
+    <div class="section-heading-container">
+        {% if section.settings.section_subtitle != blank %}
+            <p class="section-subheading">{{ section.settings.section_subtitle | strip_html }}</p>
+        {% endif %}
 
-    {% if section.settings.section_heading != blank %}
-        <h4 class="section-heading">{{ section.settings.section_heading | strip_html }}</h4>
-    {% endif %}
+        {% if section.settings.section_heading != blank %}
+            <h4 class="section-heading">{{ section.settings.section_heading | strip_html }}</h4>
+        {% endif %}
 
-    <div class="aux-section-content-container" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; padding: 2rem;">
+
+    </div>
+    
+
+
+
+
+    <div class="aux-section-content-container" >
 
         {% for block in section.blocks %}
-            <div class="aux-image-container" style="max-width: 150px ; min-width: 105px overflow: hidden">
+            <div class="aux-image-container" style="max-width: 150px; max-height: 150px; min-width: 105px; min-height: 105px; overflow: hidden; cursor: pointer;">
                 <img class="aux-image image" src="{{ block.settings.social_image | image_url }}" loading="lazy" height="100" width="100">
             </div>
         {% endfor %}

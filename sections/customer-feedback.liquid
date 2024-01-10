@@ -1,20 +1,19 @@
 
-  <div class="customer-review-content" style="border: 1px solid blue;">
-      {% comment %} <img
+  <div class="customer-review-content" >
+      <img
         src="{{ section.settings.background_image | image_url }}"
         loading="lazy"
         height="100"
         width="100"
-        class="image"
-      > {% endcomment %}
-
+        class="image review-background-image"
+      >   
         <div class="reviewSwiper"> 
 
           <div class="swiper-wrapper">
             {% for block in section.blocks %}
-              <div class="swiper-slide" style="padding: 8rem;">
-                <p>{{ block.settings.body_text | strip_html }}</p>
-                <p>{{ block.settings.reviewer | strip_html }}</p>
+              <div class="swiper-slide reviewSlide">
+                <p class="reviewSlide-body-text">{{ block.settings.body_text | strip_html }}</p>
+                <p class="reviewSlide-reviewer-text">{{ block.settings.reviewer | strip_html }}</p>
               </div>
             {% endfor %}
           </div>
@@ -25,16 +24,6 @@
 
         </div>
 
-
-
-
-
-
-
-
-        
-      r
-
     <div class="customer-feedback-heading" style="">
       {% if section.settings.section_heading != blank %}
         <h4>{{ section.settings.section_heading | strip_html }}</h4>
@@ -44,9 +33,6 @@
   </div>
 
 
-
-
-  
   <div  class="newsletter-content" >
 
  
@@ -104,7 +90,7 @@
     }
   ],
   "tag": "section",
-  "class": "customer-review__main-container page-width",
+  "class": "customer-review__main-container section page-width",
   "presets": [{ "name": "Customer review" }],
   "max_blocks": 25,
   "blocks": [

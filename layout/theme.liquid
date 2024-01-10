@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ 'newsletter.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'footer.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}"/>
-
+    <link rel="stylesheet" href="{{ 'aux-content.css' | asset_url }}"/>
      
     {%- if settings.favicon != blank -%}
         <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 35, height: 35 }}">
@@ -50,9 +50,7 @@
 
 
     <script src="{{ 'swiper-bundle.min.js' |  asset_url }}"></script>
-    <script src="{{ 'featuredCarousel.js' |  asset_url }}"></script>
-    <script src="{{ 'ourPartners.js' | asset_url }}"></script>
-    <script src="{{'customer-feedback.js' | asset_url }}"></script>
+    <script src="{{'allCarousels.js' | asset_url }}"></script>
   
   
  

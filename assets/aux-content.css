@@ -1,0 +1,22 @@
+
+.aux-section-content-container{
+    grid-template-columns: repeat(2, 1fr);
+    display: grid; 
+    gap: 2rem; 
+    padding: 2rem 0rem; 
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .aux-section-content-container{
+        grid-template-columns: repeat(4, 1fr)
+    }
+}
+@media screen and (min-width: 1000px) {
+    .aux-section-content-container{
+        grid-template-columns: repeat(6, 1fr)
+    }
+}
+
+

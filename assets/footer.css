@@ -6,7 +6,7 @@
   
   .footer-width {
     margin: 0 auto;
-    width: 90%;
+    /* width: 90%; */
   }
   .footer-bottom > p {
     text-align: center;
@@ -45,14 +45,7 @@
     color: gray;
   }
   
-  li {
-    /* font-size: 13px; */
-    list-style: none;
-  }
-  a {
-    /* color: white; */
-    text-decoration: none;
-  }
+
   .footer-column a {
     transition: 0.2s color;
   }

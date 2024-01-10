@@ -1,13 +1,12 @@
 
-
-
-<footer class="footer-alt">
-  <div class="footer-width">
+<div class="footer-alt">
+  <div class="footer-width page-width section">
     <div class="footer-top">
 
       {% for block in section.blocks %}
 
           {% if block.type == 'navigation' %}
+            
             <div class="footer-column footer-column--nav">
               <h2>{{ block.settings.linkList.title }}</h2>      
               {% for link in block.settings.linkList.links %}
@@ -33,11 +32,21 @@
                 </form> 
             </div>
 
-            {% elsif block.type == 'image' %}
-              <div class="footer-column footer-column--image">
-                  <h2>{{ block.settings.imageheader }}</h2>                 
-                  <img src="{{block.settings.image | image_url}}" width="80" height="80"/> 
-              </div>
+            {% elsif block.type == 'collection' %}
+              {% assign paymentCollectionHandle = block.settings.collection %}
+              {% assign paymentCollection = collections[paymentCollectionHandle] %}
+            
+              {% if paymentCollection %}
+                <div class="footer-column footer-column--image">
+                  <h5 style="margin-bottom: 1rem;">{{ paymentCollection.title }}</h5>
+                  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                    {% for product in paymentCollection.products %}
+                      <img src="{{ product.featured_image | image_url }}" alt="{{ product.title }}" width="80" height="80"/>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+              
 
         {% endif %}
       {% endfor %}  
@@ -48,11 +57,13 @@
     </div> 
 
   </div>
-</footer>
+</div>
 
 {% schema %}
 {
   "name": "Footer",
+  "tag" : "footer",
+  "class": "footer-section__main-container",
   "settings": [
     {
       "id": "copyright",
@@ -80,19 +91,14 @@
       ]
     },
     {
-      "name": "footer-image",
-      "type" : "image",
+      "name": "payment providers",
+      "type" : "collection",
       "settings": [
+       
         {
-          "id" : "imageheader",
-          "type" : "richtext",
-          "label" : "Heading"
-
-        },
-        {
-          "id" : "image",
-          "type" : "image_picker",
-          "label" : "Image"
+          "id" : "collection",
+          "type" : "collection",
+          "label" : "Payment providers"
 
         }
       ]

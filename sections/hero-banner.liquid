@@ -1,84 +1,74 @@
-
-
 <div class="section-hero-banner" aria-label="hero carousel">
-
-  <div class="carousel" data-carousel >
-
+  <div class="heroSwiper">
     {% comment %} <button class="carousel-btn prev" data-carousel-btn="prev" >&#8656;</button> {% endcomment %}
-    <button class="carousel-btn next" data-carousel-btn="next" >{% render 'icon-arrow-right' %}</button>
+    {% comment %} <button class="carousel-btn next" data-carousel-btn="next">{% render 'icon-arrow-right' %}</button> {% endcomment %}
 
-    <ul data-slides>
-
+    <div class="swiper-wrapper" >
       {% for block in section.blocks %}
-        <li class="slide"  {% if forloop.index == 1 %} data-active {% endif %}>
-         
-            <img
-              class="image-product"
-              src="{{ block.settings.product| image_url }}"
-              loading="eager"
-              width="100"
-              height="100"
-            >
-          
+        <div
+          class="slide swiper-slide"
+        >
+          <img
+            class="image-product"
+            src="{{ block.settings.product| image_url }}"
+            loading="eager"
+            width="100"
+            height="100"
+          >
 
-        <div class="image-overlay"></div> 
+          <div class="image-overlay"></div>
 
-            <img
-              class="banner-mg image-backdrop "
-              src="{{ block.settings.image2 | image_url }}"
-              loading="eager"
-              width="100"
-              height="100"
-            >
+          <img
+            class="banner-mg image-backdrop "
+            src="{{ block.settings.image2 | image_url }}"
+            loading="eager"
+            width="100"
+            height="100"
+          >
 
-            <div class="hero-info-container">
-          
+          <div class="hero-info-container">
             <div class="hero-title">
-              <h2 class="hero-heading hero-heading-img-one">{{ block.settings.product.title | upcase }}</h2>
+               <h2 class=" {% if forloop.index == 1 %} hero-heading hero-heading-img-one {% else %} hero-heading-alternate {% endif %}">{{ block.settings.product.title | upcase }}</h2>
             </div>
-  
+
             <div class="hero-heading-btn-container">
-  
               <div class="hero-price-cont">
                 <span style="color: white;">{% render 'icon-cash' %}</span>
                 <span class="hero-price">{{ block.settings.product.price | money }}</span>
               </div>
-  
+
               <div class="hero-heading-btn-container-one">
                 <button id="myButton" class="btn-shop-now ">SHOP NOW</button>
               </div>
-  
             </div>
-  
           </div>
-  
-        
-        </li>
+        </div>
+
+
       {% endfor %}
-    </ul>
+    </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
   </div>
 </div>
 
 
-{% comment %} CAROUSEL {% endcomment %}
 <script>
-
-  const buttons = document.querySelectorAll("[data-carousel-btn]");
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      console.log("HEERO clicked")
-      const offset = button.dataset.carouselBtn === "next" ? 1 : -1;
-      const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
-      const activeSlide = slides.querySelector("[data-active]");
-      let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-      if (newIndex < 0) newIndex = slides.children.length -1;
-      if (newIndex >= slides.children.length ) newIndex = 0;
-      slides.children[newIndex].dataset.active = true;
-      delete activeSlide.dataset.active;
-    })
-  });
-
-
+  // const buttons = document.querySelectorAll('[data-carousel-btn]');
+  // buttons.forEach((button) => {
+  //   button.addEventListener('click', () => {
+  //     console.log('HEERO clicked');
+  //     const offset = button.dataset.carouselBtn === 'next' ? 1 : -1;
+  //     const slides = button.closest('[data-carousel]').querySelector('[data-slides]');
+  //     const activeSlide = slides.querySelector('[data-active]');
+  //     let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+  //     if (newIndex < 0) newIndex = slides.children.length - 1;
+  //     if (newIndex >= slides.children.length) newIndex = 0;
+  //     slides.children[newIndex].dataset.active = true;
+  //     delete activeSlide.dataset.active;
+  //   });
+  // });
 </script>
 
 {% schema %}
