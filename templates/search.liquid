@@ -18,8 +18,8 @@
           {% if item.featured_image %}
           <div class="result-image"><a href="{{item.url}}" title="">{{ item.featured_image | product_img_url: 'small' | img_tag }}</a></div>
           {% endif %}
-          <span>{{ item.content | strip_html | truncatewords: 40 | highlight: search.terms }}</span>
-          <div style="clear:left"></div>          
+          {% comment %} <span>{{ item.content | strip_html | truncatewords: 40 | highlight: search.terms }}</span> {% endcomment %}
+          {% comment %} <div style="clear:left"></div>           {% endcomment %}
         </li>
         {% endfor %}
         </ol>      

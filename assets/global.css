@@ -77,6 +77,16 @@ a {
     height: 100%;
     object-fit: cover;
 }
+input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
 
 /* SECTION PADDING */
 .section {
@@ -171,4 +181,7 @@ a {
     text-align: left;
     font-weight: bold;
     color: var(--header-bg)
+}
+.product-title:hover {
+    color: var(--clr-red)
 }

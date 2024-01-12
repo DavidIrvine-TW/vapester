@@ -17,19 +17,19 @@
         
         <div class="header-top-container-content">
 
-          <div class="" style="color: white; display: flex; gap: .5rem; font-size: 1.1rem; display: none">
+          {% comment %} <div class="" style="color: white; display: flex; gap: .5rem; font-size: 1.1rem; display: none">
               <p id="heading" >Call Us:</p>
               <p>+1 800 820 20 20</p>
-          </div>
-
-          <div class="header-search-container bg-logo-background" >
+          </div> {% endcomment %}
+      
+          <form class="header-search-container" action="/search" >
               {% render 'icon-search' %}
-              <input style="width: 200px" placeholder="Search Products..." type="text"/>
-          </div>
+              <input class="search-input" style="width: 100%"  placeholder="Search Products..." type="search" name="q"/>
+          </form>
 
-
+          <a href="/cart">
           {% render 'icon-cart' %}
-         
+         </a>
         </div> 
 
     </div>

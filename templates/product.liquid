@@ -1,0 +1,32 @@
+<h1>{{ product.title }}</h1>
+<p>{{ product.price | money }}</p>
+<div>
+    {{ product.description }}
+</div>
+
+{% form 'product', product %}
+    <select name="id">
+        {% for variant in product.variants %}
+            <option value="{{ variant.id }}">
+                {{ variant.title }}
+            </option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">go to cart</button>
+    <button type="button" onclick="addToCart()" style="padding: 1rem; border: 1px solid black;">add to cart</button>
+
+{% endform %}
+
+
+<script>
+    function addToCart() {
+        var selectedVariantId = document.getElementById('variant-id').value;
+
+        // Use the Shopify AJAX API to update the cart
+        Shopify.addItem(selectedVariantId, 1, function(cart) {
+            console.log('Cart updated:', cart);
+            // You can update the UI to show a success message or perform other actions
+        });
+    }
+</script>
