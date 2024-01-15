@@ -35,13 +35,26 @@
    transform: translate(10px, -15px); 
  }
 
+/* Prices */
+
+
+/* description */
+
+.productView-title {
+  font-size: 1.25rem;
+  color: black;
+  margin-bottom: .5rem;
+}
+
+
+
+
  /* Style for the select element */
 .product-page-select {
-    width: 100%;
+    width: 50%;
     padding: 10px 32px;
-    font-size: 16px;
+    font-size: 1.5rem;
     border: 1px solid #ccc;
-
     background-color: #fff;
     color: #333;
     cursor: pointer;
@@ -49,8 +62,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     background: url('./arrow.svg') 98% / 3% no-repeat #EEE;; 
-    /* background-repeat: no-repeat;
-    background-position: right; */
+
   }
   
   /* Style for the select options */
@@ -68,17 +80,11 @@
     font-size: 16px;
   }
   
-  /* Style for the additional information */
-  .compare-at-price,
-  .actual-price,
-  .variant-title {
-    margin-top: 10px;
-    font-size: 14px;
-  }
+
   
   /* Style for the submit button */
   button[type="submit"] {
-    margin-top: 15px;
+    /* margin-top: 15px; */
     padding: 10px;
     background-color: #4caf50;
     color: #fff;
@@ -94,15 +100,6 @@
     background-color: #45a049;
   }
 
-
-  /* Styles for the quantity container */
-.quantity-container {
-    display: flex;
-    align-items: center;
-  
-
-  }
-  
   /* Styles for the quantity input */
   .quantity-input > span {
     width: 50px;

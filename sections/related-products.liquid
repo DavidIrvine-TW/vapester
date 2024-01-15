@@ -1,4 +1,65 @@
-{%  schema  %}  
+<div class="section-featured-collection page-width">
+    <div class="section-heading-container">
+      {% if section.settings.title_subtext != blank %}
+        <p class="section-subheading">{{ section.settings.title_subtext | strip_html }}</p>
+      {% endif %}
+      {% if section.settings.section_title == blank %}
+        <h3 class="section-heading">{{ collections['best-sellers'].title | strip_html }}</h3>
+      {% else %}
+        <h3 class="section-heading">{{ section.settings.section_title | strip_html }}</h3>
+      {% endif %}
+    </div>
+  
+    <div class="featuredSwiper">
+      <div class="swiper-wrapper">
+        {% for product in collections['best-sellers'].products %}
+          {% render 'product-card', product: product %}
+        {% endfor %}
+      </div>
+      <div id="featured-swiper-pagination" class="swiper-pagination"></div>
+    </div>
+  
+    <div class="" style="margin-top: 3rem; display: flex; gap: 2rem">
+      <div>
+        <button
+          class="btn-secondary"
+          type="button "
+          
+        >
+          SHOP OTHER BEST SELLERS
+        </button>
+      </div>
+      <div style="position: relative; width: 150px;">
+        <div id="featured-swiper-prev" class="swiper-button-prev"></div>
+        <div id="featured-swiper-next" class="swiper-button-next"></div>
+      </div>
+    </div>
+  </div>
 
+{%  schema  %}  
+{
+    "name": "Related products",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "section_title",
+        "label": "Section title"
+      },
+      {
+        "id": "title_subtext",
+        "type": "textarea",
+        "label": "Section description"
+      },
+      {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collection"
+      }
+    ],
+    "presets": [{ "name": "Related products" }],
+    "tag": "section",
+    "class": "related-products__main-container section page-width",
+    "limit": 1
+  }
     
 {% endschema %} 
