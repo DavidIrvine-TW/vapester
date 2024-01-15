@@ -5,7 +5,7 @@
     <div class="page-width header-top-container" >
 
       {% comment %} logo container {% endcomment %}   
-        <div class="logo-container  bg-logo-background relative">
+        <div class="logo-container">
           {%- if settings.logo != blank -%}
             <a href="/" class="header-logo-link">
               <img loading="eager" class="logo" src="{{ settings.logo | image_url: width: settings.logo_width }}" alt="{{ shop.name }}" width="100" height="100">
@@ -51,7 +51,28 @@
             <a href="{{ link.url }}">
               {{ link.title }}
             </a>
+
+            {% if link.links != blank %}
+              <ul id="nav-menu-sub" class="header-nav-sub" style="display: none;">
+                {% for child in link.links %}
+                  <li class="nav-item-sub {% if current_path == link.url %} active{% endif %}">
+                    <a href="{{ child.url }}" class="">{{ child.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+
+               
+            {% endif %}
+
+
+
+
+
           </li>
+
+
+
+
         {% endfor %}
 
       </ul>

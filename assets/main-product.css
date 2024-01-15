@@ -1,0 +1,138 @@
+
+
+.product__banner {
+    margin-bottom: 5rem;
+}
+.product__banner-title-container {
+    position: absolute;
+    top: 45%;
+    left: 2%;
+
+}
+
+.product__banner-heading {
+    color: white;
+    /* padding: 1px 2px;  */
+    font-size: 4rem;
+    line-height: 24px;
+    position: relative; 
+    z-index: 20;
+}
+
+.product__banner-subheading {
+    margin-bottom: 0rem;
+    font-size: 1.75rem;
+}
+
+  .product__banner-heading:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   width: 100%;
+   height: 70px;
+   background-color: var(--clr-red);
+   z-index: -1; 
+   transform: translate(10px, -15px); 
+ }
+
+ /* Style for the select element */
+.product-page-select {
+    width: 100%;
+    padding: 10px 32px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    appearance: none ;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('./arrow.svg') 98% / 3% no-repeat #EEE;; 
+    /* background-repeat: no-repeat;
+    background-position: right; */
+  }
+  
+  /* Style for the select options */
+  .product-page-select-option {
+    padding: 10px;
+  }
+  
+  /* Style for the quantity input */
+  input[name="quantity"] {
+    width: 50px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Style for the additional information */
+  .compare-at-price,
+  .actual-price,
+  .variant-title {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  /* Style for the submit button */
+  button[type="submit"] {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    /* border-radius: 5px; */
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Hover effect for the submit button */
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+
+  /* Styles for the quantity container */
+.quantity-container {
+    display: flex;
+    align-items: center;
+  
+
+  }
+  
+  /* Styles for the quantity input */
+  .quantity-input > span {
+    width: 50px;
+    height: 50px;
+    /* padding: 1rem; */
+    /* margin: 0 5px; */
+    /* border: 1px solid #ccc; */
+    font-size: 24px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    outline: none;
+    margin: 0;
+    justify-content: center;
+  }
+  
+  /* Styles for the increment and decrement buttons */
+  .quantity-button {
+    /* padding: 1rem; */
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+ 
+    cursor: pointer;
+    font-size: 32px;
+  }
+  
+  /* Hover effect for the buttons */
+  .quantity-button:hover {
+    background-color: #45a049;
+  }

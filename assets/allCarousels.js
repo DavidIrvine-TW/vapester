@@ -76,6 +76,8 @@ var swiper = new Swiper(".featuredSwiper", {
 // Our partners
 var partnerSwiper = new Swiper(".partnerSwiper", {
   loop: true,
+  grabCursor: true,
+  // centeredSlides: true,
   pagination: {
     el: ".swiper-pagination",
     type: "fraction",
@@ -108,5 +110,25 @@ var partnerSwiper = new Swiper(".partnerSwiper", {
     //   slidesPerView: 5,
     //   spaceBetween: 16,
     // }
+  },
+});
+
+ // Initialize main slider with thumbs navigation
+ var productSwiper = new Swiper(".mySwiper", {
+  spaceBetween: 10,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+  
+});
+var swiper2 = new Swiper(".mySwiper2", {
+  zoom: true,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+    swiper: productSwiper,
   },
 });

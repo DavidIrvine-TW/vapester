@@ -15,11 +15,12 @@
     <link rel="stylesheet" href="{{ 'our-partners.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'new-arrivals.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'customer-feedback.css' | asset_url }}">
-    <link rel="stylesheet" href="{{ 'newsletter.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'footer.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}"/>
     <link rel="stylesheet" href="{{ 'aux-content.css' | asset_url }}"/>
-     
+    <link rel="stylesheet" href="{{ 'main-product.css' | asset_url }}"/>
+
+
     {%- if settings.favicon != blank -%}
         <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 35, height: 35 }}">
     {%- endif -%}
@@ -47,11 +48,13 @@
 
     {% section "footer" %}
 
-
-
-    <script src="{{ 'swiper-bundle.min.js' |  asset_url }}"></script>
-    <script src="{{'allCarousels.js' | asset_url }}"></script>
-  
+    <script type="text/javascript" src="{{ 'swiper-bundle.min.js' |  asset_url }}"></script>
+    <script type="text/javascript" src="{{'allCarousels.js' | asset_url }}"></script>
+    <script type="text/javascript" src="{{'cart-script.js' | asset_url }}"></script>
+    <script type="text/javascript" src="{{ 'vanilla-tilt.js'  |  asset_url }}"></script>
+    <script type="text/javascript" src="{{ 'screenWidth.js'  |  asset_url }}"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
  
 </body>

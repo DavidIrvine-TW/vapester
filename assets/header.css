@@ -23,14 +23,30 @@
   /* border: 1px solid black; */
 }
 
+
 .logo-container {
+  width: 140px;
+    height: 140px;
+    display: block;
+    padding: 1rem;
+    position: relative;
+    margin-left: 1rem;
+ 
+
+   
+   
+}
+@media screen and (min-width: 500px){
+  .logo-container {
     min-width: 200px;
     height: 200px;
     display: block;
     position: absolute;
-    /* margin-bottom: -2.5rem; */
+    background-color:  #393939;
     top: 0;
     left: 0;
+    margin-left: 0;
+}
 }
 
 .logo {

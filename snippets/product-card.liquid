@@ -10,7 +10,9 @@
     </div>
   </a>
 
-  <div class="product-card-price-info">
+  
+
+  <div class="product-card-price-info" data-product-id="{{ product.id }}">
     <a href="{{ product.url }}">
       <p class="product-title">{{ product.title | link_to: product.url | strip_html }}</p>
     </a>
@@ -28,4 +30,7 @@
     </div>
   </div>
   {% render 'icon-star' %}
+  <a href="{{ product.url }}">
+  <button type="submit">View Product</button>
+   </a>
 </div>
