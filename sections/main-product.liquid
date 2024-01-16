@@ -1,5 +1,5 @@
 {% comment %} product page banner {% endcomment %}
-<div class="product__banner page-width" style="position: relative; height: 330px; border: 1px solid black;">
+<div class="product__banner " style="position: relative; height: 330px;">
   <img
     src="{{ section.settings.banner-image |  image_url }}"
     alt="Vapour cloud image"
@@ -17,7 +17,7 @@
   
 </div>
 
-<div class="product-page__main-container section page-width" style="display: flex; gap: 2rem; margin-bottom: 4rem;">
+<div class="product-page__main-container section page-width" style="display: flex; gap: 2rem; margin-bottom: 0rem;">
 
   {% comment %} product page carousel {% endcomment %}
   <div class="product-page__main-inner-container" style="max-width: 500px; min-width: 260px;">
@@ -122,24 +122,9 @@
   </div>
 </div>
 
-<div class="section page-width" style="width: 100%; border: 1px solid black">
-  {{ product.title | escape }}
-
-  <div>
-   {{ product.description  }}
-  </div>
+<div class="section page-width" style="width: 100%; border: 3px solid lightgray; color: black; font-size: 1.35rem;">
+   {{ product.description }}
 </div>
-
-{% for block in section.blocks %}
-    {% if block.type == 'related_products' %}
-        {% if  product.metafields.shopify--discovery--product_recommendation.related_products %} 
-            <h2>Related Products</h2>
-        {% endif %}
-      </div>
-    {% endif %}
-{% endfor %}
-  
-
 
 
 
@@ -171,6 +156,9 @@
     object-fit: cover;
   }
 </style>
+<script>
+  console.log({{ product.metafields.shopify--discovery--product_recommendation.related_products }});
+</script>
 
 
 

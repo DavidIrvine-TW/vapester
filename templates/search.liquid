@@ -1,39 +1,67 @@
-<div id="searchresults">  
-  <form action="/search" method="get">
-    <p><input type="text" name="q" value="{{search.terms  | escape}}" id="result-q" /> <input type="submit" value="Search" style="width:100px" /></p>
-  </form>
-  
-  {% if search.performed %}
-    
-    {% paginate search.results by 10 %}  
-  
-    {% if search.results == empty %}  
-      <p>Your search for "{{search.terms | escape}}" did not yield any results</p>              
-    {% else %}  
+<div id="searchresults" class="">
+  <div class="search-banner" style="height: 330px; position: relative;">
+    <img class="image" loading="lazy" width="100" height="100" src="{{ 'search-banner.jpg' | asset_url }}">
 
-        <ol>
-        {% for item in search.results %}      
-        <li>
-          <h3>{{ item.title | link_to: item.url }}</h3>
-          {% if item.featured_image %}
-          <div class="result-image"><a href="{{item.url}}" title="">{{ item.featured_image | product_img_url: 'small' | img_tag }}</a></div>
-          {% endif %}
-          {% comment %} <span>{{ item.content | strip_html | truncatewords: 40 | highlight: search.terms }}</span> {% endcomment %}
-          {% comment %} <div style="clear:left"></div>           {% endcomment %}
-        </li>
-        {% endfor %}
-        </ol>      
+    <div style="position: absolute; top: 45%; left: 2%;">
+      <span class="section-heading"> {{ search.results_count }}</span>
+      <h1 class="section-heading">results found</h1>
+    </div>
+  </div>
 
+  <div class="section page-width">
+    <form action="/search" method="get" >
+      <div style="border: 1px solid black;">
+        <input
+          type="text"
+          name="q"
+          value="{{ search.terms | escape }}"
+          placeholder="Search"
+          id="result-q"
+          style="height: 50px; width: 50%; font-size: 1.5rem;"
+        >
+        <input type="submit" value="Search" style="width:100px" style="height: 50px; width: 50%; ">
+      </div>
+    </form>
+
+    {% if search.performed %}
+      {% paginate search.results by 10 %}
+        {% if search.results == empty %}
+          <div style="text-align: center;">
+            <p style="font-size: 1.5rem;">
+              Your search for <span>"{{ search.terms | escape }}"</span> did not yield any results
+            </p>
+          </div>
+        {% else %}
+          <div
+            style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; padding: 1rem;"
+          >
+            {% for item in search.results %}
+              <div style="bordeR: 1px solid black;">
+                <h3>{{ item.title | link_to: item.url }}</h3>
+                {% if item.featured_image %}
+                  <div class="result-image" style="max-width: 300px; height: auto;">
+                    <a href="{{ item.url }}" title="">
+                      <img
+                        class="image"
+                        loading="eager"
+                        width="100"
+                        height="100"
+                        src="{{ item.featured_image | image_url }}"
+                      >
+                    </a>
+                  </div>
+                {% endif %}
+                <span style="border: 1px solid red;">
+                  {{- item.content | strip_html | truncatewords: 40 | highlight: search.terms -}}
+                </span>
+                {% comment %} <div style="clear:left"></div>           {% endcomment %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <p>{{ paginate | default_pagination }}</p>
+      {% endpaginate %}
     {% endif %}
-    
-    
-    <p>{{ paginate | default_pagination }}</p>
-    
-    {% endpaginate %}    
-    
-  {% endif %}
-  
-  
-  
-
+  </div>
 </div>
