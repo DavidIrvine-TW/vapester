@@ -20,9 +20,22 @@
 }
 
 .product__banner-subheading {
-    margin-bottom: 0rem;
-    font-size: 1.75rem;
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+    /* color: var(--clr-red); */
+    font-weight: bold;
 }
+.product__banner-subheading:before {
+    content: "";
+   position: absolute;
+   top: 0;
+   width: 100%;
+   height: 70px;
+   background-color: var(--clr-red);
+   z-index: -1; 
+   transform: translate(10px, -15px); 
+}
+
 
   .product__banner-heading:before {
    content: "";
@@ -40,7 +53,7 @@
 
 /* description */
 
-.productView-title {
+.metafield-tagline {
   font-size: 1.25rem;
   color: black;
   margin-bottom: .5rem;

@@ -10,7 +10,11 @@
   >
   <div class="product__banner-title-container">
     <h1 class="product__banner-heading">{{ product.title }}</h1>
+    {% if product.metafields.custom.title_tag  %}
+        <p class="product__banner-subheading">{{ product.metafields.custom.title_tag }}</p>
+      {% endif %}
   </div>
+  
 </div>
 
 <div class="product-page__main-container section page-width" style="display: flex; gap: 2rem; margin-bottom: 4rem;">
@@ -77,8 +81,8 @@
       </div>
     </div>
 
-    <div>
-      {{ product.description }}
+    <div class="metafield-tagline">
+      {{ product.metafields.custom.product_tagline }}
     </div>
 
 
@@ -122,10 +126,23 @@
   {{ product.title | escape }}
 
   <div>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+   {{ product.description  }}
   </div>
 </div>
+
+{% for block in section.blocks %}
+    {% if block.type == 'related_products' %}
+        {% if  product.metafields.shopify--discovery--product_recommendation.related_products %} 
+            <h2>Related Products</h2>
+        {% endif %}
+      </div>
+    {% endif %}
+{% endfor %}
+  
+
+
+
+
 
 <style>
   .swiper {
@@ -190,6 +207,11 @@
       "name": "Variant_selector",
       "type": "variant_selector",
       "settings": []
+    },
+    {
+        "name" : "Related products",
+        "type" : "related_products",
+        "settings" : []
     }
   ]
 }
