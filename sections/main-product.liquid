@@ -1,5 +1,5 @@
 {% comment %} product page banner {% endcomment %}
-<div class="product__banner " style="position: relative; height: 330px;">
+<div class="product__banner page-width" style="position: relative; height: 330px;">
   <img
     src="{{ section.settings.banner-image |  image_url }}"
     alt="Vapour cloud image"
@@ -52,7 +52,7 @@
             <div class="swiper-slide">
               <div class="product-card-image-container" style="width: 100%; overflow: hidden;">
                 <img
-                  src="{{ variant.featured_image.src | image_url: width: 500 }}"
+                  src="{{ variant.featured_image.src | image_url: width: 200 }}"
                   alt="{{ product.title | escape }}"
                   width="100"
                   height="100"
@@ -87,7 +87,7 @@
 
 
     {% form 'product', product %}
-      <div style="display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1rem;">
+      <div style="display: flex; flex-direction: column;  margin-bottom: 1rem;">
         <p class="product-options" style="font-size: 1.25rem; margin-bottom: .35rem; ">{{ product.options[0] }}</p>
         <select name="id" id="variant-id" class="product-page-select">
           {% for variant in product.variants %}
@@ -122,7 +122,7 @@
   </div>
 </div>
 
-<div class="section page-width" style="width: 100%; border: 3px solid lightgray; color: black; font-size: 1.35rem;">
+<div class="page-width section" style="width: 100%; color: black; font-size: 1.35rem;">
    {{ product.description }}
 </div>
 

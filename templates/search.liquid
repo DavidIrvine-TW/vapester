@@ -1,11 +1,22 @@
 <div id="searchresults" class="">
-  <div class="search-banner" style="height: 330px; position: relative;">
+  <div class="search-banner page-width" style="height: 330px; position: relative;">
     <img class="image" loading="lazy" width="100" height="100" src="{{ 'search-banner.jpg' | asset_url }}">
+    {% if search.performed %}
 
     <div style="position: absolute; top: 45%; left: 2%;">
       <span class="section-heading"> {{ search.results_count }}</span>
       <h1 class="section-heading">results found</h1>
     </div>
+
+    {% else %}
+      <div style="position: absolute; top: 45%; left: 2%;">
+        {% comment %} <span class="section-heading"> {{ search.results_count }}</span> {% endcomment %}
+        <h1 class="section-heading">Search for something...</h1>
+      </div>
+    {% endif %}
+
+
+    
   </div>
 
   <div class="section page-width">
@@ -24,7 +35,7 @@
     </form>
 
     {% if search.performed %}
-      {% paginate search.results by 10 %}
+      {% paginate search.results by 8 %}
         {% if search.results == empty %}
           <div style="text-align: center;">
             <p style="font-size: 1.5rem;">

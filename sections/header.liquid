@@ -1,118 +1,86 @@
-
-
-  <div class="header-top">
-
-    <div class="page-width header-top-container" >
-
-      {% comment %} logo container {% endcomment %}   
-        <div class="logo-container">
-          {%- if settings.logo != blank -%}
-            <a href="/" class="header-logo-link">
-              <img loading="eager" class="logo" src="{{ settings.logo | image_url: width: settings.logo_width }}" alt="{{ shop.name }}" width="100" height="100">
-            </a>
-          {%- else -%}
-            <h1>{{ shop.name }}</h1>
-          {%- endif -%}
-        </div>  
-        
-        <div class="header-top-container-content">
-
-          {% comment %} <div class="" style="color: white; display: flex; gap: .5rem; font-size: 1.1rem; display: none">
-              <p id="heading" >Call Us:</p>
-              <p>+1 800 820 20 20</p>
-          </div> {% endcomment %}
-      
-          <form class="header-search-container" action="/search" >
-              {% render 'icon-search' %}
-              <input class="search-input" style="width: 100%"  placeholder="Search Products..." type="search" name="q"/>
-          </form>
-
-          <a href="/cart">
-          {% render 'icon-cart' %}
-         </a>
-        </div> 
-
+<div class="header-top">
+  <div class="page-width header-top-container">
+    {% comment %} logo container {% endcomment %}
+    <div class="logo-container">
+      {%- if settings.logo != blank -%}
+      <a href="/" class="header-logo-link">
+        <img loading="eager" class="logo" src="{{ settings.logo | image_url: width: settings.logo_width }}"
+          alt="{{ shop.name }}" width="100" height="100">
+      </a>
+      {%- else -%}
+      <h1>{{ shop.name }}</h1>
+      {%- endif -%}
     </div>
 
-   
+    <div class="header-top-container-content">
+      <form class="header-search-container" action="/search">
+        {% render 'icon-search' %}
+        <input class="search-input" style="width: 100%" placeholder="Search Products..." type="search" name="q" />
+      </form>
+
+      <a href="/cart">
+        {% render 'icon-cart' %}
+      </a>
+    </div>
   </div>
+</div>
+<input type="checkbox" id="toggle-menu" style="display: none;" />
+{% comment %} LOWER HEADER - NAV MENU {% endcomment %}
+<nav class="header-bottom page-width">
+  <div class="header-bottom-content">
 
-  <input type="checkbox" id="toggle-menu" style="display: none;"/>
- 
-
-  {% comment %} LOWER HEADER - NAV MENU {% endcomment %}
-  <nav class="header-bottom page-width">
-    <div class="header-bottom-content">
-
-      <ul id="nav-menu" class="header-nav">
-        {% assign current_path = request.path %}
-        {% for link in linklists['main-menu'].links %}
-          <li class="nav-item {% if current_path == link.url %} active{% endif %}">
-            <a href="{{ link.url }}">
-              {{ link.title }}
-            </a>
-
-            {% if link.links != blank %}
-              <ul id="nav-menu-sub" class="header-nav-sub" style="display: none;">
-                {% for child in link.links %}
-                  <li class="nav-item-sub {% if current_path == link.url %} active{% endif %}">
-                    <a href="{{ child.url }}" class="">{{ child.title }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
-
-               
-            {% endif %}
-
-
-
-
-
+    <ul id="nav-menu" class="header-nav">
+      {% assign current_path = request.path %}
+      {% for link in linklists['main-menu'].links %}
+      <li class="nav-item {% if current_path == link.url %} active{% endif %}">
+        <a href="{{ link.url }}">
+          {{ link.title }}
+        </a>
+        {% if link.links != blank %}
+        <ul id="nav-menu-sub" class="header-nav-sub" style="display: none;">
+          {% for child in link.links %}
+          <li class="nav-item-sub {% if current_path == link.url %} active{% endif %}">
+            <a href="{{ child.url }}" class="">{{ child.title }}</a>
           </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <label class="hamburger" for="toggle-menu">
+    {% render 'burger-menu' %}
+  </label>
+</nav>
+
+<div class="nav-menu-overlay"></div>
 
 
 
+<script>
+  // prevent screen from being scrollable when menu is open
+  const burger = document.querySelector('.hamburger-menu');
 
-        {% endfor %}
+  const toggleMenu = document.getElementById('toggle-menu');
+  toggleMenu.addEventListener('change', function () {
+    document.body.style.overflowY = this.checked ? 'hidden' : 'auto';
 
-      </ul>
-
-    </div>
-    
-    <label class="hamburger" for="toggle-menu">
-      {% render 'burger-menu' %}
-    </label>
-  </nav>
-
-  <div class="nav-menu-overlay"></div> 
-
-
-
-  <script>
-    // prevent screen from being scrollable when menu is open
-    const burger = document.querySelector('.hamburger-menu');
-    
-    const toggleMenu = document.getElementById('toggle-menu');
-    toggleMenu.addEventListener('change', function() {
-        document.body.style.overflowY = this.checked ? 'hidden' : 'auto';
-        
     if (this.checked) {
       burger.classList.add('cross');
-  } else {
+    } else {
       burger.classList.remove('cross');
-  }
-    });
-
-    
-  </script>
+    }
+  });
+</script>
 
 
 
-  {% schema %}
-  {
-    "name": "Header",
-    "tag": "header",
-    "class": "header__main-container",
-    "settings": []
-  }
-  {% endschema %}
+{% schema %}
+{
+"name": "Header",
+"tag": "header",
+"class": "header__main-container",
+"settings": []
+}
+{% endschema %}

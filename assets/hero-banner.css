@@ -15,7 +15,7 @@
 .slide {
   /* position: absolute; */
   /* inset: 0; */
-  border: 1px solid var(--header-bg);
+  border: 3px solid var(--header-bg);
   /* opacity: 0; */
   /* transition: 300ms opacity ease-in-out;
   transition-delay: 300ms; */
