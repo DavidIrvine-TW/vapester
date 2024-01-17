@@ -99,18 +99,20 @@
   button[type="submit"] {
     margin-top: 15px;
     padding: 10px;
-    background-color: #4caf50;
+    background-color: var(--header-bg);
     color: #fff;
     font-weight: bold;
     border: none;
     /* border-radius: 5px; */
     cursor: pointer;
     width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;;
   }
   
   /* Hover effect for the submit button */
   button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: var(--clr-purple);
   }
 
   /* Styles for the quantity input */
