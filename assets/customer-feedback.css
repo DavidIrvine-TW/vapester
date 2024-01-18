@@ -42,7 +42,17 @@
     margin-top: .5rem;
     font-size: 1.25rem;
 }
-
+.cust-feed-swiper-btn {
+    font-size: 15px !important;
+}
+.cust-feed-swiper-btn:hover {
+    transform: scale(1.2)
+}
+.cust-feed-swiper-btn:before,
+.cust-feed-swiper-btn:after {
+    font-size: 25px !important;
+    color: var(--header-bg);
+}
 
 /* NEWSLETTER */
 .newsletter-content {

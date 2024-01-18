@@ -19,7 +19,7 @@
     <div style="display: flex; gap: .5rem; align-items: center;">
       {% if product.compare_at_price %}
         <p style="color: gray; text-decoration: line-through; font-size: 1.5rem; display: flex; align-items: center;">
-          <span style="color: gray;"> {% render 'icon-cash' %}</span
+          <span style="color: gray;"> {% render 'icon-cash-sm' %}</span
           ><span>{{ product.compare_at_price | money | strip_html }}</span>
         </p>
       {% endif %}

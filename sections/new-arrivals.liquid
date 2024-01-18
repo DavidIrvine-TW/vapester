@@ -2,11 +2,11 @@
 
     <div class="section-heading-container">
         {% if section.settings.collection_title != blank %}
-         <span><h4 class="section-heading">{{ section.settings.collection_title | strip_html }}</h4></span>  
+         <h4><span class="section-heading">{{ section.settings.collection_title | strip_html }}</span></h4> 
         {% endif %}
 
         {% if section.settings.collection_title == blank %}
-          <span><h4 class="section-heading">{{ collections['new-arrivals'].title | strip_html }}</h4></span>
+          <h4><span class="section-heading">{{ collections['new-arrivals'].title | strip_html }}</span></h4>
         {% endif %}
     </div>
 

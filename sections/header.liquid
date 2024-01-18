@@ -28,9 +28,11 @@
 {% comment %} LOWER HEADER - NAV MENU {% endcomment %}
 
 
-<nav class="header-bottom page-width">
-  <div class="header-bottom-content-container">
-    <ul id="nav-menu" class="header-nav">
+<div class="header-bottom page-width">
+
+  <nav class="header-bottom-content-container">
+
+    <ul id="nav-menu" class="header-nav" >
       {% assign current_path = request.path %}
       {% for link in linklists['main-menu'].links %}
 
@@ -53,11 +55,21 @@
       </li>
       {% endfor %}
     </ul>
+  </nav>
+
+  <div style=" display: flex; align-items: center;">
+    <form class="header-search-mobile-container" action="/search" >
+      {% render 'icon-search' %}
+      <input class="search-input-mobile" style="width: 100%" placeholder="Search Products..." type="search" name="q" />
+    </form>
+
+
+
+    <label class="hamburger" for="toggle-menu">
+      {% render 'burger-menu' %}
+    </label>
   </div>
-  <label class="hamburger" for="toggle-menu">
-    {% render 'burger-menu' %}
-  </label>
-</nav>
+</div>
 
 <div class="nav-menu-overlay"></div>
 

@@ -2,7 +2,7 @@
 
   {% if section.settings.heading != blank %}
     <div class="section-heading-container">
-      <h3 class="section-heading">{{ section.settings.heading | strip_html }}</h3>
+      <h3><span class="section-heading">{{ section.settings.heading | strip_html }}</span></h3>
     </div>
   {% endif %}
 
@@ -29,6 +29,7 @@
         </div>
 
         <div class="discount-image-overlay" style="background-color:{{ block.settings.overlay_color }}"></div>
+        <button class="btn-secondary discount-btn">SHOP NOW</button>
       </div>
 
     {% endfor %}

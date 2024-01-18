@@ -6,7 +6,7 @@
         {% endif %}
 
         {% if section.settings.section_heading != blank %}
-            <h4 class="section-heading">{{ section.settings.section_heading | strip_html }}</h4>
+            <h4><span class="section-heading">{{ section.settings.section_heading | strip_html }}</span></h4>
         {% endif %}
 
 
@@ -19,7 +19,7 @@
     <div class="aux-section-content-container" >
 
         {% for block in section.blocks %}
-            <div class="aux-image-container" style="max-width: 150px; max-height: 150px; min-width: 105px; min-height: 105px; overflow: hidden; cursor: pointer;">
+            <div class="aux-image-container" >
                 <img class="aux-image image" src="{{ block.settings.social_image | image_url }}" loading="lazy" height="100" width="100">
             </div>
         {% endfor %}

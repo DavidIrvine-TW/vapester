@@ -5,6 +5,13 @@
     overflow: hidden;
   }
 
+.feat-cont-swiper-btn:before,
+.feat-cont-swiper-btn:after {
+  font-size: 25px !important;
+  color: var(--header-bg);
+}
 
-
+.feat-cont-swiper-btn:hover{
+  transform: scale(1.2)
+}
 

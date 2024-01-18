@@ -4,9 +4,9 @@
       <p class="section-subheading">{{ section.settings.title_subtext | strip_html }}</p>
     {% endif %}
     {% if section.settings.section_title == blank %}
-      <h3 class="section-heading">{{ collections['best-sellers'].title | strip_html }}</h3>
+      <h3><span class="section-heading">{{ collections['best-sellers'].title | strip_html }}</span></h3>
     {% else %}
-      <h3 class="section-heading">{{ section.settings.section_title | strip_html }}</h3>
+      <h3><span class="section-heading">{{ section.settings.section_title | strip_html }}</span></h3>
     {% endif %}
   </div>
 
@@ -16,29 +16,25 @@
         {% render 'product-card', product: product %}
       {% endfor %}
     </div>
-    <div id="featured-swiper-pagination" class="swiper-pagination"></div>
+    {% comment %} <div id="featured-swiper-pagination" class="swiper-pagination"></div> {% endcomment %}
   </div>
 
   <div class="" style="margin-top: 3rem; display: flex; gap: 2rem">
     <div>
       <button
-        class="btn-secondary"
-        type="button "
-        
+        class="btn-primary"
+        type="button " 
       >
         SHOP OTHER BEST SELLERS
       </button>
     </div>
     <div style="position: relative; width: 150px;">
-      <div id="featured-swiper-prev" class="swiper-button-prev"></div>
-      <div id="featured-swiper-next" class="swiper-button-next"></div>
+      <div class="swiper-button-prev feat-cont-swiper-btn feat-cont-swiper-prev-btn"></div>
+      <div class="swiper-button-next feat-cont-swiper-btn feat-cont-swiper-next-btn"></div>
     </div>
   </div>
 </div>
 
-<style></style>
-
-<script></script>
 
 {% schema %}
 {
