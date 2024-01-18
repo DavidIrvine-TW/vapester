@@ -44,7 +44,7 @@
             style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; padding: 1rem;"
           >
             {% for item in search.results %}
-              <div style="bordeR: 1px solid black;">
+              <div >
                 <h3>{{ item.title | link_to: item.url }}</h3>
                 {% if item.featured_image %}
                   <div class="result-image" style="max-width: 300px; height: auto;">
@@ -59,7 +59,7 @@
                     </a>
                   </div>
                 {% endif %}
-                <span style="border: 1px solid red;">
+                <span>
                   {{- item.content | strip_html | truncatewords: 40 | highlight: search.terms -}}
                 </span>
                 {% comment %} <div style="clear:left"></div>           {% endcomment %}

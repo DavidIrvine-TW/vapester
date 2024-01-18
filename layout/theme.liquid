@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ 'aux-content.css' | asset_url }}"/>
     <link rel="stylesheet" href="{{ 'main-product.css' | asset_url }}"/>
     <link rel="stylesheet" href="{{ 'search.css' | asset_url }}"/>
+    <link rel="stylesheet" href="{{ 'announcement-bar.css' |  asset_url }}"/>
 
     {%- if settings.favicon != blank -%}
         <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 35, height: 35 }}">
@@ -40,7 +41,7 @@
 
 <body style="overflow-x: hidden; background-color: #FAF9F6">
  
-    {% section "header" %}
+    {% sections "header-group" %}
  
      <main role="main"  style="max-width: 1920px;">
         {{ content_for_layout }} 
@@ -54,6 +55,7 @@
     <script type="text/javascript" src="{{ 'vanilla-tilt.js'  |  asset_url }}"></script>
     <script type="text/javascript" src="{{ 'screenWidth.js'  |  asset_url }}"></script>
     <script type="text/javascript" src="{{ 'productPage.js'  |  asset_url }}"></script>
+    <script type="text/javascript" src="{{ 'burger.js'  |  asset_url }}"></script>
 
     
     {% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> {% endcomment %}

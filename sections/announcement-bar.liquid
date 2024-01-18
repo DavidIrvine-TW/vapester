@@ -1,10 +1,21 @@
+{% if section.settings.announce_text != blank %}
+  <div class="announcement-bar__content-container">
+    <p>{{ section.settings.announce_text | upcase | strip_html }}</p>
+  </div>
+{% endif %}
 
 
-<p>THIS IS AN ANNOUNCEMENT</p>
+
 {% schema %}
   {
     "name": "Announcement bar",
-    "settings": []
+    "class": "announcement-bar__main-container",
+    "tag" : "section",
+    "settings": [{
+      "type": "text",
+      "id" : "announce_text",
+      "label" : "Announcement text"
+    }]
   }
 {% endschema %}
 

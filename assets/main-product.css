@@ -1,12 +1,12 @@
 
-
 .product__banner {
     margin-bottom: 0rem;
 }
 .product__banner-title-container {
     position: absolute;
     top: 45%;
-    left: 2%;
+    left: 0;
+    width: 100%;
 
 }
 
@@ -17,6 +17,7 @@
     line-height: 24px;
     position: relative; 
     z-index: 20;
+    
 }
 
 .product__banner-subheading {
@@ -36,7 +37,6 @@
    transform: translate(10px, -15px); 
 }
 
-
   .product__banner-heading:before {
    content: "";
    position: absolute;
@@ -51,13 +51,9 @@
 /* Prices */
 
 
+
 /* description */
 
-.metafield-tagline {
-  font-size: 1.25rem;
-  color: black;
-  margin-bottom: .5rem;
-}
 
 
 
@@ -94,7 +90,6 @@
   }
   
 
-  
   /* Style for the submit button */
   button[type="submit"] {
     margin-top: 15px;
@@ -119,9 +114,6 @@
   .quantity-input > span {
     width: 50px;
     height: 50px;
-    /* padding: 1rem; */
-    /* margin: 0 5px; */
-    /* border: 1px solid #ccc; */
     font-size: 24px;
     display: flex;
     text-align: center;
@@ -147,4 +139,14 @@
   /* Hover effect for the buttons */
   .quantity-button:hover {
     background-color: #45a049;
+  }
+
+
+
+  .metafield-body-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: var(--header-bg);
+    font-weight: 500;
+    
   }

@@ -1,0 +1,13 @@
+.announcement-bar__content-container {
+    background-color: var(--clr-red); 
+    padding: .25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.announcement-bar__content-container > p {
+    font-size: 1.25rem; 
+    font-weight: bold; 
+    color: white;
+}
