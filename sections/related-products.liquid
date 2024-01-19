@@ -4,9 +4,9 @@
         <p class="section-subheading">{{ section.settings.title_subtext | strip_html }}</p>
       {% endif %}
       {% if section.settings.section_title == blank %}
-        <h3 class="section-heading">{{ collections['best-sellers'].title | strip_html }}</h3>
+        <h3><span class="section-heading">{{ collections['best-sellers'].title | strip_html }}</h3></span>
       {% else %}
-        <h3 class="section-heading">{{ section.settings.section_title | strip_html }}</h3>
+        <h3><span class="section-heading">{{ section.settings.section_title | strip_html }}</h3></span>
       {% endif %}
     </div>
   

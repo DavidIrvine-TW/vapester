@@ -32,17 +32,18 @@
 
   <nav class="header-bottom-content-container">
 
-    <ul id="nav-menu" class="header-nav" >
+    <ul id="nav-menu" class="header-nav">
       {% assign current_path = request.path %}
       {% for link in linklists['main-menu'].links %}
 
-      <li class="header-nav-item {% if current_path == link.url %} active{% endif %}" style="display: flex; gap: .2rem; align-items: center">
+      <li class="header-nav-item {% if current_path == link.url %} active{% endif %}"
+        style="display: flex; gap: .2rem; align-items: center">
         <a class="header-nav-anchor" href="{{ link.url }}">
           {{ link.title }}
         </a>
 
         {% if link.links != blank %}
-          {% render 'icon-chevron' %}
+        {% render 'icon-chevron' %}
         <ul class="header-nav-sub">
           {% for child in link.links %}
           <li class="nav-item-sub {% if current_path == link.url %} active{% endif %}">
@@ -58,17 +59,15 @@
   </nav>
 
   <div style=" display: flex; align-items: center;">
-    <form class="header-search-mobile-container" action="/search" >
+    <form class="header-search-mobile-container" action="/search">
       {% render 'icon-search' %}
       <input class="search-input-mobile" style="width: 100%" placeholder="Search Products..." type="search" name="q" />
     </form>
-
-
-
     <label class="hamburger" for="toggle-menu">
       {% render 'burger-menu' %}
     </label>
   </div>
+  
 </div>
 
 <div class="nav-menu-overlay"></div>

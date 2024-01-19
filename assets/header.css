@@ -153,8 +153,8 @@
     align-items: center;
     justify-content: flex-end;
     padding-right: 1rem;
-  
 }
+
 .header-bottom-content-container{
     width: 100%;
     display: flex;
@@ -179,6 +179,7 @@
     opacity: 0;
     background-color: #FAF9F6;
 }
+
 #nav-menu > li {
     padding: 1rem;
     border-bottom: 1px solid #ddd;
