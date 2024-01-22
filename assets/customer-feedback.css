@@ -107,6 +107,15 @@
    transform: translate(2px, 0px); 
  }  
 
+ .newsletter-email-container {
+    
+    margin-top: 1rem; 
+    display: flex; 
+    flex-direction: 
+    column; gap: 2rem; 
+    padding: 2rem;
+ }
+
  @media screen and (min-width: 480px){
     .customer-review-content {
         width: 410px;
@@ -145,5 +154,8 @@
     .reviewSlide-body-text {
         color: var(--header-bg);
         font-size: 1.5rem;
+    }
+    .newsletter-email-container {
+        margin-top: 4rem;
     }
 } 

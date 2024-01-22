@@ -89,8 +89,8 @@ var partnerSwiper = new Swiper(".partnerSwiper", {
   },
 
   navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".our-partners-swiper-next-btn",
+      prevEl: ".our-partners-swiper-prev  -btn",
   },
 
   breakpoints: {

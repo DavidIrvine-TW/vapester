@@ -7,7 +7,7 @@ function checkScreenSize() {
   
       // Perform actions based on the screen size change
       // For example, you can trigger specific behavior or update UI elements
-      const collectionTiles = document.querySelectorAll('.collection__main-container');
+      const collectionTiles = document.querySelectorAll('.collection-list-item');
   
       // Iterate through each element in the collection and update the class
       collectionTiles.forEach(tile => {

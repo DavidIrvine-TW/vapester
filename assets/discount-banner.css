@@ -33,8 +33,8 @@
 
 
 .discount-description {
-    font-size: 8rem;
-    color: var(--clr-purple)
+    font-size: 4rem;
+    color: var(--header-bg)
 }
 
 
@@ -64,7 +64,7 @@
 .discount-description-container {
     position: absolute;
     right: 1%;
-    bottom: 5%;
+    top: 0%;
    
 }
 .discount-btn {
@@ -72,8 +72,21 @@
     bottom: 10%;
     left: 5%;
     font-size:1.5rem;;
+    margin-top: 15px;
+    padding: 1rem;
+    background-color: var(--header-bg);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .2s ease;
 }
 
+.discount-btn:hover {
+    background-color: var(--clr-purple);
+    transform: scale(1.1);
+}
 
 
 

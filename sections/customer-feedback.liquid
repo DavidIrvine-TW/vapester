@@ -18,11 +18,11 @@
             {% endfor %}
           </div>
 
-         
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev cust-feed-swiper-btn"></div>
-            <div class="swiper-button-next cust-feed-swiper-btn "></div>
-        
+           
+              <div class="swiper-pagination"></div>
+              {% comment %} <div class="swiper-button-prev cust-feed-swiper-btn"></div> {% endcomment %}
+              <div class="swiper-button-next cust-feed-swiper-btn "></div>
+           
 
         </div>
 
@@ -46,9 +46,9 @@
        <p>{{ section.settings.newsletter_body_text | strip_html }}</p> 
     <div> 
 
-     <div style="margin-top: 5rem; display: flex; flex-direction: column; gap: 2rem; padding: 2rem;">
+     <div class="newsletter-email-container" >
       <input type="email" placeholder="Enter email address" id="newsletter-input">
-      <button type="button">SUBSCRIBE<button>
+      <button style="padding: 1rem;" class="btn-red" type="button">SUBSCRIBE<button>
     </div> 
 
   </div>

@@ -3,15 +3,15 @@
     <span><h3 class="section-heading">{{ section.settings.heading | strip_html }}</h3></span>
   {% endif %}
 
-  <div class="collection-content">
+  <div class="collection-list-content">
 
       {% for block in section.blocks %}
          
-          <div class="collection__main-container" >
+          <div class="collection-list-item" >
 
             <a href="{{ block.settings.collection.url }}"> 
 
-              <div class="collection__main-image-container ">
+              <div class="collection-list-item-image-container ">
                 <img
                   class="image"
                   src="{{ block.settings.collection.featured_image | image_url }}"
@@ -22,12 +22,12 @@
                 >
               </div>
 
-              <div class="collection__main-container-heading">
+              <div class="collection-list-item-heading-container">
                 <h3 class="image-collection-title">{{ block.settings.collection.title | strip_html }}</h3>
               </div>
 
               <div
-                class="collection-image-overlay"
+                class="collection-list-item-overlay"
                 style="background-color:{{ block.settings.collection_image_overlay_color }}"
               ></div>
               

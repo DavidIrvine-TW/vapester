@@ -1,8 +1,8 @@
 <div class="swiper-slide">
-  <a href="{{ product.url }}">
+  <a href="{{ item.url }}">
     <div class="product-card-image-container">
-      <img class="image" src="{{ product.featured_image | image_url }}" loading="lazy" width="100" height="100">
-      {% if product.compare_at_price %}
+      <img class="image" src="{{ item.featured_image | image_url }}" loading="lazy" width="100" height="100">
+      {% if item.compare_at_price %}
         <p class="product-card-sale">
           SALE
         </p>
@@ -12,25 +12,25 @@
 
   
 
-  <div class="product-card-price-info" data-product-id="{{ product.id }}">
-    <a href="{{ product.url }}">
-      <p class="product-card-title">{{ product.title | link_to: product.url | strip_html }}</p>
+  <div class="product-card-price-info" data-product-id="{{ item.id }}">
+    <a href="{{ item.url }}">
+      <p class="product-card-title">{{ item.title | link_to: item.url | strip_html }}</p>
     </a>
     <div style="display: flex; gap: .5rem; align-items: center;">
-      {% if product.compare_at_price %}
+      {% if item.compare_at_price %}
         <p class="product-card-compare-price ">
           <span style="color: gray;"> {% render 'icon-cash-sm' %}</span
-          ><span>{{ product.compare_at_price | money | strip_html }}</span>
+          ><span>{{ item.compare_at_price | money | strip_html }}</span>
         </p>
       {% endif %}
       <p class="product-card-price">
         <span style="color: black;"> {% render 'icon-cash-black' %}</span>
-        <span>{{ product.price | money | strip_html }}</span>
+        <span>{{ item.price | money | strip_html }}</span>
       </p>
     </div>
   </div>
   {% render 'icon-star' %}
-  <a href="{{ product.url }}">
+  <a href="{{ item.url }}">
   <button type="button" class="product-card-btn">View Product</button>
    </a>
 </div>

@@ -1,6 +1,6 @@
 
 
-.collection-content {
+.collection-list-content {
 display: grid;
 place-items: center;
 grid-template-columns: 1fr; 
@@ -9,7 +9,7 @@ gap: 2rem;
 
 }
 
-.collection__main-container {
+.collection-list-item {
 position: relative;
 cursor: pointer;
 width: 100%;
@@ -19,14 +19,14 @@ overflow: hidden;
 
 }
 
-.collection__main-image-container > img {
+.collection-list-item-image-container > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 
 }
 
-.collection__main-container-heading {
+.collection-list-item-heading-container {
   position: absolute;
   top: 50%;
   left: 0;
@@ -37,21 +37,21 @@ overflow: hidden;
 margin-bottom: 2rem;
 }
 
-.collection__main-container-heading > h3 {
+.collection-list-item-heading-container > h3 {
    color: #ffffff; 
    padding: 1px 2px; 
    font-size: 1.5rem;
    line-height: 24px;
    position: relative; 
-   z-index: 20;
+   z-index: 3;
 
 }
 
-.collection__main-container-heading > h3:before {
+.collection-list-item-heading-container > h3:before {
   content: "";
   position: absolute;
   top: 0;
-  width: 95%;
+  width: 100%;
   height: 100%;
   background-color: var(--header-bg);
   z-index: -1; 
@@ -59,7 +59,7 @@ margin-bottom: 2rem;
 
 } 
 
-.collection-image-overlay {
+.collection-list-item-overlay {
   position: absolute;
   left: 0;
   top: 0;
@@ -71,25 +71,23 @@ margin-bottom: 2rem;
 
 }
 
-.collection-image-overlay:hover {
+.collection-list-item-overlay:hover {
   opacity: 0.6;
 
 }
 
 @media screen and (min-width: 768px){
-  .collection-content {
+  .collection-list-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr); 
     gap: 2rem;   
   }
  
-  /* .collection__main-container:last-child {
-    grid-column: span 2; 
-  } */
+
   .collection__main-container-heading > h3 {
     font-size: 2rem;
-    /* line-height: 24px; */
+    line-height: 32px;
 
 
   }
@@ -99,24 +97,23 @@ margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 1200px){
-  .collection-content {
+  .collection-list-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr); 
     gap: 3rem;   
   }
-  .collection__main-container {
+  .collection-list-item {
     width: 100%;
     height: auto;
   }
-  .collection__main-container:last-child {
+  .collection-list-item:last-child {
     grid-column: span 2; 
   }
-  .collection__main-container-heading > h3 {
+  .collection-list-item-heading-container > h3 {
     font-size: 2.5rem;
-    line-height: 24px;
-
-    z-index: 20; 
+    line-height: 40px;
+    z-index: 3; 
   }
   .section-heading {
     font-size: 4rem;

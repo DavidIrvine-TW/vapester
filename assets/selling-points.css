@@ -5,7 +5,7 @@
 @media screen and (max-width: 768px){
 .selling-points__main-container {
     margin: 0 auto;
-    padding: 3rem 3rem 3rem 3rem;
+    padding: 3rem 3rem 0rem 3rem;
 }
 }
  .section-selling-points {
@@ -14,9 +14,8 @@
     margin: 0 auto; 
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: .5rem;
     z-index: -100;
-    /* border: 1px solid red; */
 } 
 
 .svg-container {

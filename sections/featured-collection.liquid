@@ -1,4 +1,5 @@
-<div class="section-featured-collection page-width">
+<div class="featured-collection-section">
+
   <div class="section-heading-container">
     {% if section.settings.title_subtext != blank %}
       <p class="section-subheading">{{ section.settings.title_subtext | strip_html }}</p>
@@ -16,19 +17,20 @@
         {% render 'product-card', product: product %}
       {% endfor %}
     </div>
-    {% comment %} <div id="featured-swiper-pagination" class="swiper-pagination"></div> {% endcomment %}
+   <div id="featured-swiper-pagination" class="swiper-pagination"></div> 
   </div>
 
-  <div class="" style="margin-top: 3rem; display: flex; gap: 2rem">
-    <div>
-      <button
-        class="btn-primary"
-        type="button " 
-      >
-        SHOP OTHER BEST SELLERS
-      </button>
-    </div>
-    <div style="position: relative; width: 150px;">
+  <div class="featured-collection-btn-container">
+  
+      <a href="/">
+        <button
+         class="btn-more-top-sellers btn-red"
+        >
+          MORE TOP SELLERS
+        </button>
+      </a>
+ 
+    <div class="featured-collection-swiper-btn-container">
       <div class="swiper-button-prev feat-cont-swiper-btn feat-cont-swiper-prev-btn"></div>
       <div class="swiper-button-next feat-cont-swiper-btn feat-cont-swiper-next-btn"></div>
     </div>
