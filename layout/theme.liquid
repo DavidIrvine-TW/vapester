@@ -22,6 +22,18 @@
     <link rel="stylesheet" href="{{ 'search.css' | asset_url }}"/>
     <link rel="stylesheet" href="{{ 'announcement-bar.css' |  asset_url }}"/>
     <link rel="stylesheet" href="{{ 'product-card.css' |  asset_url }}"/>
+    <link rel="stylesheet" href="{{ 'contact-page.css' |  asset_url }}"/>
+    <link rel="stylesheet" href="{{ 'store-locations.css' |  asset_url }}"/>
+    <link rel="stylesheet" href="{{ 'page-banner.css' |  asset_url }}"/>
+    <link rel="stylesheet" href="{{ 'store-contact-details.css' |  asset_url }}"/>
+    <link rel="stylesheet" href="{{ 'get-in-touch.css' |  asset_url }}"/>
+    <link rel="stylesheet" href="{{ 'page-banner-alternate.css' |  asset_url }}"/>
+    <link rel="stylesheet" href="{{ 'about-us.css' |  asset_url }}"/>
+    <link rel="stylesheet" href="{{ 'about-us-guarantees.css' |  asset_url }}"/>
+    <link rel="stylesheet" href="{{ 'about-us-staff-pics.css' |  asset_url }}"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+
 
     {%- if settings.favicon != blank -%}
         <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 35, height: 35 }}">
@@ -37,6 +49,8 @@
             --logo-width: {{ settings.logo_width }}px;
             }     
     </style>  
+   
+     
 
 </head>
 
@@ -57,9 +71,10 @@
     <script type="text/javascript" src="{{ 'screenWidth.js'  |  asset_url }}"></script>
     <script type="text/javascript" src="{{ 'productPage.js'  |  asset_url }}"></script>
     <script type="text/javascript" src="{{ 'burger.js'  |  asset_url }}"></script>
-
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script type="text/javascript" src="{{ 'map.js'  |  asset_url }}"></script>
     
-    {% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> {% endcomment %}
+   
   
  
 </body>

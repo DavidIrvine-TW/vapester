@@ -132,3 +132,22 @@ var swiper2 = new Swiper(".mySwiper2", {
     swiper: productSwiper,
   },
 });
+
+var swiperTeam = new Swiper(".swiperTeam", {
+  slidesPerView: 3,
+  autoplay: true,
+  spaceBetween: 10,
+  loop: true,
+
+  pagination: {
+    el: ".swiper-pagination",
+    // clickable: true,
+    type: "fraction",
+  },
+
+  navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+  },
+
+});

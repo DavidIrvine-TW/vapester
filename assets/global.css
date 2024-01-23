@@ -63,6 +63,10 @@ img {
     height: 100%;
     object-fit: cover;
 }
+textarea {
+    margin: 0;
+    padding: 0;
+}
 
 .image {
     width: 100%;

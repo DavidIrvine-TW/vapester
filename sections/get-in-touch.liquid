@@ -1,0 +1,58 @@
+
+
+<div class="contact-page-contact-container section page-width">
+  <div class="contact-page-contact-image-container">
+    <img class="contact-page-contact-background-image" loading="lazy" width="100" height="100"
+      src="{{ 'contact-banner.jpg' | asset_url }}">
+  </div>
+
+  <div class="contact-page-get-in-touch-container">
+    <h2><span class="contact-page-get-in-touch">{{ page.content }}</span></h2>
+  </div>
+
+  {% form 'contact' %}
+  {{ form.errors | default_errors }}
+
+  <div class="contact-contact-form ">
+    <div class="contact-contact-form-upper">
+      <div class="contact-name">
+        <label class="contact-label" for="first-name">Your Name</label>
+        <input class="contact-page-input" type="text" name="contact[first_name]" id="first-name"
+          placeholder="Your Name*" />
+      </div>
+      <div class="contact-email">
+        <label class="contact-label" for="email">Your Email</label>
+        <input class="contact-page-input" type="email" name="contact[email]" id="email" placeholder="Your Email*" />
+      </div>
+    </div>
+
+    <div class="contact-message">
+      <label class="contact-label" for="message">Your Message</label>
+      <textarea class="contact-page-textarea" name="contact[body]" id="message" placeholder="Your Message*"></textarea>
+    </div>
+
+    <div class="contact-order-number">
+      <label class="contact-label" for="order-number">Order number</label>
+      <input class="contact-order-input" type="text" name="contact[order_number]" id="order-number"
+        placeholder="Order Number" />
+    </div>
+
+    <div class="submit">
+      <input class="contact-submit" type="submit" value="Submit" />
+    </div>
+  </div>
+  {% endform %}
+</div>
+
+
+
+{% schema %}
+{
+"name":"Get in touch",
+"settings" : [],
+"presets" : [{"name" : "Get in touch"}],
+"limit" : 1,
+"tag": "section",
+"class" : "section-get-in-touch"
+}
+{% endschema %}
