@@ -134,7 +134,7 @@ var swiper2 = new Swiper(".mySwiper2", {
 });
 
 var swiperTeam = new Swiper(".swiperTeam", {
-  slidesPerView: 3,
+  slidesPerView: 1,
   autoplay: true,
   spaceBetween: 10,
   loop: true,
@@ -149,5 +149,18 @@ var swiperTeam = new Swiper(".swiperTeam", {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
   },
-
+  breakpoints: {
+    600: {
+      slidesPerView: 1,
+      spaceBetween: 16,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 16,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 32,
+    },
+  }
 });

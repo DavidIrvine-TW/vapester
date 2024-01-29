@@ -37,7 +37,7 @@
       {% assign current_path = request.path %}
       {% for link in linklists['main-menu'].links %}
 
-      <li class="header-nav-item {% if current_path == link.url %} active{% endif %}"
+      <li class="header-nav-item {% if current_path == link.url %} active{% endif %} {% if forloop.last %} last-item{% endif %}"
         style="display: flex; gap: .2rem; align-items: center">
         <a class="header-nav-anchor " href="{{ link.url }}">
           {{ link.title }}
@@ -56,8 +56,10 @@
 
       </li>
       {% endfor %}
+      <h3 class="mob-menu-logo"> VAPESTER</h3>
     </ul>
   </nav>
+
 
   <div style=" display: flex; align-items: center;">
     <form class="header-search-mobile-container" action="/search">

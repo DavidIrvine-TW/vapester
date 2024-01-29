@@ -1,0 +1,41 @@
+<div id="collections-listing" class="collection-page__main-container section page-width section-id-{{ section.id }}">
+  
+  {% paginate collections by 8 %}
+
+    {% if collections.size > 0 %}
+
+
+ <div style="display: flex; gap: 2rem">
+    {% for collection in collections %}
+      {% unless collection.title == 'Payment & Delivery' or collection.title == 'Vaporesso Veko One Kits' or collection.title == 'Partners' %}
+        <a href="{{ collection.url }}">
+          <div style="width: 200px; height: 200px">
+            <h3 style="cursor-pointer" class="{{ collection.title }}-collection">{{ collection.title}}</h3>
+            <div>
+              <img src="{{ collection.featured_image  | image_url}}">
+            </div>
+          </div>
+        </a>  
+      {% endunless %}
+
+    {% endfor %}
+</div>
+
+    <div id="pagination">{{ paginate | default_pagination }}</div>
+
+    {% else %}
+      <p>No Collections found...</p>
+    {% endif %}
+  {% endpaginate %}
+</div>
+
+{% schema %}
+    {
+    "name":"List Collection",
+    "settings" : [],
+    "presets" : [{"name" : "Collection List"}],
+    "limit" : 1,
+    "tag": "section",
+    "class" : "Collection-list__main-container section page-width"
+    }
+{% endschema %}

@@ -1,0 +1,36 @@
+<div class="section-discount-banner-large">
+    <img class="section-discount-banner-large-backdrop image" loading="lazy" width="100" height="100"
+        src="{{ section.settings.banner_backdrop | image_url}}">
+        <div class="discount-banner-large-container-flex">
+            <div class="section-discount-banner-large-title-container">
+            <h1><span class="section-discount-banner-large-section-heading">{{ section.settings.banner_title }}</span></h1>
+            </div>
+
+        </div>
+        <button class="btn-secondary discount-btn">SHOP NOW</button>
+</div>
+
+
+
+{% schema %}
+{
+"name": "Discount banner large",
+"settings": [
+{
+"type" : "image_picker",
+"id" : "banner_backdrop",
+"label" : "Banner backdrop"
+},
+{
+"type" : "richtext",
+"id" : "banner_title",
+"label" : "Banner title"
+}
+],
+"limit": 1,
+"class": "discount-banner-large__main-container page-width section-alt",
+"tag": "section",
+"presets": [{ "name": "Discount banner large" }]
+
+}
+{% endschema %}

@@ -111,6 +111,7 @@ height: 100%;
 } 
 .hero-btn-container {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   margin-left: 3rem;
   margin-top: 1rem;

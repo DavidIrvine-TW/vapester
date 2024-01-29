@@ -1,0 +1,334 @@
+<div>
+  <div class="main-collection-content-container" >
+
+    <div class="main-collection-filters-container">
+
+      <select id="sort-by">
+        {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+        {% for option in collection.sort_options %}
+        <option value="{{ option.value }}" {% if option.value==sort_by %}selected="selected" {% endif %}>
+          {{ option.name }}
+        </option>
+        {% endfor %}
+      </select>
+
+
+
+      {% comment %} storefront filter shopify {% endcomment %}
+
+      <form class="collection-page-form-filters">
+
+        <div class="collection-filter ">
+          <h3><span class="collection-filter-label">CART</span></h3>
+          {% render 'collection-cart' %}
+        </div>
+
+        {% comment %} Price filter {% endcomment %}
+        {%- for filter in collection.filters -%}
+        {% if filter.label == 'Price' %}
+        <div class="collection-filter price-filter">
+          <h3><span class="collection-filter-label">{{ filter.label }}</span></h3>
+
+          <div class="filter-group-display__price-range">
+
+            <div class="filter-group-display__price-range-from">
+
+              <span>{% render 'icon-cash-sm' %}</span>
+
+              <input name="{{ filter.min_value.param_name }}" id="Filter-{{ filter.min_value.param_name }}" {% if
+                filter.min_value.value -%}
+                value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}" {%- endif %}
+                type="number" placeholder="0" min="0"
+                max="{{ filter.range_max | money_without_currency | replace: ',', '' }}">
+
+              <label for="Filter-{{ filter.min_value.param_name }}">From</label>
+
+            </div>
+
+            <div class="filter-group-display__price-range-to">
+
+              <span>{% render 'icon-cash-sm' %}</span>
+
+              <input name="{{ filter.max_value.param_name }}" id="Filter-{{ filter.max_value.param_name }}" {% if
+                filter.max_value.value -%}
+                value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}" {%- endif %}
+                type="number" placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}" min="0"
+                max="{{ filter.range_max | money_without_currency | replace: ',', '' }}">
+
+              <label for="Filter-{{ filter.max_value.param_name }}">To</label>
+
+            </div>
+
+          </div>
+
+          <div class="filter-group-display__submit filter-apply-btn">
+            <input type="submit" value="Apply">
+            <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}">RESET</a>
+          </div>
+
+        </div>
+        {% endif %}
+        {% comment %} end price {% endcomment %}
+
+        {% comment %} nicotine filter {% endcomment %}
+
+        {% if filter.label == 'Nicotine options' and collection.handle == 'e-liquids' or collection.handle == 'all' %}
+        <div class="collection-filter nicotine-options-filter">
+          <h3 style="margin-bottom: 2rem;"><span class="collection-filter-label">{{ filter.label }}</span></h3>
+          {%- for filter_value in filter.values -%}
+          <li style="margin-bottom: .2rem; margin-left: 2rem;">
+            <label style="font-size: 1.25rem;" for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+              <input type="checkbox" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}"
+                id="Filter-{{ filter.param_name }}-{{ forloop.index }}" {% if filter_value.active -%}checked{%- endif %}
+                {% if filter_value.count==0 and filter_value.active==false -%}disabled{%- endif %}>
+              <span>
+                {%- case filter_value.display.type -%}
+                {%- when 'colors' -%}
+                {% liquid
+                assign size_limit = filter_value.display.value.size | at_most: 4
+                assign rotation = '0deg'
+                if size_limit == 2
+                assign rotation = '45deg'
+                endif
+
+                assign angle_increment = 360 | divided_by: size_limit
+                assign angle = 0
+                %}
+                {%- capture conic_gradient -%}
+                {%- for color in filter_value.display.value limit: size_limit -%}
+                {{ color }} {{ angle }}deg{%- assign angle = angle | plus: angle_increment %} {{ angle }}deg{%- unless
+                forloop.last %}, {%- endunless -%}
+                {%- endfor -%}
+                {%- endcapture -%}
+                <span style="
+                      width: 25px;
+                      height: 25px;
+                      border-radius: 50%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      background: conic-gradient({{ conic_gradient }}); transform: rotateZ({{ rotation }});
+                    "></span>
+                {%- when 'image' -%}
+                {{
+                filter_value.display.value
+                | image_url: width: 25
+                | image_tag: alt: filter_value.display.value.alt
+                }}
+                {%- else -%}
+                <span class="visual-display__child"></span>
+                {%- endcase -%}
+              </span>
+              {{ filter_value.label }}
+            </label>
+          </li>
+          {%- endfor -%}
+          </ul>
+
+          <div class="filter-apply-btn">
+            <input type="submit" value="Apply">
+            <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}">RESET</a>
+          </div>
+        </div>
+        {% endif %}
+        {% comment %} end nicotine {% endcomment %}
+
+        {% comment %} Tags {% endcomment %}
+
+        {% if filter.label == 'Tag' and collection.handle == 'all' %}
+        <div class="collection-filter">
+          <h3 style="margin-bottom: 2rem;"><span class="collection-filter-label">{{ filter.label }}</span></h3>
+          {%- for filter_value in filter.values -%}
+          <li style="margin-bottom: .2rem; margin-left: 2rem;">
+            <label style="font-size: 1.25rem;" for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+              <input type="checkbox" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}"
+                id="Filter-{{ filter.param_name }}-{{ forloop.index }}" {% if filter_value.active -%}checked{%- endif %}
+                {% if filter_value.count==0 and filter_value.active==false -%}disabled{%- endif %}>
+              <span>
+                {%- case filter_value.display.type -%}
+                {%- when 'colors' -%}
+                {% liquid
+                assign size_limit = filter_value.display.value.size | at_most: 4
+                assign rotation = '0deg'
+                if size_limit == 2
+                assign rotation = '45deg'
+                endif
+
+                assign angle_increment = 360 | divided_by: size_limit
+                assign angle = 0
+                %}
+                {%- capture conic_gradient -%}
+                {%- for color in filter_value.display.value limit: size_limit -%}
+                {{ color }} {{ angle }}deg{%- assign angle = angle | plus: angle_increment %} {{ angle }}deg{%- unless
+                forloop.last %}, {%- endunless -%}
+                {%- endfor -%}
+                {%- endcapture -%}
+                <span style="
+                      width: 25px;
+                      height: 25px;
+                      border-radius: 50%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      background: conic-gradient({{ conic_gradient }}); transform: rotateZ({{ rotation }});
+                    "></span>
+                {%- when 'image' -%}
+                {{
+                filter_value.display.value
+                | image_url: width: 25
+                | image_tag: alt: filter_value.display.value.alt
+                }}
+                {%- else -%}
+                <span class="visual-display__child"></span>
+                {%- endcase -%}
+              </span>
+              {{ filter_value.label }}
+            </label>
+          </li>
+          {%- endfor -%}
+          </ul>
+          <div class="filter-apply-btn">
+            <input type="submit" value="Apply">
+            <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}">RESET</a>
+          </div>
+        </div>
+        {% endif %}
+        {% comment %} end tag {% endcomment %}
+
+
+        {% if filter.label == 'Flavour' and collection.handle == 'e-liquids' or collection.handle == 'all' %}
+        <div class="collection-filter">
+          <h3 style="margin-bottom: 2rem;"> <span class="collection-filter-label">{{ filter.label }}</span></h3>
+          {%- for filter_value in filter.values -%}
+          <li style="margin-bottom: .2rem; margin-left: 2rem;">
+            <label style="font-size: 1.25rem;" for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+              <input type="radio" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}"
+                id="Filter-{{ filter.param_name }}-{{ forloop.index }}" {% if filter_value.active -%}checked{%- endif %}
+                {% if filter_value.count==0 and filter_value.active==false -%}disabled{%- endif %}>
+              <span>
+                {%- case filter_value.display.type -%}
+                {%- when 'colors' -%}
+                {% liquid
+                assign size_limit = filter_value.display.value.size | at_most: 4
+                assign rotation = '0deg'
+                if size_limit == 2
+                assign rotation = '45deg'
+                endif
+
+                assign angle_increment = 360 | divided_by: size_limit
+                assign angle = 0
+                %}
+                {%- capture conic_gradient -%}
+                {%- for color in filter_value.display.value limit: size_limit -%}
+                {{ color }} {{ angle }}deg{%- assign angle = angle | plus: angle_increment %} {{ angle }}deg{%- unless
+                forloop.last %}, {%- endunless -%}
+                {%- endfor -%}
+                {%- endcapture -%}
+                <span style="
+                      width: 25px;
+                      height: 25px;
+                      border-radius: 50%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      background: conic-gradient({{ conic_gradient }}); transform: rotateZ({{ rotation }});
+                    "></span>
+                {%- when 'image' -%}
+                {{
+                filter_value.display.value
+                | image_url: width: 25
+                | image_tag: alt: filter_value.display.value.alt
+                }}
+                {%- else -%}
+                <span class="visual-display__child"></span>
+                {%- endcase -%}
+              </span>
+              {{ filter_value.label }}
+            </label>
+          </li>
+          {%- endfor -%}
+          </ul>
+
+          <div class="filter-apply-btn">
+            <input type="submit" value="Apply">
+            <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}">RESET</a>
+          </div>
+
+        </div>
+        {% endif %}
+        {% endfor %}
+      </form>
+    </div>
+
+{% comment %} collection render {% endcomment %}
+    {% if collection.handle == 'all' %}
+    <div class="main-collection-products-container">
+      {% for product in collection.products %}
+      {% unless product.title == 'Payment & Delivery' or
+      product.title == 'partner' or
+      product.title == 'Vaporesso Veco One' or
+      product.title == 'Tarot Mini Kits' or
+      product.title == 'E-liquids Bundle' or
+      product.title == 'Gift Card'%}
+      {% render 'product-card', product: product %}
+      {% endunless %}
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if collection.handle != 'all' %}
+    {% paginate collection.products by 6 %}
+      <div style="width: 100%; height: min-content;">
+        <div class="main-collection-products-container">
+          {% for product in collection.products %}
+          {% render 'product-card', product: product %}
+          {% endfor %}
+        </div>
+        <p class="pagination">{{ paginate | default_pagination }}</p>
+        {% endpaginate %}
+    </div>
+  </div>
+ 
+  {% endif %}
+</div>
+
+
+
+
+
+
+{% comment %} shopify selectbox script {% endcomment %}
+<script>
+  Shopify.queryParams = {};
+  if (location.search.length) {
+    var params = location.search.substr(1).split('&');
+
+    for (var i = 0; i < params.length; i++) {
+      var keyValue = params[i].split('=');
+
+      if (keyValue.length) {
+        Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+      }
+    }
+  }
+  document.querySelector('#sort-by').addEventListener('change', function (e) {
+    var value = e.target.value;
+
+    Shopify.queryParams.sort_by = value;
+    location.search = new URLSearchParams(Shopify.queryParams).toString();
+  });
+</script>
+
+
+
+
+{% schema %}
+{
+"name":"Main Collection",
+"settings" : [],
+"presets" : [{"name" : "Collection"}],
+"limit" : 1,
+"tag": "section",
+"class" : "main-collection__main-container section page-width"
+}
+{% endschema %}

@@ -38,7 +38,8 @@
               </div>
 
               <div class="hero-btn-container">
-                <button id="myButton" class="hero-btn font-body">SHOP NOW</button>
+                {% assign productUrls = 'products/vaporesso-tarot-mini-lit-1,collections/e-liquids,collections/small-kits' | split: ',' %}
+                <a id="myButton" class="hero-btn font-body" href="{{ productUrls[forloop.index0] }}">SHOP NOW</a>
               </div>
             </div>
 

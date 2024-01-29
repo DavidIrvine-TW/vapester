@@ -1,6 +1,10 @@
+.about-us-staff-pics-main-content {
+    margin: 0 auto;
+}
 .about-us-pic-container {
-    width: 390px; 
-    height: 460px;
+    max-width: 390px; 
+    max-height: 460px;
+    min-width: 260px;
     position: relative;
 }
 .about-us-pic-container:hover .about-us-team-pic-overlay {

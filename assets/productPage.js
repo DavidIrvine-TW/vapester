@@ -3,12 +3,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const variantSelect = document.getElementById('variant-id');
     const compareAtPriceElement = document.querySelector('.compare-at-price');
     const actualPriceElement = document.querySelector('.actual-price');
-    const variantTitleElement = document.querySelector('.variant-title');
+    const variantTitleElement = document.querySelector('.product-page-variant-title');
 
     // quantity
     document.querySelector('.decrement').addEventListener('click', decrement);
     document.querySelector('.increment').addEventListener('click', increment);
     let counterValue = 1;
+
+   
  
     function increment() {
       counterValue++;

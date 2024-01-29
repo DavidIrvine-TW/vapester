@@ -1,32 +1,62 @@
-{% form 'cart', cart %}
+<div class="section page-width">
+    {% form 'cart', cart %}
 
+    <div class="cart-title-container">
+        {% if cart.empty? %}
+        <h1 class="font-product-info cart-title">Your cart is empty!</h1>
+        {% else %}
+        <h1 class="font-product-info cart-title"><span>Your cart</span></h1>
+        {% endif %}
 
-<h1>cartpage</h1>
-
-
-{% if cart.empty? %}
-<h1>Hey your cart is empty!</h1>  
-{% else %}
-
-{% for item in cart.items %}
-    <div>
-        <img src="{{ item.image | image_url: width: 200 }}">
-        <h2>{{ item.title |  strip_html }}</h2>
-        <p>{{ item.final_line_price | money }}</p>
-        <input name="updates[]" value="{{ item.quantity }}">
-        <a href="{{ item.url_to_remove }}">Remove</a>
+        <span><a class="cart-title-btn" href="/">Continue Shopping</a></span>
     </div>
-{% endfor %}
-{% endif %}
-
-<hr/>
 
 
-<P>Total: {{ cart.total_price | money }}</P>
+    {% for item in cart.items %}
+    <div class="id-{{ product.title }} cart-item-container">
+
+        <div class="cart-item-image-container">
+            <img class="image" src="{{ item.image | image_url: width: 200 }}">
+        </div>
+
+        <div class="cart-item-info-container font-product-info">
+            <h2 class="cart-item-title">{{ item.title | strip_html }}</h2>
+            {% if item.variant.compare_at_price %}
+                <span class="cart-price-compare">$ {{ item.variant.compare_at_price | money | strip_html }}</span>
+                {% comment %} <p>Now: <span>{{ item.price | money | strip_html }}</span></p> {% endcomment %}
+                {% assign savings = item.variant.compare_at_price | minus: item.final_price | times: item.quantity %}
+                {% comment %} <p class="cart-saving"> $ {{ savings | money }} saved!</p> {% endcomment %}
+            {% endif %}
+
+            <p class="cart-item-price" style="display: flex; align-items: center;"><span> $ {{ item.final_line_price | money }}</span></p>
+            <div class="cart-quantity-container">
+                <span class="cart-quantity-label">Quantity:</span>
+                <input class="cart-quantity" name="updates[]" value="{{ item.quantity }}" type="number">
+            </div>
+
+            <a class="cart-item-remove" href="{{ item.url_to_remove }}">Remove</a>
+        </div>
+    </div>
 
 
-<button type="submit" name="checkout" style="padding: 1rem; border: 1px solid black;">Checkout</button>
-<button type="submit" name="update" style="padding: 1rem; border: 1px solid black;">update</button>
+    {% endfor %}
 
-{% endform %}
 
+
+    {% if cart.empty? %}
+
+    {% else %}
+    <p class="cart-total" style="">Cart Total: <span style="color: var(--clr-red)">$ {{ cart.total_price | money }}</span></p>
+    <div class="cart-btn-container" >
+        <div class="cart-btn-container-inner">
+            <button class="cart-btn checkout-btn" type="submit" name="checkout" style="">Checkout</button>
+            <button class="cart-btn update-btn" type="submit" name="update" style="">update cart</button>
+        </div>
+    </div>
+    {% endif %}
+
+    {% endform %}
+
+
+
+</div>

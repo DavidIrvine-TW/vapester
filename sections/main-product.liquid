@@ -99,6 +99,21 @@
         <button class="quantity-button increment" type="button">+</button>
       </div>
 
+      <ul style="display: flex; justify-content: flex-start; gap: 1rem; padding: 2rem 0; flex-wrap: wrap; " class="list list-payment" role="list">
+              {%- for type in shop.enabled_payment_types -%}
+                <li class="list-payment__item">
+                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                </li>
+              {%- endfor -%}
+      </ul>
+
+
+
+
+
+
+
+
       <p class="product-page-product-selected">Product selected: x<span class="selected-amount">1</span> <span
           class="product-page-variant-title"></span></p>
 
@@ -106,7 +121,7 @@
         <button type="submit">Add to cart</button>
         <button type="button" class="product-page-btn-checkout">CHECKOUT</button>
       </div>
-      <p class="added-to-cart-display" style="display: none;">PRODUCT ADDED</p>
+      <p id="user-feedback" class="added-to-cart-display"style="margin-top: .5rem; font-size: 1.5rem; font-weight: bold; color: var(--clr-red);"></p>
       {% endform %}
      
     </div>
@@ -152,9 +167,8 @@
     object-fit: cover;
   }
 </style>
-<script>
 
-</script>
+<script type="text/javascript" src="{{ 'productPage.js'  |  asset_url }}"></script>
 
 
 

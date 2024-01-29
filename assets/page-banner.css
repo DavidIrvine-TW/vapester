@@ -5,7 +5,6 @@
     position: relative;
     border-top: 3px solid var(--header-bg);
     border-bottom: 3px solid var(--header-bg);
-    margin-bottom: 3rem;
 }
 .section-page-banner-inner{
     position: absolute;
@@ -18,7 +17,7 @@
 
 .section-page-banner-heading{
     color: var(--header-bg);
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 40px;
     position: relative;
     z-index: 3;
@@ -36,17 +35,31 @@
 }
 .section-page-banner-title-container {
     position: absolute; 
-    top:40%; 
     left: 2%; 
     display: flex; 
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
+    gap: .25rem;
     z-index: 0
 }
+
+.page-banner-collection {
+    top: 20%; 
+}
+.page-banner-page {
+    top: 40%; 
+}
+.section-page-banner-subheading {
+    color: var(--header-bg); 
+    font-size: 1.4rem;
+}
+
+
+
 
 @media screen and (min-width: 768px){
     .section-page-banner {
         height: 330px;
+        margin-bottom: 3rem;
     }
     .section-page-banner-heading{
         font-size: 5rem;

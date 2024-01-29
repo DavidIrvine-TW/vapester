@@ -1,0 +1,15 @@
+.collection-list-main-content-container {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; 
+    border: 1px solid black;
+}
+.collection-list-content{
+    
+}
+
+.collection-list-image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

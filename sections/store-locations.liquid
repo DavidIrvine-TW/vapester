@@ -1,6 +1,10 @@
-<div class="contact-store-locations-section page-width">
-  <p class="contact-location-section-subtitle"> Our Stores</p>
-  <h3><span class="contact-location-section-title">LOCATIONS</span></h3>
+<div class="contact-store-locations-section ">
+  <div class="section-heading-container">
+    <p class="contact-location-section-subtitle">Our Stores</p>
+    <h3><span class="contact-location-section-title">LOCATIONS</span></h3>
+  </div>
+
+
   <div id="map"></div>
 
   <div style="margin-top: 3rem; ">
@@ -12,19 +16,19 @@
         <div class="store-address-flex">
           <span class="store-address font-product-info">4523 Godfrey Road
             London, PC 10048</span>
-            <button class="btn-directions">Directions</button>
-       
-        </div>  
+          <button class="btn-directions">Directions</button>
+
+        </div>
       </div>
 
       <div class="contact-store-location">
-       <span class="store-location-city">Glasgow</span>
+        <span class="store-location-city">Glasgow</span>
         <div class="store-address-flex ">
           <span class="store-address font-product-info">3552 Pride Avenue
             Glasgow, GP 11215</span>
-            <button class="btn-directions">Directions</button>
+          <button class="btn-directions">Directions</button>
         </div>
-       
+
       </div>
 
       <div class="contact-store-location">
@@ -32,7 +36,7 @@
         <div class="store-address-flex ">
           <span class="store-address font-product-info">713 Deer Ridge Drive
             Rochelle Park, NJ 07662</span>
-            <button class="btn-directions">Directions</button>
+          <button class="btn-directions">Directions</button>
         </div>
       </div>
 
@@ -41,19 +45,28 @@
         <div class="store-address-flex">
           <span class="store-address font-product-info">4705 Moonlight Drive
             Edinbrugh, NJ 08401</span>
-            <button class="btn-directions">Directions</button>
+          <button class="btn-directions">Directions</button>
         </div>
       </div>
 
 
     </div>
-    
+
 
   </div>
 </div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+  const map = L.map('map').setView([51.505, -0.09], 13);
 
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
 
+  const marker = L.marker([51.5, -0.09]).addTo(map);
+</script>
 
 
 
@@ -62,12 +75,12 @@
 
 
 {% schema %}
-    {
-    "name":"Store locations",
-    "settings" : [],
-    "presets" : [{"name" : "Store locations"}],
-    "limit" : 1,
-    "tag": "section",
-    "class" : "section-store-locations"
-    }
-    {% endschema %}
+{
+"name":"Store locations",
+"settings" : [],
+"presets" : [{"name" : "Store locations"}],
+"limit" : 1,
+"tag": "section",
+"class" : "section-store-locations section page-width"
+}
+{% endschema %}

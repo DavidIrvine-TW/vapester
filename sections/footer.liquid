@@ -53,11 +53,23 @@
   </div>
 
    <div class="footer-bottom">
-      <p>{{ section.settings.copyright }}</p>
+      <p id="scrollToTopBtn" style="cursor: pointer;">SCROLL TO TOP</p>
     </div> 
 
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the button
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    scrollToTopBtn.addEventListener("click", function () {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    });
+  });
+</script>
 
 {% schema %}
 {

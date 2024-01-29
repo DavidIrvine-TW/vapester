@@ -1,20 +1,16 @@
 function checkScreenSize() {
-    // Function to be executed when the window is resized
+
     function handleResize() {
-      // Get the screen width
+    
       const screenWidth = window.innerWidth;
-      console.log(screenWidth)
-  
-      // Perform actions based on the screen size change
-      // For example, you can trigger specific behavior or update UI elements
+ 
       const collectionTiles = document.querySelectorAll('.collection-list-item');
   
-      // Iterate through each element in the collection and update the class
       collectionTiles.forEach(tile => {
         if (screenWidth > 768) {
-          tile.classList.add('tilt'); // Add the class for desktop
+          tile.classList.add('tilt'); 
         } else {
-          tile.classList.remove('tilt'); // Remove the class for smaller devices
+          tile.classList.remove('tilt'); 
         }
       });
       
@@ -44,19 +40,15 @@ function checkScreenSize() {
     });
     }
   
-    // Add an event listener for the window resize event
+
     window.addEventListener('resize', handleResize);
-  
-    // Call handleResize initially to set the initial state
+
     handleResize();
   
-    // Return the handleResize function in case you want to remove the listener later
     return handleResize;
   }
   
-  // Call the function to start monitoring screen size changes
+ 
   const resizeHandler = checkScreenSize();
   
-  // To stop monitoring, you can remove the event listener
-  // window.removeEventListener('resize', resizeHandler);
   
