@@ -254,7 +254,7 @@
 }
 
 #nav-menu>li:hover {
-  /* background-color: lightgray; */
+  background-color: lightgray;
 }
 .last-item {
   background-color: var(--clr-yellow);
