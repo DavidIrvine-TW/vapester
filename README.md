@@ -21,6 +21,9 @@ pages/sections for store owners.
 convenience.
 
 
+#ajax #template #html #css #javascript #tilt #swiperjs #leafletjs #liquid #shopify #e-commerce #cart #checkout
+
+
 Design by [Themerex](https://themerex.net/)
 
 ## Vapester pages 
