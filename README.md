@@ -2,8 +2,6 @@
 
 A from scratch custom Shopify 2.0 storefront template. The Vapester storefront is a complete e-commerce solution. This multipage site includes product collections, search, filtering, cart and checkout pages. All store data is held and managed by the Shopify CMS.
 
----
-
 Built with vanilla tech:
 
 <img src="./assets/icon-shopify.svg" alt="shopify-icon"> <img src="https://skillicons.dev/icons?i=html" alt="skills-icons"/> <img src="https://skillicons.dev/icons?i=css" alt="skills-icons"/> <img src="https://skillicons.dev/icons?i=js" alt="skills-icons"/>
@@ -21,3 +19,34 @@ pages/sections for store owners.
 
 • Incorporates LeafletJS to provide users with the ability to visualize the locations of all store outlets, enhancing user engagement and
 convenience.
+
+
+Design by [Themerex](https://themerex.net/)
+
+## Vapester pages 
+
+### - Homepage
+
+<img src="./assets/VapeSterHome.jpg" alt="homepage">
+
+
+### - Collection 
+
+<img src="./assets/VapeSterCollection.jpg" alt="colletion page">
+
+
+### - Product 
+
+<img src="./assets/VapeSterProduct.jpg" alt="product page">
+
+
+### - About 
+
+<img src="./assets/VapeSterAbout.jpg" alt="about page">
+
+
+### - Contact
+
+<img src="./assets/VapeSterContact.jpg" alt="contact page">
+
+
