@@ -5,7 +5,4 @@ A from scratch custom Shopify 2.0 storefront template. The Vapester storefront i
 Built with vanilla tech:
 
 
-<img src="./assets/icon-shopify.svg" alt="shopify-icon">
-<img src="https://skillicons.dev/icons?i=html" alt="skills-icons"/>
-<img src="https://skillicons.dev/icons?i=css" alt="skills-icons"/> 
-<img src="https://skillicons.dev/icons?i=js" alt="skills-icons"/>
+<img src="./assets/icon-shopify.svg" alt="shopify-icon"> <img src="https://skillicons.dev/icons?i=html" alt="skills-icons"/> <img src="https://skillicons.dev/icons?i=css" alt="skills-icons"/> <img src="https://skillicons.dev/icons?i=js" alt="skills-icons"/>
